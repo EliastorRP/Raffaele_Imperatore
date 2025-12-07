@@ -1,301 +1,306 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Centre de contrôle – Dossier R. Imperatore</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<header class="site-header">
-    <div class="logo-zone">
-        <div class="logo-symbol">Σ</div>
-        <span class="logo-text">Scientifique de Genesis</span>
+    <header class="site-header">
+        <div class="logo-zone">
+            <div class="logo-symbol">Σ</div>
+            <span class="logo-text">Scientifique de Genesis</span>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="identite.html">Identité</a></li>
+                <li><a href="physique.html">Description Physique</a></li>
+                <li><a href="caractere.html">Caractère</a></li>
+                <li><a href="informations.html">Documents</a></li>
+                <li><a href="histoire.html">Histoire</a></li>
+                <li><a href="funfacts.html">Fun Facts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="system-glitch-overlay" id="systemGlitchOverlay">
+        <div class="system-glitch-noise"></div>
+        <div class="system-glitch-message">
+            <p class="glitch-line">[CRITICAL ERROR] TIMELINE DESYNC DETECTED.</p>
+            <p class="glitch-line">[ALERT] SUBJECT R-IM OUT OF BOUNDS.</p>
+            <p class="glitch-line">[SECURITY] GENESIS CORE COMPROMISED.</p>
+        </div>
     </div>
 
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html" class="active">Accueil</a></li>
-            <li><a href="identite.html">Identité</a></li>
-            <li><a href="physique.html">Description Physique</a></li>
-            <li><a href="caractere.html">Caractère</a></li>
-            <li><a href="informations.html">Documents</a></li>
-            <li><a href="histoire.html">Histoire</a></li>
-            <li><a href="funfacts.html">Fun Facts</a></li>
-        </ul>
-    </nav>
-</header>
 
-<div class="system-glitch-overlay" id="systemGlitchOverlay">
-    <div class="system-glitch-noise"></div>
-    <div class="system-glitch-message">
-        <p class="glitch-line">[CRITICAL ERROR] TIMELINE DESYNC DETECTED.</p>
-        <p class="glitch-line">[ALERT] SUBJECT R-IM OUT OF BOUNDS.</p>
-        <p class="glitch-line">[SECURITY] GENESIS CORE COMPROMISED.</p>
-    </div>
-</div>
+    <main class="content">
 
+        <section class="panel dashboard-panel">
+            <div class="dash-left">
+                <div class="subject-scan">
+                    <div class="subject-scan-header">
+                        <span class="scan-code">SUBJ-R-IM</span>
+                        <span class="scan-tag">STATUT : <span class="accent">ACTIF</span></span>
+                    </div>
 
-<main class="content">
+                    <div class="subject-scan-body">
+                        <div class="subject-silhouette">
+                            <img src="images/raffaele-scan.jpg" alt="Sujet Raffaele – Scan"
+                                class="subject-silhouette-img">
 
-    <section class="panel dashboard-panel">
-        <div class="dash-left">
-            <div class="subject-scan">
-                <div class="subject-scan-header">
-                    <span class="scan-code">SUBJ-R-IM</span>
-                    <span class="scan-tag">STATUT : <span class="accent">ACTIF</span></span>
-                </div>
+                            <div class="scan-bar"></div>
 
-                <div class="subject-scan-body">
-                    <div class="subject-silhouette">
-    <img src="images/raffaele-scan.jpg" alt="Sujet Raffaele – Scan"
-         class="subject-silhouette-img">
-
-    <div class="scan-bar"></div>
-
-    <div class="silhouette-overlay">
-        <span class="silhouette-label">SCANNING...</span>
-    </div>
-</div>
+                            <div class="silhouette-overlay">
+                                <span class="silhouette-label">SCANNING...</span>
+                            </div>
+                        </div>
 
 
-                    <div class="subject-info">
-                        <p class="subject-name">Raffaele Imperatore</p>
-                        <p class="subject-role">Personnel Genesis // Scientifique</p>
-                        <div class="subject-tags">
-                            <span class="tag-chip">CHRONOPHOBIE SÉVÈRE</span>
-                            <span class="tag-chip">ACCÈS LIMITÉ</span>
-                            <span class="tag-chip">RISQUE ÉTHIQUE : ÉLEVÉ</span>
+                        <div class="subject-info">
+                            <p class="subject-name">Raffaele Imperatore</p>
+                            <p class="subject-role">Personnel Genesis // Scientifique</p>
+                            <div class="subject-tags">
+                                <span class="tag-chip">CHRONOPHOBIE SÉVÈRE</span>
+                                <span class="tag-chip">ACCÈS LIMITÉ</span>
+                                <span class="tag-chip">RISQUE ÉTHIQUE : ÉLEVÉ</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="dash-right">
-            <div class="terminal-panel">
-                <div class="terminal-header">
-                    <span class="terminal-title">GENESIS CORE // CONSOLE D’ACCÈS</span>
-                    <span class="terminal-status">ONLINE</span>
-                </div>
-                <div class="terminal-screen">
-                    <pre class="terminal-output" id="terminalOutput">
+            <div class="dash-right">
+                <div class="terminal-panel">
+                    <div class="terminal-header">
+                        <span class="terminal-title">GENESIS CORE // CONSOLE D’ACCÈS</span>
+                        <span class="terminal-status">ONLINE</span>
+                    </div>
+                    <div class="terminal-screen">
+                        <pre class="terminal-output" id="terminalOutput">
                     </pre>
-                    <div class="terminal-scanline"></div>
+                        <div class="terminal-scanline"></div>
+                    </div>
+                </div>
+
+                <div class="entry-hint">
+                    <p>
+                        Utilisez le <span class="highlight">centre de contrôle</span> ci-dessous pour naviguer
+                        entre les différents modules liés au sujet R-IM.
+                    </p>
                 </div>
             </div>
+        </section>
 
-            <div class="entry-hint">
-                <p>
-                    Utilisez le <span class="highlight">centre de contrôle</span> ci-dessous pour naviguer
-                    entre les différents modules liés au sujet R-IM.
+        <section class="panel control-panel">
+            <header class="control-header">
+                <h2>Centre de contrôle // Modules du dossier</h2>
+                <p class="control-subtitle">
+                    Sélectionnez un module pour accéder aux données correspondantes. Certains segments
+                    peuvent contenir des informations <span class="accent">classifiées</span>.
                 </p>
+            </header>
+
+            <div class="control-grid">
+                <a href="identite.html" class="control-card">
+                    <div class="control-card-top">
+                        <span class="control-code">MOD-01</span>
+                        <span class="control-pill">IDENTITÉ</span>
+                    </div>
+                    <h3 class="control-name">Fiche d’identification</h3>
+                    <p class="control-text">
+                        Carte d’identité Genesis, numéro de dossier, données civiles et statut administratif
+                        du sujet R-IM.
+                    </p>
+                    <div class="control-footer">
+                        <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
+                        <span class="control-arrow">⟶</span>
+                    </div>
+                </a>
+
+                <a href="physique.html" class="control-card">
+                    <div class="control-card-top">
+                        <span class="control-code">MOD-02</span>
+                        <span class="control-pill">MORPHOLOGIE</span>
+                    </div>
+                    <h3 class="control-name">Données physiques</h3>
+                    <p class="control-text">
+                        Analyse morphologique détaillée, signes distinctifs, anomalies corporelles et
+                        relevés cliniques.
+                    </p>
+                    <div class="control-footer">
+                        <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
+                        <span class="control-arrow">⟶</span>
+                    </div>
+                </a>
+
+                <a href="caractere.html" class="control-card">
+                    <div class="control-card-top">
+                        <span class="control-code">MOD-03</span>
+                        <span class="control-pill">COMPORTEMENT</span>
+                    </div>
+                    <h3 class="control-name">Profil psychologique</h3>
+                    <p class="control-text">
+                        Traits de caractère, réponses comportementales, modules de défense et phobie
+                        principale (chronophobie).
+                    </p>
+                    <div class="control-footer">
+                        <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
+                        <span class="control-arrow">⟶</span>
+                    </div>
+                </a>
+
+                <a href="informations.html" class="control-card control-card--warning">
+                    <div class="control-card-top">
+                        <span class="control-code">MOD-04</span>
+                        <span class="control-pill control-pill--red">ARCHIVES</span>
+                    </div>
+                    <h3 class="control-name">Documents & rapports</h3>
+                    <p class="control-text">
+                        Rapports internes, documents annexes, pièces jointes et fichiers administratifs
+                        liés au sujet.
+                    </p>
+                    <div class="control-footer">
+                        <span class="control-level">Niveau d’accès : <strong>DANGEREUX</strong></span>
+                        <span class="control-arrow">⚠</span>
+                    </div>
+                </a>
+
+                <a href="histoire.html" class="control-card control-card--warning">
+                    <div class="control-card-top">
+                        <span class="control-code">MOD-05</span>
+                        <span class="control-pill control-pill--red">HISTORIQUE</span>
+                    </div>
+                    <h3 class="control-name">Ligne temporelle</h3>
+                    <p class="control-text">
+                        Chronologie des événements majeurs : accident, coma, cataclysme, intégration à Genesis,...
+                    </p>
+                    <div class="control-footer">
+                        <span class="control-level">Niveau d’accès : <strong>LIMITÉ</strong></span>
+                        <span class="control-arrow">⚠</span>
+                    </div>
+                </a>
+
+                <a href="funfacts.html" class="control-card">
+                    <div class="control-card-top">
+                        <span class="control-code">MOD-06</span>
+                        <span class="control-pill">ANNEXE</span>
+                    </div>
+                    <h3 class="control-name">Fun facts observés</h3>
+                    <p class="control-text">
+                        Particularités du quotidien, habitudes, détails comportementaux mineurs et
+                        observations anecdotiques.
+                    </p>
+                    <div class="control-footer">
+                        <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
+                        <span class="control-arrow">⟶</span>
+                    </div>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="panel control-panel">
-        <header class="control-header">
-            <h2>Centre de contrôle // Modules du dossier</h2>
-            <p class="control-subtitle">
-                Sélectionnez un module pour accéder aux données correspondantes. Certains segments
-                peuvent contenir des informations <span class="accent">classifiées</span>.
-            </p>
-        </header>
-
-        <div class="control-grid">
-            <a href="identite.html" class="control-card">
-                <div class="control-card-top">
-                    <span class="control-code">MOD-01</span>
-                    <span class="control-pill">IDENTITÉ</span>
-                </div>
-                <h3 class="control-name">Fiche d’identification</h3>
-                <p class="control-text">
-                    Carte d’identité Genesis, numéro de dossier, données civiles et statut administratif
-                    du sujet R-IM.
-                </p>
-                <div class="control-footer">
-                    <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
-                    <span class="control-arrow">⟶</span>
-                </div>
-            </a>
-
-            <a href="physique.html" class="control-card">
-                <div class="control-card-top">
-                    <span class="control-code">MOD-02</span>
-                    <span class="control-pill">MORPHOLOGIE</span>
-                </div>
-                <h3 class="control-name">Données physiques</h3>
-                <p class="control-text">
-                    Analyse morphologique détaillée, signes distinctifs, anomalies corporelles et
-                    relevés cliniques.
-                </p>
-                <div class="control-footer">
-                    <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
-                    <span class="control-arrow">⟶</span>
-                </div>
-            </a>
-
-            <a href="caractere.html" class="control-card">
-                <div class="control-card-top">
-                    <span class="control-code">MOD-03</span>
-                    <span class="control-pill">COMPORTEMENT</span>
-                </div>
-                <h3 class="control-name">Profil psychologique</h3>
-                <p class="control-text">
-                    Traits de caractère, réponses comportementales, modules de défense et phobie
-                    principale (chronophobie).
-                </p>
-                <div class="control-footer">
-                    <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
-                    <span class="control-arrow">⟶</span>
-                </div>
-            </a>
-
-            <a href="informations.html" class="control-card control-card--warning">
-                <div class="control-card-top">
-                    <span class="control-code">MOD-04</span>
-                    <span class="control-pill control-pill--red">ARCHIVES</span>
-                </div>
-                <h3 class="control-name">Documents & rapports</h3>
-                <p class="control-text">
-                    Rapports internes, documents annexes, pièces jointes et fichiers administratifs
-                    liés au sujet.
-                </p>
-                <div class="control-footer">
-                    <span class="control-level">Niveau d’accès : <strong>DANGEREUX</strong></span>
-                    <span class="control-arrow">⚠</span>
-                </div>
-            </a>
-
-            <a href="histoire.html" class="control-card control-card--warning">
-                <div class="control-card-top">
-                    <span class="control-code">MOD-05</span>
-                    <span class="control-pill control-pill--red">HISTORIQUE</span>
-                </div>
-                <h3 class="control-name">Ligne temporelle</h3>
-                <p class="control-text">
-                    Chronologie des événements majeurs : accident, coma, cataclysme, intégration à Genesis,...
-                </p>
-                <div class="control-footer">
-                    <span class="control-level">Niveau d’accès : <strong>LIMITÉ</strong></span>
-                    <span class="control-arrow">⚠</span>
-                </div>
-            </a>
-
-            <a href="funfacts.html" class="control-card">
-                <div class="control-card-top">
-                    <span class="control-code">MOD-06</span>
-                    <span class="control-pill">ANNEXE</span>
-                </div>
-                <h3 class="control-name">Fun facts observés</h3>
-                <p class="control-text">
-                    Particularités du quotidien, habitudes, détails comportementaux mineurs et
-                    observations anecdotiques.
-                </p>
-                <div class="control-footer">
-                    <span class="control-level">Niveau d’accès : <strong>LIBRE</strong></span>
-                    <span class="control-arrow">⟶</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <section class="panel status-panel">
-        <div class="status-left">
-            <h2>État du noyau Genesis</h2>
-            <ul class="status-list">
-                <li>
-                    <span class="status-label">Serveurs principaux</span>
-                    <span class="status-value status-ok">OPÉRATIONNELS</span>
-                </li>
-                <li>
-                    <span class="status-label">Sécurité du dossier R-IM</span>
-                    <span class="status-value status-ok">CHIFFRAGE ACTIF</span>
-                </li>
-                <li>
-                    <span class="status-label">Segments historiques</span>
-                    <span class="status-value status-warn">ACCÈS LIMITÉ</span>
-                </li>
-                <li>
-                    <span class="status-label">Risques éthiques</span>
-                    <span class="status-value status-crit">SURVEILLANCE RENFORCÉE</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="status-right">
-            <h2>Journal d’activité</h2>
-            <div class="log-panel">
-                <div class="log-line">[03:14:09] SYNC // Mise à jour des données morphologiques.</div>
-                <div class="log-line">[03:14:12] ALERT // Activité accrue sur les segments chronophobes.</div>
-                <div class="log-line">[03:14:18] INFO // Liaison vers historique du sujet initialisée.</div>
-                <div class="log-line">[03:14:26] WARN // Détection de contradictions comportementales.</div>
-                <div class="log-line log-line--glitch">[03:14:33] REDACTED // ████████████████████.</div>
+        <section class="panel status-panel">
+            <div class="status-left">
+                <h2>État du noyau Genesis</h2>
+                <ul class="status-list">
+                    <li>
+                        <span class="status-label">Serveurs principaux</span>
+                        <span class="status-value status-ok">OPÉRATIONNELS</span>
+                    </li>
+                    <li>
+                        <span class="status-label">Sécurité du dossier R-IM</span>
+                        <span class="status-value status-ok">CHIFFRAGE ACTIF</span>
+                    </li>
+                    <li>
+                        <span class="status-label">Segments historiques</span>
+                        <span class="status-value status-warn">ACCÈS LIMITÉ</span>
+                    </li>
+                    <li>
+                        <span class="status-label">Risques éthiques</span>
+                        <span class="status-value status-crit">SURVEILLANCE RENFORCÉE</span>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-</main>
+            <div class="status-right">
+                <h2>Journal d’activité</h2>
+                <div class="log-panel">
+                    <div class="log-line">[03:14:09] SYNC // Mise à jour des données morphologiques.</div>
+                    <div class="log-line">[03:14:12] ALERT // Activité accrue sur les segments chronophobes.</div>
+                    <div class="log-line">[03:14:18] INFO // Liaison vers historique du sujet initialisée.</div>
+                    <div class="log-line">[03:14:26] WARN // Détection de contradictions comportementales.</div>
+                    <div class="log-line log-line--glitch">[03:14:33] REDACTED // ████████████████████.</div>
+                </div>
+            </div>
+        </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const output = document.getElementById("terminalOutput");
+    </main>
 
-    if (output) {
-        const lines = [
-            "[BOOT SEQUENCE INITIÉE] …",
-            "[CHARGEMENT MODULES] MEM // COG // ETHICS // CHRONO … OK",
-            "[IDENTIFICATION SUJET] R-IM // IMPERATORE, RAFFAELE",
-            "[VÉRIFICATION ACCÈS] Accès limité.",
-            "[OUVERTURE DOSSIER CENTRAL] …",
-            ">> Centre de contrôle prêt. Sélectionnez un module dans la grille ci-dessous."
-        ];
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const output = document.getElementById("terminalOutput");
 
-        let lineIndex = 0;
-        const delayBetweenLines = 450;
+            if (output) {
+                const lines = [
+                    "[BOOT SEQUENCE INITIÉE] …",
+                    "[CHARGEMENT MODULES] MEM // COG // ETHICS // CHRONO … OK",
+                    "[IDENTIFICATION SUJET] R-IM // IMPERATORE, RAFFAELE",
+                    "[VÉRIFICATION ACCÈS] Accès limité.",
+                    "[OUVERTURE DOSSIER CENTRAL] …",
+                    ">> Centre de contrôle prêt. Sélectionnez un module dans la grille ci-dessous."
+                ];
 
-        function printNextLine() {
-            if (lineIndex >= lines.length) return;
-            output.textContent += lines[lineIndex] + "\n";
-            lineIndex++;
-            setTimeout(printNextLine, delayBetweenLines);
-        }
+                let lineIndex = 0;
+                const delayBetweenLines = 450;
 
-        printNextLine();
-    }
+                function printNextLine() {
+                    if (lineIndex >= lines.length) return;
+                    output.textContent += lines[lineIndex] + "\n";
+                    lineIndex++;
+                    setTimeout(printNextLine, delayBetweenLines);
+                }
 
-    const CORRUPTION_INTERVAL = 10000; 
-    const CORRUPTION_DURATION = 2000;  
-    let isGlitching = false;
+                printNextLine();
+            }
 
-    function triggerCorruption() {
-        if (isGlitching) return;
-        isGlitching = true;
+            const CORRUPTION_INTERVAL = 10000;
+            const CORRUPTION_DURATION = 2000;
+            let isGlitching = false;
 
-        document.body.classList.add("is-corrupted");
+            function triggerCorruption() {
+                if (isGlitching) return;
+                isGlitching = true;
 
-        const logPanel = document.querySelector(".log-panel");
-        if (logPanel) {
-            const div = document.createElement("div");
-            div.className = "log-line";
-            div.textContent = "[ALERT] Anomalie critique sur le noyau Genesis.";
-            logPanel.prepend(div);
-        }
+                document.body.classList.add("is-corrupted");
 
-        setTimeout(() => {
-            document.body.classList.remove("is-corrupted");
-            isGlitching = false;
-        }, CORRUPTION_DURATION);
-    }
+                const logPanel = document.querySelector(".log-panel");
+                if (logPanel) {
+                    const div = document.createElement("div");
+                    div.className = "log-line";
+                    div.textContent = "[ALERT] Anomalie critique sur le noyau Genesis.";
+                    logPanel.prepend(div);
+                }
 
-    setTimeout(triggerCorruption, 800);
-    setInterval(triggerCorruption, CORRUPTION_INTERVAL);
-});
-</script>
+                setTimeout(() => {
+                    document.body.classList.remove("is-corrupted");
+                    isGlitching = false;
+                }, CORRUPTION_DURATION);
+            }
+
+            setTimeout(triggerCorruption, 800);
+            setInterval(triggerCorruption, CORRUPTION_INTERVAL);
+        });
+    </script>
 
 
 
 </body>
+
 </html>
