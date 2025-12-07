@@ -270,7 +270,7 @@
                 printNextLine();
             }
 
-            const CORRUPTION_INTERVAL = 10000;
+            const CORRUPTION_INTERVAL = 20000;
             const CORRUPTION_DURATION = 2000;
             let isGlitching = false;
 
@@ -294,7 +294,7 @@
                 }, CORRUPTION_DURATION);
             }
 
-            setTimeout(triggerCorruption, 800);
+            setTimeout(triggerCorruption, 10000);
             setInterval(triggerCorruption, CORRUPTION_INTERVAL);
         });
     </script>
