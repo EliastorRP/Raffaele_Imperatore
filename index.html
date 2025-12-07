@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Centre de contrôle – Dossier R. Imperatore</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts si pas déjà mis -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -40,9 +39,7 @@
 
 <main class="content">
 
-    <!-- PANEL 1 : TERMINAL + SCAN SUJET -->
     <section class="panel dashboard-panel">
-        <!-- Scan silhouette -->
         <div class="dash-left">
             <div class="subject-scan">
                 <div class="subject-scan-header">
@@ -52,14 +49,11 @@
 
                 <div class="subject-scan-body">
                     <div class="subject-silhouette">
-    <!-- image à la place de la forme -->
     <img src="images/raffaele-scan.jpg" alt="Sujet Raffaele – Scan"
          class="subject-silhouette-img">
 
-    <!-- barre de scan -->
     <div class="scan-bar"></div>
 
-    <!-- overlay texte -->
     <div class="silhouette-overlay">
         <span class="silhouette-label">SCANNING...</span>
     </div>
@@ -79,7 +73,6 @@
             </div>
         </div>
 
-        <!-- Terminal de boot -->
         <div class="dash-right">
             <div class="terminal-panel">
                 <div class="terminal-header">
@@ -102,7 +95,6 @@
         </div>
     </section>
 
-    <!-- PANEL 2 : MODULES PRINCIPAUX -->
     <section class="panel control-panel">
         <header class="control-header">
             <h2>Centre de contrôle // Modules du dossier</h2>
@@ -113,7 +105,6 @@
         </header>
 
         <div class="control-grid">
-            <!-- Identité -->
             <a href="identite.html" class="control-card">
                 <div class="control-card-top">
                     <span class="control-code">MOD-01</span>
@@ -130,7 +121,6 @@
                 </div>
             </a>
 
-            <!-- Physique -->
             <a href="physique.html" class="control-card">
                 <div class="control-card-top">
                     <span class="control-code">MOD-02</span>
@@ -147,7 +137,6 @@
                 </div>
             </a>
 
-            <!-- Caractère -->
             <a href="caractere.html" class="control-card">
                 <div class="control-card-top">
                     <span class="control-code">MOD-03</span>
@@ -164,7 +153,6 @@
                 </div>
             </a>
 
-            <!-- Documents -->
             <a href="informations.html" class="control-card control-card--warning">
                 <div class="control-card-top">
                     <span class="control-code">MOD-04</span>
@@ -181,7 +169,6 @@
                 </div>
             </a>
 
-            <!-- Histoire -->
             <a href="histoire.html" class="control-card control-card--warning">
                 <div class="control-card-top">
                     <span class="control-code">MOD-05</span>
@@ -197,7 +184,6 @@
                 </div>
             </a>
 
-            <!-- Fun Facts -->
             <a href="funfacts.html" class="control-card">
                 <div class="control-card-top">
                     <span class="control-code">MOD-06</span>
@@ -216,7 +202,6 @@
         </div>
     </section>
 
-    <!-- PANEL 3 : STATUT SYSTÈME / LOGS -->
     <section class="panel status-panel">
         <div class="status-left">
             <h2>État du noyau Genesis</h2>
@@ -256,7 +241,6 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    // --- TERMINAL ANIMÉ ACCUEIL ---
     const output = document.getElementById("terminalOutput");
 
     if (output) {
@@ -282,9 +266,8 @@ document.addEventListener("DOMContentLoaded", () => {
         printNextLine();
     }
 
-    // --- CORRUPTION GLOBALE : toutes les 10s pendant 2s ---
-    const CORRUPTION_INTERVAL = 10000; // 10s
-    const CORRUPTION_DURATION = 2000;  // 2s
+    const CORRUPTION_INTERVAL = 10000; 
+    const CORRUPTION_DURATION = 2000;  
     let isGlitching = false;
 
     function triggerCorruption() {
@@ -293,7 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.classList.add("is-corrupted");
 
-        // log optionnel
         const logPanel = document.querySelector(".log-panel");
         if (logPanel) {
             const div = document.createElement("div");
@@ -308,7 +290,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, CORRUPTION_DURATION);
     }
 
-    // 1er glitch après un petit délai, puis toutes les 10s
     setTimeout(triggerCorruption, 800);
     setInterval(triggerCorruption, CORRUPTION_INTERVAL);
 });

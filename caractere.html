@@ -5,7 +5,6 @@
     <title>Caractère – Raffaele Imperatore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Polices scientifiques -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -34,9 +33,6 @@
 
 <main class="content">
 
-    <!-- ============================
-         PANEL 1 – TRAITS (ACCORDÉON)
-    ============================= -->
     <section class="panel caractere-panel">
         <header class="caractere-header">
             <h2>Profil de caractère</h2>
@@ -47,7 +43,6 @@
 
         <div class="traits-list">
 
-            <!-- T-01 Sarcastique -->
             <article class="trait open">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-01</span>
@@ -77,7 +72,6 @@
                 </div>
             </article>
 
-            <!-- T-02 Opinions tranchées -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-02</span>
@@ -115,7 +109,6 @@
                 </div>
             </article>
 
-            <!-- T-03 Manipulation -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-03</span>
@@ -157,7 +150,6 @@
                 </div>
             </article>
 
-            <!-- T-04 Expressif -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-04</span>
@@ -188,7 +180,6 @@
                 </div>
             </article>
 
-            <!-- T-05 Humeur changeante -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-05</span>
@@ -221,7 +212,6 @@
                 </div>
             </article>
 
-            <!-- T-06 Patience fragile -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-06</span>
@@ -254,7 +244,6 @@
                 </div>
             </article>
 
-            <!-- T-07 Obsédé par le temps -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-07</span>
@@ -291,7 +280,6 @@
                 </div>
             </article>
 
-            <!-- T-08 Rancunier -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-08</span>
@@ -326,7 +314,6 @@
                 </div>
             </article>
 
-            <!-- T-09 Ne fait rien par bonté -->
             <article class="trait">
                 <button class="trait-toggle" type="button">
                     <span class="trait-index">T-09</span>
@@ -371,9 +358,6 @@
         </div>
     </section>
 
-    <!-- ============================
-         PANEL 2 – ANNEXE INTERACTIVE
-    ============================= -->
     <section class="panel comportement-panel">
         <header class="comportement-header">
             <h2>Annexe comportementale</h2>
@@ -446,7 +430,6 @@
         </article>
 
 
-        <!-- MODULE A-02 : N'aime pas -->
         <article class="module" id="modDislike">
             <div class="module-header">
                 <div class="module-title">
@@ -504,7 +487,6 @@
             </div>
         </article>
 
-        <!-- MODULE C-03 : Phobie -->
         <article class="module phobia" id="modPhobie">
             <div class="module-header">
                 <div class="module-title">
@@ -548,12 +530,8 @@
 
 </main>
 
-<!-- ============================
-     SCRIPT INTERACTIF
-============================= -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    /* --- Accordéon des traits --- */
     document.querySelectorAll('.trait-toggle').forEach(btn => {
         btn.addEventListener('click', () => {
             const trait = btn.closest('.trait');
@@ -561,24 +539,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --- Modules annexes --- */
     const modules = document.querySelectorAll('.module');
 
     function runScanAnimation(mod) {
         const header = mod.querySelector('.module-header');
         if (!header) return;
 
-        // ligne de scan
         const line = document.createElement('div');
         line.className = 'scan-line';
         header.appendChild(line);
         setTimeout(() => line.remove(), 650);
 
-        // relancer l'animation de la jauge de phobie si présente
         const phobiaFill = mod.querySelector('.phobia-meter-fill');
         if (phobiaFill) {
             phobiaFill.style.animation = 'none';
-            // trigger reflow
             void phobiaFill.offsetWidth;
             phobiaFill.style.animation = '';
         }

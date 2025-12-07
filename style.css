@@ -30,10 +30,10 @@ body::before {
     background-image:
         linear-gradient(rgba(140, 255, 230, 0.16) 1px, transparent 1px),
         linear-gradient(90deg, rgba(140, 255, 230, 0.16) 1px, transparent 1px);
-    background-size: 32px 32px;   /* grille plus serrée */
+    background-size: 32px 32px;   
     pointer-events: none;
-    opacity: .45;                 /* beaucoup plus visible */
-    mix-blend-mode: normal;       /* plus net, moins “fondu” */
+    opacity: .45;                 
+    mix-blend-mode: normal;       
     z-index: -1;
 }
 
@@ -82,7 +82,6 @@ body::before {
     opacity: .9;
 }
 
-/* NAV */
 .main-nav ul {
     list-style: none;
     display: flex;
@@ -125,13 +124,11 @@ body::before {
     opacity: 1;
 }
 
-/* Onglet actif (à mettre page par page) */
 .active {
     border-color: #7AF3D8 !important;
     background: rgba(122, 243, 216, 0.08);
 }
 
-/* Sous-menu Supplémentaire */
 .submenu {
     position: relative;
 }
@@ -175,7 +172,6 @@ body::before {
     margin: auto;
 }
 
-/* Panneau générique (carte scientifique) */
 .panel {
     background: radial-gradient(circle at top left, rgba(122, 243, 216, 0.08), transparent 42%),
                 rgba(7, 11, 22, 0.96);
@@ -186,7 +182,6 @@ body::before {
     position: relative;
 }
 
-/* Cadre intérieur discret */
 .panel::before {
     content: "";
     position: absolute;
@@ -244,8 +239,6 @@ p {
 }
 
 .photo-panel::before {
-    /* on neutralise le cadre intérieur pour ce panel,
-       sinon double bordure pas très clean */
     display: none;
 }
 
@@ -266,7 +259,6 @@ p {
     filter: contrast(1.05) saturate(.85);
 }
 
-/* Bandeau haut "Fig. 01" */
 .photo-box::before {
     content: "FIG. 01 // PROFIL SUJET";
     position: absolute;
@@ -282,21 +274,20 @@ p {
     color: #8CF6E5;
 }
 
-/* Bandeau bas infos ID */
 .photo-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: .55rem .7rem .65rem;
-    background: rgba(0, 0, 0, 0.40); /* fond noir discret mais bien lisible */
-    backdrop-filter: blur(2px);      /* effet verre dépoli, très scientifique */
+    background: rgba(0, 0, 0, 0.40); 
+    backdrop-filter: blur(2px);      
     font-family: "IBM Plex Mono", monospace;
     font-size: .72rem;
     letter-spacing: .16em;
     text-transform: uppercase;
     color: #9AF7E8;
-    border-top: 1px solid rgba(122, 243, 216, 0.25); /* petite ligne esthétique */
+    border-top: 1px solid rgba(122, 243, 216, 0.25); 
 }
 
 
@@ -311,7 +302,6 @@ p {
     margin-top: .1rem;
 }
 
-/* Notes à côté de la photo */
 .photo-notes {
     position: relative;
     padding-left: 1.1rem;
@@ -337,7 +327,6 @@ p {
     color: #CDE5F5;
 }
 
-/* --------- Zone de texte à droite de l'image --------- */
 
 .photo-notes h2 {
     text-transform: uppercase;
@@ -352,7 +341,7 @@ p {
     line-height: 1.7;
     color: #D6EAF6;
     margin-bottom: 0.5rem;
-    max-width: 32rem; /* évite une ligne trop longue, plus agréable à lire */
+    max-width: 32rem; 
 }
 
 .note-body {
@@ -367,7 +356,6 @@ p {
     font-weight: 500;
 }
 
-/* Ligne de petits "tags" pour combler le vide proprement */
 .note-meta {
     margin-top: 0.9rem;
     display: flex;
@@ -396,14 +384,11 @@ p {
     padding-top: 1.6rem;
 }
 
-/* on corrige le cadre intérieur pour ce panel */
 .physique-panel::before {
     inset: .7rem;
 }
 
-/* Titre principal déjà géré par h2 */
 
-/* Titres des sous-parties numérotés */
 .physique-panel h3 {
     position: relative;
     padding-left: 2.4rem;
@@ -423,14 +408,12 @@ p {
     opacity: .9;
 }
 
-/* Texte des sous-parties */
 .physique-panel p {
     padding-left: 2.4rem;
     border-left: 1px solid rgba(122, 243, 216, 0.25);
     margin-bottom: .8rem;
 }
 
-/* Encadré scientifique pour Signes distinctifs */
 .distinctive-box {
     margin-top: 2rem;
     padding: 1rem 1.2rem;
@@ -485,7 +468,7 @@ p {
 
 
 /* ------------------------------
-   FOOTER (si tu en ajoutes un)
+   FOOTER 
 ------------------------------ */
 .site-footer {
     text-align: center;
@@ -533,14 +516,13 @@ p {
 }
 
 /* ============================
-   CARTE D'IDENTITÉ – GENESIS
+   CARTE D'IDENTITÉ - GENESIS
 ============================ */
 
 .idcard-panel {
     padding: 1.6rem 1.2rem 1.9rem;
 }
 
-/* on enlève le cadre interne en pointillé pour que la carte soit bien clean */
 .idcard-panel::before {
     display: none;
 }
@@ -550,7 +532,6 @@ p {
     justify-content: center;
 }
 
-/* Carte format 86x54 mm approx, en mode colonne pour coller l'exemple CNI */
 .idcard-front {
     position: relative;
     max-width: 1020px;
@@ -563,8 +544,7 @@ p {
         linear-gradient(135deg, #050912, #020408);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
 
-    /* CHANGEMENT IMPORTANT */
-    padding: 0.7rem 0.9rem 1.4rem; /* ← on augmente seulement le bottom */
+    padding: 0.7rem 0.9rem 1.4rem; 
     
     overflow: hidden;
     display: flex;
@@ -572,7 +552,6 @@ p {
 }
 
 
-/* bord interne de sécurité */
 .idcard-front::before {
     content: "";
     position: absolute;
@@ -583,7 +562,6 @@ p {
     z-index: 0;
 }
 
-/* Tous les blocs internes au-dessus du fond & bord */
 .idcard-band,
 .idcard-header-row,
 .idcard-body,
@@ -592,7 +570,6 @@ p {
     z-index: 2;
 }
 
-/* ----- WATERMARK "DOSSIER CONFIDENTIEL" ----- */
 
 .idcard-watermark {
     position: absolute;
@@ -605,13 +582,12 @@ p {
     color: rgba(255, 255, 255, 0.295);
     white-space: nowrap;
     pointer-events: none;
-    z-index: 10; /* entre le fond et le contenu */
+    z-index: 10; 
     text-shadow:
         0 0 6px rgba(0, 0, 0, 0.7),
         0 0 12px rgba(0, 0, 0, 0.8);
 }
 
-/* ----- BANDEAU SUPÉRIEUR (équivalent "RÉPUBLIQUE FRANÇAISE") ----- */
 
 .idcard-band {
     display: flex;
@@ -639,7 +615,6 @@ p {
     color: #C8F5F1;
 }
 
-/* ----- LIGNE "CARTE D'IDENTITÉ N°" ----- */
 
 .idcard-header-row {
     display: flex;
@@ -668,7 +643,6 @@ p {
     background: rgba(0, 0, 0, 0.45);
 }
 
-/* ----- CORPS DE CARTE : PHOTO + INFOS ----- */
 
 .idcard-body {
     display: grid;
@@ -679,7 +653,6 @@ p {
     flex: 1 1 auto;
 }
 
-/* PHOTO (format 3:4 comme sur la carte) */
 .idcard-photo {
     position: relative;
     width: 100%;
@@ -700,7 +673,6 @@ p {
     filter: contrast(1.05) saturate(0.95);
 }
 
-/* petit label "PHOTO" en bas à gauche */
 .idcard-photo-label {
     position: absolute;
     left: 0.45rem;
@@ -716,7 +688,6 @@ p {
     border-radius: 999px;
 }
 
-/* INFOS à droite (Nom, Prénom, Sexe, Né le, À) */
 
 .idcard-fields {
     display: grid;
@@ -738,7 +709,6 @@ p {
     column-gap: 0.4rem;
 }
 
-/* Ligne double : Sexe + Né le côte à côte */
 .idline-double {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -760,7 +730,6 @@ p {
     padding-bottom: 0.05rem;
 }
 
-/* Signature */
 .idcard-signature-zone {
     margin-top: 0.45rem;
     display: flex;
@@ -775,14 +744,13 @@ p {
     color: #9FDFFF;
 }
 
-/* Image de signature non déformée */
 .idcard-signature {
-    max-height: 160px;         /* limite la hauteur */
+    max-height: 160px;        
     height: auto;
     width: auto;
-    object-fit: contain;      /* garde le ratio */
+    object-fit: contain;      
     display: block;
-    align-self: flex-start;   /* évite qu'elle s'étire sur la largeur */
+    align-self: flex-start;   
 }
 
 
@@ -798,14 +766,12 @@ p {
     color: #E4F5FF;
 }
 
-/* ligne avec deux champs côte à côte (Sexe + Né le) */
 .idline-inline {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 0.8rem;
 }
 
-/* ----- BAS DE CARTE : MRZ ----- */
 
 .idcard-mrz-zone {
     margin-top: 0.25rem;
@@ -827,7 +793,6 @@ p {
     text-overflow: ellipsis;
 }
 
-/* ----- RESPONSIVE ----- */
 
 @media (max-width: 720px) {
     .idcard-panel {
@@ -854,7 +819,7 @@ p {
 }
 
 /* ============================
-   CARACTÈRE – TRAITS (ACCORDÉON)
+   CARACTÈRE - TRAITS (ACCORDÉON)
 ============================= */
 
 .caractere-panel {
@@ -964,7 +929,6 @@ p {
     background: linear-gradient(90deg, #7AF3D8, #9FFFC8);
 }
 
-/* niveau de remplissage 1–5 */
 .trait-meter-fill.lvl-1 { width: 20%; }
 .trait-meter-fill.lvl-2 { width: 40%; }
 .trait-meter-fill.lvl-3 { width: 60%; }
@@ -1002,7 +966,7 @@ p {
 }
 
 /* ============================
-   ANNEXE COMPORTEMENTALE – MODULES
+   ANNEXE COMPORTEMENTALE - MODULES
 ============================= */
 
 .comportement-panel {
@@ -1023,7 +987,6 @@ p {
     margin-bottom: 1.1rem;
 }
 
-/* bouton de lancement du diagnostic */
 
 #runDiagnostic {
     width: 100%;
@@ -1045,7 +1008,6 @@ p {
     background: rgba(122, 243, 216, 0.2);
 }
 
-/* modules */
 
 .module {
     border: 1px solid rgba(122, 243, 216, 0.3);
@@ -1105,7 +1067,6 @@ p {
     transform: rotate(180deg);
 }
 
-/* ligne de scan */
 
 .scan-line {
     position: absolute;
@@ -1123,7 +1084,6 @@ p {
     to   { top: 100%; opacity: 0; }
 }
 
-/* contenu du module */
 
 .module-body {
     max-height: 0;
@@ -1156,7 +1116,6 @@ p {
     color: #D6EAF6;
 }
 
-/* phobie – style spécifique */
 
 .phobia {
     border-color: rgba(255, 140, 140, 0.7);
@@ -1170,7 +1129,6 @@ p {
     color: #FF9DAA;
 }
 
-/* jauge de phobie */
 
 .phobia-meter-block {
     margin-top: 1.2rem;
@@ -1252,7 +1210,7 @@ p {
 }
 
 /* ============================
-   HISTOIRE – TIMELINE
+   HISTOIRE - TIMELINE
 ============================= */
 
 .timeline-panel {
@@ -1273,7 +1231,6 @@ p {
     margin-bottom: 1.2rem;
 }
 
-/* Navigation des segments */
 
 .timeline-nav {
     display: flex;
@@ -1300,7 +1257,6 @@ p {
     background: rgba(122, 243, 216, 0.22);
 }
 
-/* Structure timeline globale */
 
 .timeline {
     position: relative;
@@ -1333,7 +1289,6 @@ p {
     transform: translateY(-2px);
 }
 
-/* marqueur (colonne gauche) */
 
 .timeline-marker {
     position: relative;
@@ -1370,7 +1325,6 @@ p {
     margin-top: 0.1rem;
 }
 
-/* Carte d’événement (colonne droite) */
 
 .timeline-card {
     background: radial-gradient(circle at top left, rgba(122, 243, 216, 0.08), transparent 45%),
@@ -1381,7 +1335,6 @@ p {
     position: relative;
 }
 
-/* scan line */
 
 .timeline-scanline {
     position: absolute;
@@ -1399,7 +1352,6 @@ p {
     to   { top: 100%; opacity: 0; }
 }
 
-/* header de la carte */
 
 .timeline-toggle {
     width: 100%;
@@ -1445,7 +1397,6 @@ p {
     transform: rotate(180deg);
 }
 
-/* corps de carte */
 
 .timeline-body {
     max-height: 0;
@@ -1459,21 +1410,18 @@ p {
     padding-bottom: 1rem;
 }
 
-/* === LAYOUT INTERNE : MÉDIAS + TEXTE === */
 
 .timeline-layout {
     display: block;
     margin-top: 0.9rem;
 }
 
-/* clear du float pour que la carte prenne bien sa hauteur */
 .timeline-layout::after {
     content: "";
     display: block;
     clear: both;
 }
 
-/* bloc médias flottant à gauche */
 
 .timeline-media {
     float: left;
@@ -1486,7 +1434,6 @@ p {
     gap: 1rem;
 }
 
-/* photo */
 
 .timeline-photo-slot {
     border-radius: 0.6rem;
@@ -1530,7 +1477,6 @@ p {
     opacity: 0.9;
 }
 
-/* Carte audio */
 
 .timeline-audio-card {
     margin-top: 1rem;
@@ -1545,7 +1491,6 @@ p {
     align-items: center;
 }
 
-/* on cache le player natif */
 .timeline-audio-card audio {
     display: none;
 }
@@ -1559,7 +1504,6 @@ p {
     opacity: 0.9;
 }
 
-/* bouton icône seul */
 .audio-play-icon-btn {
     width: 50px;
     height: 50px;
@@ -1585,7 +1529,6 @@ p {
     pointer-events: none;
 }
 
-/* volume */
 
 .audio-volume-wrap {
     display: flex;
@@ -1622,7 +1565,6 @@ p {
     box-shadow: 0 0 8px rgba(122, 243, 216, 0.9);
 }
 
-/* TEXTE */
 
 .timeline-text p {
     font-size: 0.9rem;
@@ -1632,7 +1574,6 @@ p {
     text-align: justify;
 }
 
-/* RESPONSIVE */
 
 @media (max-width: 900px) {
     .timeline-item {
@@ -1702,7 +1643,6 @@ p {
     color: #ff9fa7;
 }
 
-/* Titre glitché */
 
 .glitch-title {
     position: relative;
@@ -1714,19 +1654,16 @@ p {
     white-space: nowrap;
 }
 
-/* État révélé après déverrouillage */
 .glitch-title--revealed {
-    color: #EFFFFF; /* ou la couleur de tes autres titres */
+    color: #EFFFFF; 
 }
 
-/* On coupe l'effet glitch quand c'est révélé */
 .glitch-title--revealed::before,
 .glitch-title--revealed::after {
     display: none;
 }
 
 
-/* Deux calques "fantômes" pour l'effet glitch léger */
 .glitch-title::before,
 .glitch-title::after {
     content: attr(data-glitch);
@@ -1752,7 +1689,6 @@ p {
     animation: glitchShift2 3s infinite ease-in-out;
 }
 
-/* Animations glitch douces */
 
 @keyframes glitchShift1 {
     0%, 90%, 100% { clip-path: inset(0 0 0 0); transform: translate(-1px, 0); }
@@ -1768,7 +1704,6 @@ p {
     80% { clip-path: inset(15% 0 15% 0); transform: translate(2px, 0.5px); }
 }
 
-/* Panneau de verrouillage */
 
 .redacted-lock-panel {
     margin-top: 0.9rem;
@@ -1857,7 +1792,6 @@ p {
     min-height: 1em;
 }
 
-/* Contenu caché par défaut tant que non déverrouillé */
 
 .redacted-content {
     display: none;
@@ -1872,7 +1806,6 @@ p {
     display: block;
 }
 
-/* Responsive */
 
 @media (max-width: 720px) {
     .redacted-form {
@@ -1892,7 +1825,6 @@ p {
 
 /* ==========================================
    MÉDIAS ROUGES POUR SEGMENTS REDACTED
-   (nouvelle classe .redacted-media)
 ========================================== */
 
 .redacted-media .timeline-photo-slot {
@@ -1916,7 +1848,6 @@ p {
 }
 
 
-/* AUDIO */
 .redacted-media .timeline-audio-card {
     border: 1px solid rgba(255, 120, 120, 0.75);
     background: radial-gradient(circle at top,
@@ -1961,7 +1892,6 @@ p {
     box-shadow: 0 0 10px rgba(255, 130, 140, 0.95);
 }
 
-/* Séparateur dans la nav */
 .timeline-nav-separator {
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.65rem;
@@ -1972,14 +1902,12 @@ p {
     margin-inline: 0.2rem;
 }
 
-/* Boutons de nav pour segments redacted (glitchés) */
 .timeline-nav-btn--redacted {
     border-color: rgba(255, 120, 140, 0.7);
     color: #ffd5de;
     background: rgba(40, 5, 15, 0.9);
 }
 
-/* Boutons de nav GENESIS secrets mais lisibles */
 .timeline-nav-btn--red-genesis {
     border-color: rgba(255, 100, 130, 0.9);
     color: #ffe3ea;
@@ -1987,7 +1915,6 @@ p {
     box-shadow: 0 0 10px rgba(255, 80, 110, 0.35);
 }
 
-/* Petit hover dramatique */
 .timeline-nav-btn--redacted:hover,
 .timeline-nav-btn--red-genesis:hover {
     background: rgba(120, 15, 35, 0.95);
@@ -1995,7 +1922,6 @@ p {
     color: #ffffff;
 }
 
-/* Variante de glitch pour la nav (réutilise ta base .glitch-title) */
 .glitch-title--nav {
     font-size: 0.7rem;
     letter-spacing: 0.18em;
@@ -2017,7 +1943,7 @@ p {
 
 
 /* ============================
-   FUN FACTS – LAB CONSOLES
+   FUN FACTS - LAB CONSOLES
 ============================ */
 
 .funfacts-panel {
@@ -2038,7 +1964,6 @@ p {
     margin-bottom: 1.1rem;
 }
 
-/* Bouton random / scan */
 .funfacts-random-btn {
     width: 100%;
     padding: 0.7rem 1rem;
@@ -2071,7 +1996,6 @@ p {
     color: #7AF3D8;
 }
 
-/* Grille des cartes */
 .funfacts-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2084,7 +2008,6 @@ p {
     }
 }
 
-/* Carte funfact */
 .funfact-card {
     border-radius: 0.9rem;
     border: 1px solid rgba(122, 243, 216, 0.4);
@@ -2100,12 +2023,10 @@ p {
     transform: translateY(-1px);
 }
 
-/* mise en avant via bouton random */
 .funfact-card.funfact-focus {
     box-shadow: 0 0 24px rgba(122, 243, 216, 0.9);
 }
 
-/* header de carte */
 .funfact-toggle {
     width: 100%;
     padding: 0.65rem 0.9rem;
@@ -2162,7 +2083,6 @@ p {
     transform: rotate(180deg);
 }
 
-/* Corps de la carte */
 .funfact-body {
     max-height: 0;
     overflow: hidden;
@@ -2183,7 +2103,7 @@ p {
 }
 
 /* ============================
-   FUN FACTS – CARROUSEL HOLO
+   FUN FACTS - CARROUSEL HOLO
 ============================ */
 
 .funfacts-panel {
@@ -2204,7 +2124,6 @@ p {
     margin-bottom: 1.1rem;
 }
 
-/* wrapper carrousel */
 .funfacts-carousel {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
@@ -2212,13 +2131,11 @@ p {
     gap: 0.7rem;
 }
 
-/* zone centrale */
 .funfacts-viewport {
     position: relative;
     min-height: 420px;
 }
 
-/* slides */
 .funfact-slide {
     position: absolute;
     inset: 0;
@@ -2238,7 +2155,6 @@ p {
     pointer-events: auto;
 }
 
-/* cadre holographique */
 .funfact-holo-frame {
     position: relative;
     width: 100%;
@@ -2252,7 +2168,6 @@ p {
     overflow: hidden;
 }
 
-/* halo extérieur “holo” */
 .funfact-holo-frame::before {
     content: "";
     position: absolute;
@@ -2278,7 +2193,6 @@ p {
     }
 }
 
-/* petite ligne de scan */
 .funfact-holo-frame::after {
     content: "";
     position: absolute;
@@ -2303,7 +2217,6 @@ p {
     100% { transform: translateY(520%); opacity: 0; }
 }
 
-/* en-tête de slide */
 .funfact-header-row {
     display: flex;
     align-items: center;
@@ -2339,7 +2252,6 @@ p {
     color: #CFEFFF;
 }
 
-/* texte */
 .funfact-body {
     max-height: 300px;
     overflow-y: auto;
@@ -2354,7 +2266,6 @@ p {
     text-align: justify;
 }
 
-/* scroll discret dans la carte */
 .funfact-body::-webkit-scrollbar {
     width: 4px;
 }
@@ -2366,7 +2277,6 @@ p {
     border-radius: 999px;
 }
 
-/* boutons précédent / suivant */
 .funfacts-nav {
     width: 38px;
     height: 38px;
@@ -2388,7 +2298,6 @@ p {
     box-shadow: 0 0 18px rgba(122, 243, 216, 0.7);
 }
 
-/* points de navigation */
 .funfacts-dots {
     grid-column: 1 / -1;
     display: flex;
@@ -2412,7 +2321,6 @@ p {
     box-shadow: 0 0 10px rgba(122, 243, 216, 0.9);
 }
 
-/* responsive */
 @media (max-width: 720px) {
     .funfacts-carousel {
         grid-template-columns: 1fr;
@@ -2435,10 +2343,10 @@ p {
 
 
 /* ============================
-   ACCUEIL – DASHBOARD GENESIS
+   ACCUEIL - DASHBOARD GENESIS
 ============================ */
 
-/* Panel principal : 2 colonnes */
+
 .dashboard-panel {
     display: grid;
     grid-template-columns: minmax(260px, 340px) minmax(0, 1.4fr);
@@ -2450,7 +2358,6 @@ p {
     inset: .7rem;
 }
 
-/* ----- SCAN SUJET (colonne gauche) ----- */
 
 .dash-left {
     position: relative;
@@ -2485,7 +2392,6 @@ p {
     opacity: 0.9;
 }
 
-/* Corps du scan */
 .subject-scan-body {
     display: flex;
     flex-direction: column;
@@ -2495,23 +2401,21 @@ p {
 .subject-silhouette {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 4;           /* garde un format “portrait” */
+    aspect-ratio: 3 / 4;           
     border-radius: 0.9rem;
     overflow: hidden;
     border: 1px solid rgba(122, 243, 216, 0.7);
     background: radial-gradient(circle at top, #111827, #020308);
 }
 
-/* l’image qui remplace la forme */
 .subject-silhouette-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;             /* couvre bien tout le cadre */
+    object-fit: cover;             
     display: block;
     filter: contrast(1.05) saturate(.9);
 }
 
-/* la barre de scan reste au-dessus de l’image */
 .scan-bar {
     position: absolute;
     left: 0;
@@ -2533,7 +2437,6 @@ p {
     100% { top: 100%; }
 }
 
-/* overlay “SCANNING…” par-dessus aussi */
 .silhouette-overlay {
     position: absolute;
     inset: auto 0 0 0;
@@ -2553,7 +2456,6 @@ p {
 }
 
 
-/* Infos sujet sous la silhouette */
 
 .subject-info {
     padding: 0.1rem 0.1rem 0;
@@ -2592,7 +2494,6 @@ p {
     color: #D4FBF1;
 }
 
-/* ----- TERMINAL (colonne droite) ----- */
 
 .dash-right {
     display: flex;
@@ -2629,7 +2530,6 @@ p {
     color: #9FFFE4;
 }
 
-/* écran */
 .terminal-screen {
     position: relative;
     padding: 0.65rem 0.8rem 0.75rem;
@@ -2647,7 +2547,6 @@ p {
     white-space: pre-wrap;
 }
 
-/* scanline horizontale */
 .terminal-scanline {
     position: absolute;
     left: 0;
@@ -2670,7 +2569,7 @@ p {
 }
 
 /* ============================
-   GRILLE DE MODULES (PANEL 2)
+   GRILLE DE MODULES 
 ============================ */
 
 .control-panel {
@@ -2788,7 +2687,6 @@ p {
     font-size: 1rem;
 }
 
-/* carte warning pour Histoire */
 .control-card--warning {
     border-color: rgba(255, 140, 140, 0.7);
 }
@@ -2798,7 +2696,7 @@ p {
 }
 
 /* ============================
-   PANEL 3 – STATUT & LOGS
+   PANEL 3 - STATUT & LOGS
 ============================ */
 
 .status-panel {
@@ -2863,7 +2761,6 @@ p {
     border-color: rgba(255, 150, 150, 0.9);
 }
 
-/* logs */
 
 .log-panel {
     margin-top: 0.3rem;
@@ -2885,7 +2782,6 @@ p {
     overflow: hidden;
 }
 
-/* léger glitch sur une ligne */
 .log-line--glitch {
     position: relative;
     color: #FFB3C0;
@@ -2954,7 +2850,7 @@ p {
 }
 
 /* ==========================================
-   CARTE DANGER – mêmes dimensions que les autres
+   CARTE DANGER 
 ========================================== */
 
 .homepage-card--danger {
@@ -2979,7 +2875,6 @@ p {
         inset 0 0 14px rgba(255, 0, 0, 0.23);
 }
 
-/* Effet de lignes de scan rouge */
 .homepage-card--danger::before {
     content: "";
     position: absolute;
@@ -3002,18 +2897,15 @@ p {
     100% { transform: translateY(100%); }
 }
 
-/* Titres rouges */
 .homepage-card-title--danger {
     color: #ff9999;
     text-shadow: 0 0 6px rgba(255, 80, 80, 0.5);
 }
 
-/* Texte rouge pâle */
 .homepage-card-text--danger {
     color: #ffbbbb;
 }
 
-/* Bouton danger */
 .homepage-card-btn--danger {
     border: 1px solid rgba(255, 90, 90, 0.8);
     color: #ffdede;
@@ -3063,7 +2955,7 @@ p {
 
 
 /* ============================
-   TEXTE GLITCHÉ (à appliquer où tu veux)
+   TEXTE GLITCHÉ 
 ============================ */
 
 .glitch-text {
@@ -3086,10 +2978,8 @@ p {
 
 /* ============================
    MODE CORRUPTION GLOBALE
-   (toutes les 10s pendant 2s)
 ============================ */
 
-/* Quand le body a cette classe, tout part en vrille */
 body.is-corrupted {
     background: #1a0000 !important;
     color: #ffdddd !important;
@@ -3097,7 +2987,6 @@ body.is-corrupted {
 }
 
 
-/* Tous les éléments prennent cher visuellement */
 body.is-corrupted * {
     text-shadow:
         0 0 3px rgba(255, 60, 60, 0.9),
@@ -3105,7 +2994,6 @@ body.is-corrupted * {
     animation: genesisShake 0.18s infinite alternate;
 }
 
-/* Cartes, panels, timeline, etc. deviennent "EN ALERTE" */
 body.is-corrupted .panel,
 body.is-corrupted .idcard-front,
 body.is-corrupted .timeline-card,
@@ -3122,7 +3010,6 @@ body.is-corrupted .hero-grid {
         radial-gradient(circle at bottom right, rgba(120, 0, 0, 0.45), #050000) !important;
 }
 
-/* Header & navbar en mode "ALERTE ROUGE" */
 body.is-corrupted .site-header {
     background: linear-gradient(90deg, #3b0000, #150000) !important;
     border-bottom-color: rgba(255, 80, 80, 0.9) !important;
@@ -3134,12 +3021,10 @@ body.is-corrupted .main-nav a {
     background: rgba(50, 0, 0, 0.8) !important;
 }
 
-/* Images aussi un peu contaminées */
 body.is-corrupted img {
     filter: contrast(1.4) saturate(1.5) hue-rotate(-20deg);
 }
 
-/* Overlay bruit / lignes de scan rouge par-dessus toute la page */
 body.is-corrupted::after {
     content: "";
     position: fixed;
@@ -3159,13 +3044,11 @@ body.is-corrupted::after {
     animation: genesisLines 0.12s infinite;
 }
 
-/* Si tu as déjà une scan-bar, on la speed up en corruption */
 body.is-corrupted .scan-bar {
     animation-duration: 0.4s !important;
     background: linear-gradient(to bottom, #ff8080, transparent) !important;
 }
 
-/* ====== Animations ====== */
 
 @keyframes genesisShake {
     0%   { transform: translate(0, 0) skewX(0deg); }
@@ -3186,16 +3069,14 @@ body.is-corrupted .scan-bar {
 }
 
 /* ============================
-   CORRUPTION GLOBALE – GLITCH TEXTE
+   CORRUPTION GLOBALE - GLITCH TEXTE
 ============================ */
 
-/* On s'assure que le mode corruption est bien visible */
 body.is-corrupted {
     background: #100000 !important;
     color: #ffdddd !important;
 }
 
-/* Glitch fort sur tout le texte */
 body.is-corrupted h1,
 body.is-corrupted h2,
 body.is-corrupted h3,
@@ -3217,7 +3098,6 @@ body.is-corrupted .scan-panel {
          0 0 4px rgba(0, 0, 0, 0.9);
 }
 
-/* Optionnel : les cartes vibrent un peu aussi */
 body.is-corrupted .panel,
 body.is-corrupted .timeline-card,
 body.is-corrupted .funfacts-panel {
@@ -3228,7 +3108,6 @@ body.is-corrupted .funfacts-panel {
         0 0 60px rgba(255, 0, 0, 0.4);
 }
 
-/* Overlay bruit par-dessus toute la page */
 body.is-corrupted::after {
     content: "";
     position: fixed;
@@ -3248,7 +3127,6 @@ body.is-corrupted::after {
     animation: noiseSlide 0.08s infinite;
 }
 
-/* ===== Animations ===== */
 
 @keyframes textGlitch {
     0% {
@@ -3287,7 +3165,6 @@ body.is-corrupted::after {
 
 /* ============================
    OVERLAY GLITCH CRITIQUE
-   (s'affiche uniquement en mode is-corrupted)
 ============================ */
 
 .system-glitch-overlay {
@@ -3296,28 +3173,23 @@ body.is-corrupted::after {
     z-index: 9999;
     pointer-events: none;
     
-    /* caché par défaut */
     opacity: 0;
     visibility: hidden;
     
-    /* pour centrer le message */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /* petit voile léger pour renforcer le côté alerte */
     background: transparent;
     transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-/* On l'affiche seulement quand le site est en corruption */
 body.is-corrupted .system-glitch-overlay {
     opacity: 1;
     visibility: visible;
 }
 
-/* bruit / grain rouge sur toute la surface */
 .system-glitch-noise {
     position: absolute;
     inset: 0;
@@ -3338,7 +3210,6 @@ body.is-corrupted .system-glitch-overlay {
     100% { opacity: 0.3; }
 }
 
-/* Bloc de message centré */
 .system-glitch-message {
     position: relative;
     z-index: 1;
@@ -3350,7 +3221,6 @@ body.is-corrupted .system-glitch-overlay {
     color: #FFE3E9;
 }
 
-/* Lignes qui apparaissent / disparaissent */
 .glitch-line {
     font-size: 0.75rem;
     text-shadow:
@@ -3372,7 +3242,7 @@ body.is-corrupted .system-glitch-overlay {
 }
 
 /* ============================
-   IDENTITÉ – RÉPUTATION INTERNE (V2)
+   IDENTITÉ  RÉPUTATION INTERNE 
 ============================ */
 
 .reputation-panel {
@@ -3384,7 +3254,6 @@ body.is-corrupted .system-glitch-overlay {
     inset: 0.7rem;
 }
 
-/* Header */
 
 .reputation-header {
     margin-bottom: 1rem;
@@ -3424,7 +3293,6 @@ body.is-corrupted .system-glitch-overlay {
     max-width: 42rem;
 }
 
-/* Layout 2 colonnes */
 
 .reputation-layout {
     margin-top: 1rem;
@@ -3433,7 +3301,6 @@ body.is-corrupted .system-glitch-overlay {
     gap: 1.3rem;
 }
 
-/* Colonne gauche : carte de reput */
 
 .reputation-card {
     position: relative;
@@ -3448,7 +3315,6 @@ body.is-corrupted .system-glitch-overlay {
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.65);
 }
 
-/* petite “scan-line” décorative */
 .reputation-card::before {
     content: "";
     position: absolute;
@@ -3506,7 +3372,6 @@ body.is-corrupted .system-glitch-overlay {
     color: #FFD5DF;
 }
 
-/* jauge */
 
 .rep-meter-block {
     margin-top: 0.4rem;
@@ -3554,7 +3419,6 @@ body.is-corrupted .system-glitch-overlay {
     color: #CDE5F7;
 }
 
-/* chips */
 
 .rep-chip-grid {
     display: flex;
@@ -3593,7 +3457,6 @@ body.is-corrupted .system-glitch-overlay {
     color: #FFD7DD;
 }
 
-/* mini-log */
 
 .rep-mini-log {
     margin-top: 0.2rem;
@@ -3618,7 +3481,6 @@ body.is-corrupted .system-glitch-overlay {
     line-height: 1.6;
 }
 
-/* Colonne droite */
 
 .reputation-body {
     position: relative;
@@ -3668,7 +3530,6 @@ body.is-corrupted .system-glitch-overlay {
     text-align: justify;
 }
 
-/* Responsive */
 
 @media (max-width: 900px) {
     .reputation-layout {

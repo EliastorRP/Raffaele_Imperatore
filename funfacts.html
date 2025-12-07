@@ -41,15 +41,12 @@
 
     <div class="funfacts-carousel">
 
-        <!-- Bouton précédent -->
         <button class="funfacts-nav funfacts-prev" type="button" aria-label="Fun fact précédent">
             ◂
         </button>
 
-        <!-- Zone d’affichage -->
         <div class="funfacts-viewport">
             
-            <!-- SLIDE 1 : ORDONNÉ -->
             <article class="funfact-slide is-active" data-index="0">
                 <div class="funfact-holo-frame">
                     <div class="funfact-header-row">
@@ -80,7 +77,6 @@
                 </div>
             </article>
 
-            <!-- SLIDE 2 : TÉLÉPHONE -->
             <article class="funfact-slide" data-index="1">
                 <div class="funfact-holo-frame">
                     <div class="funfact-header-row">
@@ -103,7 +99,6 @@
                 </div>
             </article>
 
-            <!-- SLIDE 3 : MORPHOLOGIE -->
             <article class="funfact-slide" data-index="2">
                 <div class="funfact-holo-frame">
                     <div class="funfact-header-row">
@@ -130,7 +125,6 @@
                 </div>
             </article>
 
-            <!-- SLIDE 4 : MONTRES & HORLOGES -->
             <article class="funfact-slide" data-index="3">
                 <div class="funfact-holo-frame">
                     <div class="funfact-header-row">
@@ -163,12 +157,10 @@
 
         </div>
 
-        <!-- Bouton suivant -->
         <button class="funfacts-nav funfacts-next" type="button" aria-label="Fun fact suivant">
             ▸
         </button>
 
-        <!-- petits indicateurs -->
         <div class="funfacts-dots" aria-label="Navigation fun facts">
             <button type="button" class="funfacts-dot is-active" data-index="0"></button>
             <button type="button" class="funfacts-dot" data-index="1"></button>
@@ -225,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // optionnel : navigation clavier gauche/droite
     window.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             showSlide(currentIndex - 1);
