@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Histoire - Raffaele Imperatore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Polices scientifiques -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo-zone">
+        <div class="logo-symbol">∑</div>
+        <span class="logo-text">Scientifique de Genesis</span>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="identite.html">Identité</a></li>
+            <li><a href="physique.html">Description Physique</a></li>
+            <li><a href="caractere.html">Caractère</a></li>
+            <li><a href="informations.html">Documents</a></li>
+            <li><a href="histoire.html" class="active">Histoire</a></li>
+            <li><a href="funfacts.html">Fun Facts</a></li>
+
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-histoire">
+
+    <section class="panel timeline-panel">
+        <header class="timeline-header">
+            <h2>Chronologie - Dossier de vie</h2>
+            <p class="timeline-subtitle">
+                Lecture séquentielle de l’historique du sujet. Cliquez sur chaque segment pour développer les détails.
+            </p>
+        </header>
+
+        <!-- Navigation rapide des grandes périodes -->
+        <nav class="timeline-nav">
+    <!-- Segments visibles -->
+    <button type="button" class="timeline-nav-btn" data-target="#evt-avant">Avant</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-naissance">Naissance</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-enfance">Enfance</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-accident">Accident</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-coma">Coma</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-cataclysme">Cataclysme</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-ado">Adolescence</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-uni">Université</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-genesis1">Genesis I</button>
+    <button type="button" class="timeline-nav-btn" data-target="#evt-genesis2">Genesis II</button>
+
+    <!-- Secrets NON lisibles : titres glitchés -->
+    <button type="button"
+            class="timeline-nav-btn timeline-nav-btn--redacted"
+            data-target="#evt-descendance">
+        <span class="glitch-title glitch-title--nav"
+              data-glitch="2040 | Descendance">
+            ███ ███ ███
+        </span>
+    </button>
+
+    <button type="button"
+            class="timeline-nav-btn timeline-nav-btn--redacted"
+            data-target="#evt-famille">
+        <span class="glitch-title glitch-title--nav"
+              data-glitch="2048 | Vie de famille">
+            ███ ███ ███
+        </span>
+    </button>
+
+    <!-- Secrets GENESIS lisibles -->
+    <button type="button"
+            class="timeline-nav-btn timeline-nav-btn--red-genesis"
+            data-target="#evt-genesis-2050">
+        GENESIS III
+    </button>
+
+    <button type="button"
+            class="timeline-nav-btn timeline-nav-btn--redacted"
+            data-target="#evt-reclusion">
+        <span class="glitch-title glitch-title--nav"
+              data-glitch="2048-2050 | Séparation &amp; vie recluse">
+            ███ ███ ███
+        </span>
+    </button>
+
+    <button type="button"
+            class="timeline-nav-btn timeline-nav-btn--red-genesis"
+            data-target="#evt-genesis-2055">
+        GENESIS IV
+    </button>
+</nav>
+
+
+        <div class="timeline">
+
+<!-- AVANT SA NAISSANCE -->
+<article class="timeline-item open" id="evt-avant">
+    <div class="timeline-marker">
+        <span class="timeline-year">-2015</span>
+    </div>
+
+    <div class="timeline-card">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-01</span>
+                <h3>Avant sa naissance</h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+
+                <!-- COLONNE GAUCHE : OST SEULE -->
+                <div class="timeline-media">
+
+                    <div class="timeline-audio-card js-ost">
+                        <p class="audio-title">OST - Avant sa naissance</p>
+
+                        <audio src="audio/ost-naissance.mp3"></audio>
+
+                        <button class="audio-play-icon-btn">
+                            <span class="audio-icon">▶</span>
+                        </button>
+
+                        <div class="audio-volume-wrap">
+                            <input 
+                                type="range" 
+                                class="audio-volume" 
+                                min="0" max="1" 
+                                step="0.01" 
+                                value="0.2">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLONNE DROITE : TEXTE -->
+                <div class="timeline-text">
+                    <p>
+                        Cristiano et Lelia formaient un beau petit couple. Enviés, admirés, ils savaient gérer leurs problèmes avec une discipline tranquille et un calme remarquable. Ils s’écoutaient, se comprenaient, se disputaient aussi, mais jamais assez longtemps pour fissurer ce qu’ils construisaient, jamais assez fort pour entamer la tendresse qui les liait.
+                    </p>
+                    <p>
+                        Leur famille respectives s’accordaient avec une simplicité presque miraculeuse, comme si aucun drame n’avait assez de poigne pour atteindre ce cocon familial que les deux jeunes amoureux s’appliquaient à bâtir.
+                    </p>
+                    <p>
+                        Et comme beaucoup, ils voulaient rendre leur amour plus officiel, laisser une trace concrète de ce qu’ils partageaient. Ils se marièrent à l’église, sous les applaudissements de leurs proches, une cérémonie douce, sincère, touchante.
+                    </p>
+                    <p>
+                        Lelia passa tout l’événement avec une main posée sur le creux de son ventre, geste discret mais chargé de promesses. Ils attendaient un petit garçon, déjà nommé dans leurs cœurs : Raffaele.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- NAISSANCE -->
+<article class="timeline-item" id="evt-naissance">
+    <div class="timeline-marker">
+        <span class="timeline-year">2015</span>
+    </div>
+
+    <div class="timeline-card">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-02</span>
+                <h3>Naissance</h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+                
+
+
+                <!-- COLONNE DROITE : TEXTE -->
+                <div class="timeline-text">
+                    <p>
+                        Il fallait croire que le jeune nourrisson était déjà pressé. Né un jour à l’avance, sa mère dut se hâter jusqu’à l’hôpital, conduite par un époux tout aussi angoissé qu’elle. Le moment fut hâtif, agité, tendu, mais chargé d’émotions si vives qu’elles semblaient presque tangibles.
+                    </p>
+                    <p>
+                        Tout se déroula pourtant merveilleusement bien. Lelia, épuisée, souriait malgré tout, incapable de détacher ses yeux du petit visage froissé et pleurnichard qu’elle tenait dans ses bras.
+                    </p>
+                    <p>
+                        Cristiano aussi s’était effondré en larmes. C’était leur rêve, leur avenir, leur famille qui prenait forme sous leurs yeux. Le fruit d’un amour sincère, un voyage qu’ils ne feraient désormais plus à deux, mais à trois.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- JEUNE ENFANCE -->
+<article class="timeline-item">
+    <div class="timeline-marker">
+        <span class="timeline-year">2020</span>
+    </div>
+
+    <div class="timeline-card">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-03</span>
+                <h3>Jeune enfance | 0 à 5 ans</h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+
+                <!-- COLONNE GAUCHE : PHOTO SEULE -->
+                <div class="timeline-media">
+                    <div class="timeline-photo-slot">
+                        <!-- IMAGE optionnelle -->
+                        <img src="images/house.png" class="timeline-photo-img" alt="Jeune enfance"> 
+
+                        <span class="photo-slot-label">À Florence, en Italie</span>
+                        <span class="photo-slot-sub">Maison Familiale des Imperatore</span>
+                    </div>
+                </div>
+
+                <!-- COLONNE DROITE : TEXTE -->
+                <div class="timeline-text">
+                    <p>
+                        Raffaele apprit très vite à marcher. C’était un jeune garçon curieux, casse-cou, qui s’accrochait aux barreaux de son berceau comme s’il voulait explorer le monde avant même d’être capable de comprendre ce qu’il regardait.
+                    </p>
+                    <p>
+                        Il était joueur, futé, vif d’esprit, sans pour autant sortir réellement de la moyenne.
+                    </p>
+                    <p>
+                        Ses parents étaient fiers, comment auraient-ils pu ne pas l’être ? Mais il grandissait trop vite à leurs yeux. Ses premiers mots, ses premiers pas, tout cela leur laissait dans la gorge un arrière-goût de nostalgie dont ils mirent des années à ne plus souffrir.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+            <!-- ENFANCE 5-15 -->
+<article class="timeline-item">
+    <div class="timeline-marker">
+        <span class="timeline-year">2030</span>
+    </div>
+
+    <div class="timeline-card">
+        <div class="timeline-scanline"></div>
+
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-03</span>
+                <h3>Enfance | 5 à 15 ans</h3>
+            </div>
+            <span class="timeline-arrow">⌃</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+
+                <!-- COLONNE MÉDIAS FLOTTANTE À GAUCHE -->
+                <div class="timeline-media">
+                    <div class="timeline-photo-slot">
+                        <img src="images/enfance.jpg" alt="Enfance" class="timeline-photo-img">
+                        <div class="photo-caption">
+                            <span class="photo-slot-label">Raffaele &amp; Croustine</span>
+                            <span class="photo-slot-sub">Photo prise en 2027</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-audio-card js-ost">
+                        <p class="audio-title">OST - Souvenir d’Enfance</p>
+                        <audio src="audio/ost-enfance.mp3"></audio>
+
+                        <button type="button" class="audio-play-icon-btn">
+                            <span class="audio-icon">▶</span>
+                        </button>
+
+                        <div class="audio-volume-wrap">
+                            <input type="range" class="audio-volume" min="0" max="1" step="0.01" value="0.2">
+                        </div>
+                    </div>
+                </div>
+    
+
+
+                            <div class="timeline-text">
+                                <p>
+                                    Après la marche vint la course, et dans le jardin, Raffaele tombait souvent. Il se relevait toujours, inlassablement, essuyant la poussière de ses genoux avant de repartir dans un éclat de rire, comme si rien ne pouvait réellement l’arrêter. Il était souriant, jovial, mais étrangement peu sociable. Déjà, à cet âge-là, il dégageait quelque chose d’un peu différent, un décalage subtil que les autres enfants percevaient sans pouvoir le nommer.
+                                </p>
+                                <p>
+                                    Il n’était pas rejeté pour autant, ni harcelé. Peut-être parfois un peu moqué, jamais méchamment. Et l’amour que lui portaient ses parents suffisait à apaiser les petites griffures de ces premières incompréhensions.
+                                </p>
+                                <p>
+                                    Il avait réussi à se faire quelques amis, un petit groupe avec lequel il jouait dans la rue jusqu’à ce que la lumière décline. Puis vint le jour où il demanda un chat. Il le nomma Croustine, sans que personne ne comprenne vraiment pourquoi. Elle avait un pelage noir comme la nuit, deux yeux jaunes, félins, presque prédateurs, mais l’animal respirait la douceur à chaque mouvement, et Raffaele l’adorait sans la moindre retenue.
+                                </p>
+                                <p>
+                                    Il s’occupait d’elle comme d’un trésor vivant. Il passait des heures à la fenêtre à attendre son retour, à scruter la rue dans l’espoir de voir ses petites oreilles réapparaître au détour d’un mur. Croustine était, en un sens, sa meilleure amie. Son point d’ancrage. Sa constante.
+                                </p>
+                                <p>
+                                    Pourtant, malgré la tendresse de son chat, malgré l’amour de ses parents et la bienveillance de ses amis, Raffaele cultivait aussi un goût prononcé pour la solitude. Il se faisait souvent réprimander pour rentrer trop tard, ou pour ses mensonges maladroits : " Je suis chez un ami ", disait-il. Alors qu’en réalité, il traînait dans des rues désertes, là où s’attardaient des maisons abandonnées, des ruines oubliées, des terrains vagues où le temps semblait s’être arrêté.
+                                </p>
+                                <p>
+                                    Il aimait ces lieux pour les secrets qu’ils semblaient garder, pour les histoires qu’ils murmuraient dans leurs murs fissurés. Il n’était pas rare qu’il revienne avec quelques égratignures, des bleus qu’il ne prenait jamais la peine d’expliquer. Il vivait intensément, profondément, pleinement, un enfant qui explorait le monde comme s’il avait déjà peur d’en manquer.
+                                </p>
+                                <p>
+                                    Passion étrange pour un garçon de son âge, oui. Ses parents s’en inquiétaient parfois, surtout pour le danger que ces escapades impliquaient, mais jamais pour la passion elle-même. Et Raffaele était têtu. Même lorsqu’ils tentaient de l’accompagner, de le surveiller, il trouvait toujours un moyen de s’échapper, de continuer ses aventures.
+                                </p>
+                                <p>
+                                    Des aventures qui, un jour, devront coûter cher à la famille…
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+
+            <!-- 15 JANVIER 2030 - ACCIDENT -->
+<article class="timeline-item" id="evt-accident">
+    <div class="timeline-marker">
+        <span class="timeline-year">2030</span>
+    </div>
+
+    <div class="timeline-card">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-05</span>
+                <h3>15 janvier 2030 | L’accident (15 ans)</h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+
+                <!-- COLONNE GAUCHE : PHOTO + OST -->
+                <div class="timeline-media">
+
+                    <!-- Photo -->
+                    <div class="timeline-photo-slot">
+                        <img src="images/grenier.jpg" alt="Grenier" class="timeline-photo-img">
+                        <div class="photo-caption">
+                            <span class="photo-slot-label">À Florence en Italie</span>
+                            <span class="photo-slot-sub">Croquis réaliste du grenier abandonné</span>
+                        </div>
+                    </div>
+
+                    <!-- OST -->
+                    <div class="timeline-audio-card js-ost">
+                        <p class="audio-title">OST - L’accident</p>
+
+                        <audio src="audio/grenier.mp3"></audio>
+
+                        <button class="audio-play-icon-btn">
+                            <span class="audio-icon">▶</span>
+                        </button>
+
+                        <div class="audio-volume-wrap">
+                            <input 
+                                type="range" 
+                                class="audio-volume" 
+                                min="0" max="1" 
+                                step="0.01" 
+                                value="0.3">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLONNE DROITE : TEXTE -->
+                <div class="timeline-text">
+                    <p>
+                        Dans des décombres oubliés au sommet d’une vieille bâtisse que le temps avait presque entièrement dévorée, un grenier tenait encore, soutenu par quelques piliers de bois moisi, humides, affaissés par les saisons. Il semblait suspendu entre la ruine et la survie, comme un dernier souffle architectural défiant la gravité. Raffaele, évidemment, ne s’en souciait pas. L’odeur de renfermé l’attirait, un parfum de secrets étouffés, d’histoires murmurées à travers les lattes pourries, et il s’y infiltra avec cette audace propre aux enfants qui croient encore que le monde se pliera à leur curiosité.
+                    </p>
+                    <p>
+                        Le grenier était jonché de cartons, de caisses éventrées par les années, et au milieu de ce décor décrépit reposait une valise trop bien fermée pour appartenir à l’abandon. Elle tranchait avec l’ambiance poussiéreuse, presque comme un objet déplacé dans le temps. Raffaele l’ouvrit, convaincu qu’il y trouverait quelques trésors, une pièce rare, quelque chose d’assez étonnant pour impressionner ses parents ou attiser la jalousie de ses amis.
+                    </p>
+                    <p>
+                        Mais lorsque le zip glissa jusqu’à son terme, l’odeur de renfermé fut balayée par un parfum plus lourd, plus ancien, plus horriblement vivant.
+                    </p>
+                    <p>
+                        Une odeur de mort. Épaisse, écœurante, presque palpable.
+                    </p>
+                    <p>
+                        Il eut un mouvement de recul si brusque qu’il en heurta un pilier. Il pinça ses narines du bout des doigts, ferma la bouche avec l’instinct d’un enfant persuadé que l’air même pouvait l’empoisonner. Mais sa curiosité, cette flamme trop vive en lui, le poussait encore en avant.
+                    </p>
+                    <p>
+                        Son cœur cognait contre sa poitrine, non pas comme un tambour régulier mais comme un animal affolé cherchant à s’échapper.
+                    </p>
+                    <p>
+                        Il se pencha, malgré tout. Et ce qu’il vit… il ne le comprit pas immédiatement. Ce n’était qu’un amas informe, un mélange de couleurs ternes et de textures inconnues. Puis, lentement, comme si son esprit refusait d’accepter l’évidence, il distingua une main. Un pied. Un visage.
+                    </p>
+                    <p>
+                        Un être humain, là, décomposé dans une valise. Le cauchemar prit forme d’un seul coup, brutal, implacable.
+                    </p>
+                    <p>
+                        Son estomac se souleva. Un haut-le-cœur, puis un autre, plus violent encore. Mais ses yeux restaient fixés, piégés, incapables de cligner. Tout son corps hurlait de fuir, pourtant il restait là, figé dans une horreur fascinée.
+                    </p>
+                    <p>
+                        Ses sens l’alertèrent avant sa raison. Un craquement sec résonna sous ses pieds. Puis un grattement, léger, mais assez pour faire éclater quelque chose en lui. Une présence. Une menace. Quelqu’un ? Un rat, probablement, mais dans sa terreur, l’imaginaire prenait la forme d’un ennemi bien plus dangereux.
+                    </p>
+                    <p>
+                        Il se redressa trop vite, renversa une boîte, faillit s’étouffer avec sa propre respiration, puis il se précipita vers l’échelle par laquelle il était monté, sans prêter attention à ses appuis ni au bois rendu glissant par l’humidité.
+                    </p>
+                    <p>
+                        Et il glissa.
+                    </p>
+                    <p>
+                        Son pied dérapa, sa cheville plia, et son corps bascula sans qu’il ait le temps de comprendre. Sa tête passa la première par la trappe ouverte, puis le reste de son poids s’abattit dans un choc brutal contre le sol du niveau inférieur.
+                    </p>
+                    <p>
+                        Le monde se fissura autour de lui. Les sons devinrent lointains, étouffés, comme écoutés à travers de l’eau. La douleur tambourina, puis devint une vibration sourde. Il voulut crier, mais sa voix demeura prisonnière dans le nœud noué à sa gorge.
+                    </p>
+                    <p>
+                        Était-il mort ? La pensée, vague et glacée, traversa son esprit sans pouvoir se formuler.
+                    </p>
+                    <p>
+                        Il resta immobile, incapable de reprendre son souffle, l’air lui refusant tout accès comme si ses poumons s’étaient refermés. Son monde rétrécit, se brouilla, s’effilocha, et après de longues minutes, ou ce qui lui sembla être des heures, l’obscurité l'engloutissait, petit à petit, sans un bruit.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- L’HÔPITAL -->
+<article class="timeline-item" id="evt-hopital">
+    <div class="timeline-marker">
+        <span class="timeline-year">2030</span>
+    </div>
+
+    <div class="timeline-card">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-06</span>
+                <h3>L’hôpital</h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+                
+                <!-- COLONNE MÉDIA (photo + OST) -->
+                <div class="timeline-media">
+
+                    <!-- OST (1 seul audio) -->
+                    <div class="timeline-audio-card js-ost">
+                        <p class="audio-title">OST - Hôpital</p>
+
+                        <!-- AUDIO NATIF (caché via CSS) -->
+                        <audio src="audio/ost-hopital.mp3"></audio>
+
+                        <!-- BOUTON PLAY -->
+                        <button class="audio-play-icon-btn">
+                            <span class="audio-icon">▶</span>
+                        </button>
+
+                        <!-- VOLUME -->
+                        <div class="audio-volume-wrap">
+                            <input type="range" class="audio-volume" min="0" max="1" step="0.01" value="0.2">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TEXTE -->
+                <div class="timeline-text">
+                    <p>
+                        On ne retrouva Raffaele que 10 heures après sa chute. Pendant tout ce temps, ses parents
+                        avaient sombré dans une panique insoutenable, imaginant le pire : un enlèvement, une agression,
+                        une mauvaise rencontre.
+                    </p>
+                    <p>
+                        Transporté d’urgence à l’hôpital, Raffaele fut séparé de ses parents, laissés dans une salle
+                        d’attente glaciale où l’air semblait trop lourd pour leurs poumons. Cristiano et Lelia
+                        n’avaient plus de mots.
+                    </p>
+                    <p>
+                        Lorsqu’on leur annonça que leur fils était stabilisé, un souffle de soulagement traversa leurs
+                        lèvres, mais le médecin ne partageait pas cet espoir. Raffaele était vivant, oui, mais plongé
+                        dans un coma profond.
+                    </p>
+                    <p>
+                        Lorsqu’on les autorisa enfin à entrer dans la chambre où il reposait, ses parents fondirent en
+                        larmes. On leur avait assuré qu’il pouvait les entendre, même de là où il se trouvait. Alors
+                        ils parlèrent, sans s’arrêter.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- LA GUÉRISON -->
+<article class="timeline-item" id="evt-guerison">
+    <div class="timeline-marker">
+        <span class="timeline-year">2030</span>
+    </div>
+
+    <div class="timeline-card">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-07</span>
+                <h3>La guérison</h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+
+                <!-- COLONNE MÉDIA (photo seule) -->
+                <div class="timeline-media">
+                    <div class="timeline-photo-slot">
+                        <img src="images/guerison.jpg" alt="Guérison" class="timeline-photo-img">
+                        <div class="photo-caption">
+                            <span class="photo-slot-label">Raffaele 15 ans</span>
+                            <span class="photo-slot-sub">Hôpital de Florence</span>
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="timeline-text">
+                    <p>
+                        Raffaele resta deux semaines dans cet état suspendu entre la vie et le rêve, deux semaines durant lesquelles ses parents se relayèrent pour éviter qu’il ouvre les yeux dans une chambre vide. Ils dormaient à tour de rôle, mangeaient à peine, et vivaient au rythme des machines qui traçaient les battements réguliers du cœur de leur enfant.
+                    </p>
+                    <p>
+                        Puis, un matin, son doigt bougea. Léger comme un souffle, presque imperceptible, mais réel. Sa mère se jeta immédiatement sur sa main, murmurant son prénom, les yeux brouillés de larmes. Mais quand il ouvrit enfin les yeux, il resta absent, son regard perdu dans un plafond qu’il semblait ne pas réellement voir.
+                    </p>
+                    <p>
+                        Il demeura muet une semaine entière. Parfois, seulement parfois, ses yeux glissaient vers le visage de ses parents, comme pour vérifier qu’ils n’étaient pas des mirages. Peu à peu, il retrouva ses réflexes : il réagissait aux lumières, aux voix, répondait aux médecins par de légers mouvements.
+                    </p>
+                    <p>
+                        Mais malgré la récupération progressive de ses sens, sa voix ne revint pas. Les médecins parlaient de mutisme traumatique, né d’un choc profond. Était-ce le cadavre aperçu dans la valise ? La chute violente ? Les heures passées seul ? Ou bien quelque chose de plus sombre, vécu dans les profondeurs du coma ?
+                    </p>
+                    <p>
+                        Impossible à dire. Et lui, désormais enfermé dans le silence, n’avait plus les mots pour expliquer ce que son esprit avait affronté.
+                    </p>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- LE COMA -->
+<article class="timeline-item" id="evt-coma">
+    <div class="timeline-marker">
+        <span class="timeline-year">2030</span>
+    </div>
+
+    <div class="timeline-card">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code">SEG-08</span>
+                <h3>Le coma</h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+
+                <!-- COLONNE MEDIA : ici seulement un OST -->
+                <div class="timeline-media">
+                    <div class="timeline-audio-card js-ost">
+                        <p class="audio-title">OST - Monde intérieur</p>
+
+                        <audio src="audio/ost-coma.mp3"></audio>
+
+                        <button class="audio-play-icon-btn">
+                            <span class="audio-icon">▶</span>
+                        </button>
+
+                        <div class="audio-volume-wrap">
+                            <input type="range" 
+                                   class="audio-volume"
+                                   min="0" max="1" step="0.01" 
+                                   value="0.2">
+                        </div>
+                    </div>
+                </div>
+                            <div class="timeline-text">
+                                <p>
+                                    Dans ce coma, Raffaele avait vécu. Pas rêvé : vécu. Les médecins lui diront plus tard que deux semaines s’étaient écoulées dans le monde réel, mais lui jurerait, s’il avait pu, que des années entières s’étaient compactées dans sa tête comme une existence parallèle. Il se souvenait d’avoir grandi là-bas, ou du moins d’en avoir ressenti l'usure : la peau tiraillée, les muscles lourds, cette fatigue profonde qu’on n’acquiert qu’avec le temps. Trois ans, cinq ans, dix ans… il était incapable d’estimer la durée exacte, mais il en gardait l’impression physique, l’amertume, les stigmates invisibles.
+                                </p>
+                                <p>
+                                    Lorsqu’il se réveilla, il conserva certains réflexes de cet autre monde. Une attitude constamment aux aguets, des gestes de défense instinctifs, une méfiance animale. Il refusait qu’on le touche, repoussait les mains tendues, frappait parfois sans réfléchir quiconque s’approchait trop. Dans chaque silhouette inconnue, il croyait entrevoir un monstre en devenir, une créature prête à se défaire de son enveloppe humaine pour révéler ce qui se tapissait dessous.
+                                </p>
+                                <p>
+                                    Ce n’était ni de la paranoïa, ni des hallucinations. C’étaient des souvenirs, les fragments brouillés d’une vie qu’il avait menée dans les ténèbres du coma. Dans cette réalité intérieure, il avait connu un monde dévasté, plongé dans une apocalypse où régnaient le chaos, la violence, la mort.
+                                </p>
+                                <p>
+                                    Mais ces horreurs n’étaient pas seules sur le trône : il y avait aussi des êtres dotés de pouvoirs surnaturels, des anomalies humaines qui dominaient les survivants, les asservissaient, les torturaient. Et lui, lui aussi avait été leur proie.
+                                </p>
+                                <p>
+                                    Il avait dû se cacher, lutter, survivre face à ces entités humanoïdes capables de miracles comme de désastres. L’ironie, cruelle et presque cosmique, voulut que quelques mois après son réveil, un cataclysme frappe réellement le monde : catastrophes naturelles, pandémies, révoltes, puis l’apparition des premières personnes dotées de dons, de pouvoirs, exactement comme celles qu’il avait combattues dans les limbes de son coma.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LE CATACLYSME -->
+            <article class="timeline-item" id="evt-cataclysme">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2030+</span>
+                </div>
+
+                <div class="timeline-card">
+                    <button class="timeline-toggle" type="button">
+                        <div class="timeline-toggle-text">
+                            <span class="timeline-code">SEG-09</span>
+                            <h3>Le cataclysme</h3>
+                        </div>
+                        <span class="timeline-arrow">▾</span>
+                    </button>
+
+                    <div class="timeline-body">
+                        <div class="timeline-layout">
+                            <div class="timeline-media">
+                                <div class="timeline-photo-slot">
+                                    <img src="images/cataclysme.jpg" alt="Guérison" class="timeline-photo-img">
+                                    <div class="photo-caption">
+                                        <span class="photo-slot-label">La Grande Calamité</span>
+                                        <span class="photo-slot-sub">Florence après le cataclysme</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-text">
+                                <p>
+                                    Lors du déchaînement des cieux, lorsque la terre elle-même sembla se tordre sous les hurlements du monde, Raffaele se trouvait chez lui, à Florence, dans la demeure familiale. Ses parents l’entouraient, tous deux pâles d’effroi, les mains tremblantes, incapables d’articuler autre chose que des exclamations paniquées. "Ça n’arrive que dans les films !" criaient-ils, tentant de donner du sens à l’inimaginable, comme si le simple fait de le dire pouvait repousser l’horreur qui se déroulait derrière leurs fenêtres.
+                                </p>
+                                <p>
+                                    Raffaele, lui, demeurait silencieux. Toujours silencieux. Il semblait moins surpris que ses parents, moins choqué, moins déstabilisé, et c’était précisément cela qui rendait son attitude inquiétante. Terrorisé, il l’était pourtant : ses yeux allaient de droite à gauche, scrutant les ombres, les murs, les vibrations dans l’air, mais jamais ses parents. Comme s’il savait déjà, avec une certitude froide, qu’ils ne pourraient rien pour lui. Qu’ils n’avaient jamais eu les moyens de le protéger de ce qui arrivait.
+                                </p>
+                                <p>
+                                    Quand tout prit fin, les rues n’étaient plus que poussière et décombres. Florence baignait dans une lumière d’après-guerre : fumée, sirènes, silhouettes hagardes, bâtiments éventrés. Une vision terrible, trop réelle, trop proche de ce qu’il avait vécu dans son coma. Une impression de déjà-vu l’assaillit, violente et familière, comme si le monde venait de se superposer à celui qu’il avait traversé dans sa tête.
+                                </p>
+                                <p>
+                                    Puis vint la reconstruction. Lente. Lourde. Érigée avec des mains ensanglantées, dans les flammes, la peur, et l’espoir crispé d’un peuple qui refusait de s’effondrer. Les couleurs d’antan finirent par revenir, maladroitement, entre les gravats.
+                                </p>
+                                <p>
+                                    Et dans tout cela, Raffaele sut. Ou plutôt : il se persuada, avec une intensité presque sacrée, que son coma n’avait pas été un délire de cerveau traumatisé. Non. C’était une prémonition. Une vision d’avant. L’écho d’un futur proche, un avertissement qu’il n’avait pas le droit d’ignorer.
+                                </p>
+                                <p>
+                                    Il devait agir. Il devait comprendre. Il devait se préparer. Et surtout, il devait empêcher que cela arrive de nouveau, même si, au fond, il savait que le monde avait déjà commencé à suivre l’exact chemin qu’il avait parcouru dans l’obscurité.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ADOLESCENCE -->
+            <article class="timeline-item" id="evt-ado">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2033</span>
+                </div>
+
+                <div class="timeline-card">
+                    <button class="timeline-toggle" type="button">
+                        <div class="timeline-toggle-text">
+                            <span class="timeline-code">SEG-10</span>
+                            <h3>Adolescence | 16 à 18 ans</h3>
+                        </div>
+                        <span class="timeline-arrow">▾</span>
+                    </button>
+
+                    <div class="timeline-body">
+                        <div class="timeline-layout">
+                            <!-- COLONNE MEDIA : ici seulement un OST -->
+                <div class="timeline-media">
+                    <div class="timeline-audio-card js-ost">
+                        <p class="audio-title">OST - Adolescence</p>
+
+                        <audio src="audio/ost-ado.mp3"></audio>
+
+                        <button class="audio-play-icon-btn">
+                            <span class="audio-icon">▶</span>
+                        </button>
+
+                        <div class="audio-volume-wrap">
+                            <input type="range" 
+                                   class="audio-volume"
+                                   min="0" max="1" step="0.01" 
+                                   value="0.2">
+                        </div>
+                    </div>
+                </div>
+                            <div class="timeline-text">
+                                <p>
+                                    Après l’accident, il fallut deux années entières pour que Raffaele parvienne à reparler. Deux ans de silence lourd, de regards brisés, de gestes évités. Mais jamais il ne reparla de ce qu’il avait vu, ni de ce qu’il avait vécu dans cet univers apocalyptique dont il portait encore les cicatrices invisibles. Ce silence n’était pas un refus : c’était un verrou.
+                                </p>
+                                <p>
+                                    Il ne souriait plus vraiment. Sortait moins. S’isola davantage. On le retrouvait souvent enfermé dans sa chambre ou dans le garage familial, absorbé par des bricolages étranges, des expériences dont ses parents s’inquiétaient sans trouver le courage de l’interroger. Ils se persuadaient naïvement que c’était sa façon de guérir, qu’il cherchait simplement à reconstruire quelque chose.
+                                </p>
+                                <p>
+                                    Il s’enfermait aussi dans les études, dévorant autant les ouvrages qui lui étaient imposés que ceux qui n’avaient aucun rapport avec ses cours. Les psychologues ne parvenaient à rien tirer de lui : il ne coopérait pas, répondait par sarcasme, par provocation, parfois par un silence si tranchant qu’il mettait un terme à la séance. On le déplaça d’institut en institut, de spécialiste en spécialiste, mais chaque tentative échoua de la même manière : Raffaele refusait d’être analysé par quiconque.
+                                </p>
+                                <p>
+                                    Il développa soudain un intérêt presque obsessionnel pour les langues, en particulier l’anglais. Il voulait le parler rapidement, parfaitement, comme si c’était une urgence dont il ne pouvait se détourner. Ses parents lui offrirent des cours particuliers qu’il ne manqua jamais : pas une absence, pas une minute de retard. Il apprenait avec une discipline presque alarmante.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- JEUNE ADULTE - UNIVERSITÉ -->
+            <article class="timeline-item" id="evt-uni">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2035</span>
+                </div>
+
+                <div class="timeline-card">
+                    <button class="timeline-toggle" type="button">
+                        <div class="timeline-toggle-text">
+                            <span class="timeline-code">SEG-11</span>
+                            <h3>Jeune adulte | 18 à 20 ans</h3>
+                        </div>
+                        <span class="timeline-arrow">▾</span>
+                    </button>
+
+                    <div class="timeline-body">
+                        <div class="timeline-layout">
+                            <div class="timeline-media">
+                                <div class="timeline-photo-slot">
+                                    <img src="images/jeune-adulte.jpg" alt="Guérison" class="timeline-photo-img">
+                                    <div class="photo-caption">
+                                        <span class="photo-slot-label">Première année de Raffaele</span>
+                                        <span class="photo-slot-sub">Croquis réaliste de ses 18 ans</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-text">
+                                <p>
+                                    À dix-huit ans, Raffaele fut accepté dans une université scientifique en Australie. Ce fut un coup dur pour ses parents, qui auraient voulu le garder près d’eux, mais il prétendit que les établissements là-bas étaient plus compétents.
+                                </p>
+                                <p>
+                                    La vérité, pourtant, était autre : il fuyait. Il cherchait un terrain plus vaste où approfondir ses obsessions, ses théories, son plan.
+                                </p>
+                                <p>
+                                    Ses études furent d’une facilité déconcertante. Il apprenait tout avec une intensité presque douloureuse, comme si sa vie en dépendait, et en un sens, pour lui, c’était le cas. Dans son esprit, les phénomènes qu’il avait vus dans son coma, ou qu’il croyait avoir vus, n’étaient pas de simples hallucinations. C’était un avertissement, un présage, et il était persuadé que l’humanité s’éteindrait si elle n’apprenait pas rapidement à gérer ces anomalies, ces êtres capables de pouvoirs surnaturels.
+                                </p>
+                                <p>
+                                    Prodigieux, brillant, prometteur, il attira l’attention de ses professeurs autant que l’envie de ses camarades. Mais Raffaele ne se liait pas. Il n’était l’ami de personne et s’en portait très bien. Il observait les autres avec une certaine hauteur, presque un plaisir venimeux, comme si leurs préoccupations lui semblaient terriblement naïves. Pour lui, ils étaient des ignorants, des esprits mous qui ne savaient pas encore ce contre quoi ils devaient lutter.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- GENESIS PARTIE 1 -->
+            <article class="timeline-item" id="evt-genesis1">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2035</span>
+                </div>
+
+                <div class="timeline-card">
+                    <button class="timeline-toggle" type="button">
+                        <div class="timeline-toggle-text">
+                            <span class="timeline-code">SEG-12</span>
+                            <h3>Partie 1 | Genesis (2035, 20 ans)</h3>
+                        </div>
+                        <span class="timeline-arrow">▾</span>
+                    </button>
+
+                    <div class="timeline-body">
+                        <div class="timeline-layout">
+                            <div class="timeline-media">
+                                <div class="timeline-audio-card js-ost">
+                                    <p class="audio-title">OST - Genesis</p>
+
+                                    <audio src="audio/ost-genesis.mp3"></audio>
+
+                                    <button class="audio-play-icon-btn">
+                                        <span class="audio-icon">▶</span>
+                                    </button>
+
+                                    <div class="audio-volume-wrap">
+                                        <input type="range" 
+                                            class="audio-volume"
+                                            min="0" max="1" step="0.01" 
+                                            value="0.2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-text">
+                                <p>
+                                    En parallèle de ses études, Raffaele s’était acharné à comprendre le cataclysme. Avec ses moyens dérisoires, avec davantage de questions que de réponses, il avait construit des plans : des ébauches d’idées, des schémas griffonnés, des théories encore informes mais déjà tournées vers un but précis. Il lui manquait un lieu, il lui manquait du matériel, il lui manquait des esprits suffisamment brillants pour le suivre. Pourtant, son ambition prenait forme, morceau après morceau, comme un mécanisme encore incomplet mais déjà animé par une volonté propre.
+                                </p>
+                                <p>
+                                    Ses recherches, obstinées, l’avaient conduit jusqu’en Australie. Là-bas, un institut aux contours encore flous, une organisation en gestation connue sous le nom de Genesis, attira toute son attention. Elle n’était pas encore complètement née, pas encore officiellement lancée, mais c’était précisément ce qui fit vibrer l’espoir en lui : il pensait pouvoir y inscrire son nom dans la fondation même de ce qu’elle deviendrait.
+                                </p>
+                                <p>
+                                    Par un chemin détourné, un chemin que seul un esprit aussi obstiné que le sien pouvait imaginer, il parvint à obtenir un entretien avec les figures majeures de cet organisme en devenir.
+                                </p>
+                                <p>
+                                    Sur le papier, ses capacités révélaient une intelligence rare, presque inquiétante. En pratique, il n’avait que vingt ans. Une mémoire prodigieuse, des formules en cascade, vingt décimales du nombre pi récitables à n’importe quel instant… Cela impressionnait, certes, mais rien dans ces prouesses n’était encore concret. Rien qui, aux yeux de Genesis, puisse peser face aux enjeux colossaux qu’elle se préparait à affronter.
+                                </p>
+                                <p>
+                                    On lui refusa alors la place.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- GENESIS PARTIE 2 -->
+            <article class="timeline-item" id="evt-genesis2">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2037</span>
+                </div>
+
+                <div class="timeline-card">
+                    <button class="timeline-toggle" type="button">
+                        <div class="timeline-toggle-text">
+                            <span class="timeline-code">SEG-13</span>
+                            <h3>Partie 2 | Genesis (2037, 22 ans)</h3>
+                        </div>
+                        <span class="timeline-arrow">▾</span>
+                    </button>
+
+                    <div class="timeline-body">
+                        <div class="timeline-layout">
+                            
+                            <div class="timeline-text">
+                                
+                                <p>
+                                    Le refus ne l’éteignit pas. Au contraire : il l’aiguisa comme une lame longtemps laissée dans l’ombre. Il le fortifia, le redressa, le recentra sur ce qu’il savait être sa voie. Raffaele était persuadé que Genesis représentait la clef, la seule capable de ramener l’ordre dans le chaos qu’il avait traversé durant son coma, un chaos si réel dans son esprit qu’il en ressentait encore les brûlures fantômes.
+                                </p>
+                                <p>
+                                    Dix années avaient passé depuis ces visions de fin du monde, mais les cicatrices, elles, ne s’étaient jamais refermées. Elles vivaient sous sa peau, silencieuses, obstinées, comme un rappel permanent de ce qui pourrait advenir si l’humanité restait aveugle.
+                                </p>
+                                <p>
+                                    S’il voulait rejoindre Genesis, s’il voulait participer à la construction de cette paix impossible qu’il imaginait, il devait prouver ce dont il était capable. Il trouva alors un emploi dans un laboratoire d’analyses, spécialisé dans les prélèvements sanguins. Ce n’était pas un poste prestigieux, rien d’éblouissant aux yeux du monde, mais pour lui c’était une porte entrouverte : l’accès à des machines, à des instruments, à un matériel dont il rêvait depuis des années.
+                                </p>
+                                <p>
+                                    Pourtant, le laboratoire n’était pas un refuge. La surveillance y était constante, presque étouffante. Impossible d’y mener des recherches personnelles sans être immédiatement remarqué. Et ces analyses routinières n’avaient rien à voir avec ce qu’il voulait réellement étudier : les anomalies humaines, les dons, les mutations, ces êtres capables de défier la logique elle-même. Il lui fallait un espace à lui. Il lui fallait une brèche. Il lui fallait quelqu’un.
+                                </p>
+                                <p>
+                                    Cette personne apparut sous le nom d’Aisha. Une jeune femme douce, rieuse, jolie, et surtout : fille de la patronne du laboratoire. Leur rencontre eut lieu dans une ruelle, un hasard trop bien synchronisé pour ne pas éveiller de soupçons, mais assez subtil pour que personne n’y voie autre chose qu’une coïncidence. Quelques conversations, quelques verres, quelques sourires, et l’histoire prit forme. Une romance pour elle. Une stratégie pour lui.
+                                </p>
+                                <p>
+                                    Sa politesse millimétrée, sa galanterie dosée au millimètre près, son sourire étudié firent le reste. Bientôt, il fut invité chez elle, accueilli par une famille qui ne tarda pas à l’apprécier. Le père, solide, lui serra la main avec chaleur. La mère feignit la surprise de le reconnaître, surprise dont il joua à merveille. Peu à peu, il fut adopté, intégré, aimé. La confiance s’installa, une confiance qu’Aisha lui offrit avec la générosité naïve des gens qui ne soupçonnent rien.
+                                </p>
+                                <p>
+                                    Les mois passèrent, et son travail impeccable au laboratoire lui valut une carte d’accès spéciale. Un laissez-passer précieux qui lui donnait la liberté dont il rêvait. Dès lors, le laboratoire devint un terrain de jeu, un espace d’études et de construction. Il analysait sans relâche, élaborait des théories, empilait ses notes avec une rigueur presque obsessionnelle. D’intrigant, il devint prometteur. Son ambition devint obsession : comprendre ces êtres pourvus de dons, les classifier, les prédire, les maîtriser.
+                                </p>
+                                <p>
+                                    En parallèle, il loua des locaux à quelques kilomètres de leur maison. Un hangar discret, anonyme, où il entreposait du matériel subtilisé au laboratoire, pièce après pièce. C’est là qu’il bâtit son véritable sanctuaire scientifique, un lieu façonné à son image, où rien ne l'empêcherait d’aller trop loin.
+                                </p>
+                                <div class="timeline-media">
+                                <div class="timeline-photo-slot">
+                                    <img src="images/labo-mini.jpg" alt="Guérison" class="timeline-photo-img">
+                                    <div class="photo-caption">
+                                        <span class="photo-slot-label">Entrepôt aménagé</span>
+                                        <span class="photo-slot-sub">Résultats de l'aménagement</span>
+                                    </div>
+                                </div>
+                            </div>
+                                <p>
+                                    Quand il estima que tout était prêt, il démissionna, expliquant avoir obtenu un poste dans un laboratoire plus adapté. La famille le félicita, le soutint, et ne lui en voulut pas. Un jeune homme brillant devait évoluer, disait-on. Ils étaient naïfs. Et il comptait sur cela.
+                                </p>
+                                <p>
+                                    Pendant un an, il vécut grâce à l’argent de ses parents, prétendant poursuivre ses études, alors qu’il s’immergeait entièrement dans ses propres expérimentations, loin de tout regard. Loin de toute morale aussi.
+                                </p>
+                                <p>
+                                    Ce ne fut qu’en 2037 qu’il revint frapper à la porte de Genesis. Plus vieux de deux ans, plus aiguisé, plus sûr de lui, et sans doute plus dangereux qu’il ne l’avait jamais été. Il ne présenta ni diplômes prestigieux, ni lettres de recommandation. Il apporta quelque chose de bien plus précieux : des résultats, des analyses, des observations que l’organisation ne pouvait ignorer.
+                                </p>
+                                <p>
+                                    Cette fois, on ne le refusa pas. On l’accepta. Et Raffaele posa enfin le pied dans l’organisation qu’il destinait, depuis longtemps déjà, à être la clef de tous ses rêves.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- DESCENDANCE - SEG REDACTED 01 -->
+<article class="timeline-item timeline-item--redacted" id="evt-descendance" data-redacted="true">
+    <div class="timeline-marker timeline-marker--redacted">
+        <span class="timeline-year">2040</span>
+    </div>
+
+    <div class="timeline-card timeline-card--redacted">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code timeline-code--red">SEG-R01</span>
+                <!-- Titre glitché / illisible -->
+                <h3 class="glitch-title" data-glitch="DESCENDANCE | 2040 (25 ans)">
+                    ███ ███ ███
+                </h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+
+                <!-- Pas de médias, juste le texte verrouillé -->
+                <div class="timeline-text">
+
+                    <!-- Bloc verrouillé (demande de mot de passe) -->
+                    <div class="redacted-lock-panel">
+                        <p class="redacted-lock-title">
+                            SEGMENT CLASSIFIÉ - ACCÈS RESTREINT
+                        </p>
+                        <p class="redacted-lock-text">
+                            Ce segment de l’historique de <span class="highlight">R. Imperatore</span> est classé
+                            <span class="accent">CONFIDENTIEL</span>.<br>
+                            Veuillez entrer le mot de passe d’autorisation pour le déverrouiller.
+                        </p>
+
+                        <form class="redacted-form">
+                            <label class="redacted-label">
+                                MOT DE PASSE
+                                <input type="password" class="redacted-input" autocomplete="off">
+                            </label>
+                            <button type="submit" class="redacted-submit">
+                                DÉVERROUILLER
+                            </button>
+                            <p class="redacted-error" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contenu réellement classé (caché au départ) -->
+                    <div class="redacted-content">
+                        <div class="timeline-media redacted-media">
+                        <div class="timeline-audio-card js-ost">
+                                    <p class="audio-title">OST - Naissance</p>
+
+                                    <audio src="audio/famille.mp3"></audio>
+
+                                    <button class="audio-play-icon-btn">
+                                        <span class="audio-icon">▶</span>
+                                    </button>
+
+                                    <div class="audio-volume-wrap">
+                                        <input type="range" 
+                                            class="audio-volume"
+                                            min="0" max="1" step="0.01" 
+                                            value="0.2">
+                                    </div>
+                                </div>
+                            </div>
+                        <p>
+                            En 2040, Aisha découvrit sa grossesse presque par hasard, au détour d’un test acheté sur un coup d’intuition. 
+                            Elle ne savait rien, bien sûr, du véritable travail de l’homme qu’elle avait épousé deux ans plus tôt. 
+                            Pour elle, Raffaele restait ce scientifique brillant, sérieux, parfois trop absorbé par ses recherches, 
+                            mais fondamentalement bienveillant, l’image qu’il lui avait si savamment construite.
+                        </p>
+                        <p>
+                            Lorsque le résultat s’afficha, positif, elle ne fut pas surprise. Après tant d’années ensemble, cette nouvelle 
+                            lui sembla naturelle, presque prédestinée. Et l’idée de porter une petite fille l’emplit d’une joie sincère, 
+                            lumineuse. Naïvement, et tragiquement, elle espérait que cette grossesse rapprocherait Raffaele d’elle. 
+                            Qu’il rentrerait plus tôt, qu’il dormirait davantage à la maison, qu’il laisserait son travail s’effacer un peu 
+                            derrière l’arrivée de leur enfant.
+                        </p>
+                        <div class="timeline-media redacted-media">
+    <div class="timeline-photo-slot">
+                                    <img src="images/fille.png" alt="Guérison" class="timeline-photo-img">
+                                    <div class="photo-caption">
+                                        <span class="photo-slot-label">Angela Imperatore</span>
+                                        <span class="photo-slot-sub">Photo prise le jour de ses 15 ans</span>
+                                    </div>
+                                </div>
+                            </div>
+                        <p>
+                            Mais pour Raffaele… Cette naissance n’était ni un miracle ni une bénédiction. C’était une intrusion. 
+                            Une variable imprévue. Un ralentissement. Une perte de temps. Quand Aisha lui annonça la nouvelle, il l’enlaça : 
+                            une étreinte mécanique, glaciale, qu’elle interpréta comme de la pudeur ou de l’émotion mal contenue. 
+                            Elle le voulait tellement doux, tellement investi, qu’elle s’aveuglait volontairement.
+                        </p>
+                        <p>
+                            Pourtant, Aisha n’était pas stupide. Elle percevait ces fissures dans son absence, ces silences trop longs, 
+                            ces sourires qui n’atteignaient jamais ses yeux. Elle sentait qu’il n’était pas réellement présent, 
+                            ni pour elle, ni pour ce foyer qu’elle tentait de bâtir autour de lui. Mais elle continuait d’espérer malgré tout, 
+                            prisonnière de l’ombre du premier homme dont elle était tombée amoureuse, ce fantôme délicat que Raffaele 
+                            n’avait laissé entrevoir qu’au début.
+                        </p>
+                        <p>
+                            La grossesse se déroula sans encombre, et rien ne put se mettre entre la jeune femme et l’enfant qu’elle portait. 
+                            Leur fille naquit par un après-midi calme, sous les lumières tamisées de la salle d’accouchement. Aisha posa les yeux 
+                            sur elle et l’aima instantanément, d’un amour vaste, absolu, inconditionnel. Même les médecins, habitués à toutes les 
+                            naissances, s’émerveillèrent devant ce petit ange qui venait de faire son entrée dans le monde.
+                        </p>
+                        <p>
+                            Raffaele, lui, n’était pas là. Il n’était pas venu. Il n’avait pas tenu la main tremblante de sa femme, n’avait pas 
+                            entendu les premiers pleurs de son enfant, n’avait pas vu ses paupières trembler, ni son minuscule poing s’agripper 
+                            à l’air. À vrai dire, il se souvenait à peine du prénom qu’ils avaient choisi ensemble. Pour lui, cette petite vie 
+                            n’était qu’une conséquence de plus à gérer, une complication organique au milieu de ses plans, un élément vivant 
+                            qu’il n’avait jamais voulu dans l’équation.
+                        </p>
+                        <p>
+                            Aisha, pourtant, la serra contre son cœur. Et dans cette absence béante laissée par l’homme qu’elle aimait, 
+                            elle se promit au moins une chose : sa fille, elle, ne manquerait jamais d’amour.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- VIE DE FAMILLE - SEG REDACTED 02 -->
+<article class="timeline-item timeline-item--redacted" id="evt-famille" data-redacted="true">
+    <div class="timeline-marker timeline-marker--redacted">
+        <span class="timeline-year">2048</span>
+    </div>
+
+    <div class="timeline-card timeline-card--redacted">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code timeline-code--red">SEG-R02</span>
+                <!-- Titre glitché / illisible -->
+                <h3 class="glitch-title" data-glitch="VIE DE FAMILLE | 2048 (33 ans)">
+                    ███ ███ ███
+                </h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+                <div class="timeline-text">
+
+                    <!-- Bloc verrouillé -->
+                    <div class="redacted-lock-panel">
+                        <p class="redacted-lock-title">
+                            SEGMENT CLASSIFIÉ - ACCÈS RESTREINT
+                        </p>
+                        <p class="redacted-lock-text">
+                            Ce segment de l’historique de <span class="highlight">R. Imperatore</span> est classé
+                            <span class="accent">CONFIDENTIEL</span>.<br>
+                            Veuillez entrer le mot de passe d’autorisation pour le déverrouiller.
+                        </p>
+
+                        <form class="redacted-form">
+                            <label class="redacted-label">
+                                MOT DE PASSE
+                                <input type="password" class="redacted-input" autocomplete="off">
+                            </label>
+                            <button type="submit" class="redacted-submit">
+                                DÉVERROUILLER
+                            </button>
+                            <p class="redacted-error" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contenu classé -->
+                    <div class="redacted-content">
+                        
+                        <p>
+                            Raffaele n’était qu’une ombre dans sa propre maison. Il ne se rappelait pas les premiers mots d'Angela, 
+                            ni ses premiers pas hésitants sur le parquet du salon. Ces souvenirs, il ne les avait pas vécus. 
+                            Il les avait manqués, ignorés. Et si cela continuait d’attrister Aisha, ce n’était plus tant pour elle, 
+                            elle avait depuis quelque temps fait le deuil de l’homme qu’elle avait épousé, mais pour leur fille, 
+                            ce petit trésor qui grandissait avec un père sans visage, sans présence, sans chaleur.
+                        </p>
+                        <p>
+                            Elle se répétait que l’enfant avait besoin d’un père. Pas forcément de lui. D’un père, d’un repère. Angela grandissait pourtant 
+                            dans une belle maison à la campagne, entourée d’un jardin fleuri où les saisons se paraissaient de couleurs vives, 
+                            sous le soleil brûlant de l’Australie. Dans ses veines coulait pourtant une autre origine, non trop lointaine, héritée 
+                            de l’homme dont elle portait le nom : l’Italie.
+                        </p>
+                        <p>
+                            Ce même homme lui enseigna sa langue. Non pas par élan paternel, il fallut presque le contraindre, mais quelque chose, 
+                            un reste de cœur ou de culpabilité, l’empêchait de s’enfuir totalement. Angela avait un regard doux, naïf, presque 
+                            “stupide”, pensait-il parfois. Un regard d’enfant qui ne comprenait pas encore la dureté du monde. Pourtant, ce regard-là, 
+                            malgré lui, savait l’attendrir. Parfois. À de rares moments où son humanité se rappelait à lui.
+                        </p>
+                        <p>
+                            Les soirs où il rentrait tôt, ou moins tard, il s’asseyait près d’elle et lui enseignait l’italien. Ces instants auraient pu 
+                            être beaux, et ils l’étaient parfois, dans l’éclat fragile d’un sourire enfantin. Mais Raffaele n’avait jamais eu beaucoup 
+                            de patience. Il était dur, inflexible, exigeant au-delà du raisonnable. Angela était jeune, et ses erreurs auraient dû être 
+                            des étapes naturelles. Pour lui, elles étaient des échecs inacceptables.
+                        </p>
+                        <p>
+                            Dans son regard, elle pouvait parfois voir une lueur de déception, un tranchant invisible qui la poussait à redoubler d’efforts, 
+                            encore et encore, jusqu’à s’épuiser pour lui plaire.
+                        </p>
+                                                <div class="timeline-media redacted-media">
+    <div class="timeline-photo-slot">
+                                    <img src="images/chambre.jpg" alt="Guérison" class="timeline-photo-img">
+                                    <div class="photo-caption">
+                                        <span class="photo-slot-label">Chambre d'Angela</span>
+                                        <span class="photo-slot-sub">Australie</span>
+                                    </div>
+                                </div>
+                            </div>
+                        <p>
+                            Dans la maison familiale, les disputes éclataient régulièrement. Aisha ne demandait pourtant que le minimum : une présence, 
+                            une attention, un geste. Mais ce minimum-là, Raffaele ne pouvait l’offrir. De ses lèvres coulait un venin acide, un poison 
+                            qu’il déversait avec une froideur clinique. Ils tentaient de se disputer loin des oreilles de Angela, sur le seuil de la porte 
+                            ou dans la cuisine, mais certains mots, violents, transperçaient les murs.
+                        </p>
+                        <p>
+                            "Tu crois que j’ai du temps à perdre pour une bambine qui confond encore années et anus ?!"<br>
+                            "Si elle était un peu plus futée, peut-être que je resterais plus longtemps à la maison. Mais elle est comme toi : 
+                            conne comme un manche à balai. Porca puttana !"
+                        </p>
+                        <p>
+                            Et pourtant… les choses auraient été plus simples s’il avait été monstrueux en permanence. Mais Raffaele oscillait. 
+                            Il n’était pas constant. Il n’était pas un bloc de pierre : parfois, quelque chose en lui se fissurait. 
+                            Il lui arrivait de monter, tard, dans la chambre d'Angela. À l’heure du coucher, souvent trop tard, parfois quand l’enfant 
+                            dormait déjà. Était-ce du remords, de la culpabilité, un reste de compassion qu’il détestait ressentir ? Peut-être.
+                        </p>
+                        <p>
+                            Il s’asseyait à son chevet et lui lisait une histoire. Toujours la même. Celle que ses parents lui avaient lue. 
+                            Celle qu’on lui chuchotait lorsqu’il était dans le coma, persuadés qu’il entendrait. Pour Angela, il l’avait traduite en anglais, 
+                            ajoutant parfois quelques phrases en italien pour accélérer son apprentissage, ou peut-être parce qu’il voulait, pour une fois, 
+                            qu’elle l’entende vraiment. Qu’elle l’aime. Qu’il sache aimer comme il aurait dû le faire.
+                        </p>
+                        <p>
+                            Et chaque fois, il terminait la lecture de la même manière. Il se penchait au-dessus d’elle, déposait un baiser sur son front, 
+                            un geste étonnamment tendre pour un homme d’habitude si froid, sincère également, mais trop fragile pour être assumé, et parfois, 
+                            une larme silencieuse roulait sur sa joue.
+                        </p>
+                        <p>
+                            Peut-être qu’à cet instant précis, dans cette pénombre où personne ne le voyait, il imaginait déjà un avenir où il ne serait plus là. 
+                            Ce baiser, à chaque fois, avait cet arrière-gout amer d’un au revoir. D’un adieu. D’un départ.
+                        </p>
+                        <p>
+                            Dans le fond, Raffaele ne détestait pas Angela. Comment l’aurait-il pu ? Elle était sa fille, son sang, cette petite existence fragile 
+                            qu’il avait mise au monde malgré lui. Mais il réprimait ses attaches avec une discipline presque militaire, étouffant cet amour paternel 
+                            qu’il aurait dû lui offrir, jusqu’à faire d’elle, au fil des années, une poupée de cire qu’il tenait à distance.
+                        </p>
+                        <p>
+                            Elle glissait de ses mains avant même qu’il ne tente de la saisir. Il y avait toujours plus important qu’elle. Toujours plus urgent. 
+                            Chaque priorité écrasait la précédente, et parmi elles, jamais Angela ne parvenait à se frayer une place.
+                        </p>
+                        <p>
+                            Plus le temps passait, plus les éclairs de tendresse qui le prenaient parfois se faisaient rares, comme s’ils s’évaporaient avant même 
+                            d’avoir pu atteindre son cœur. Et dans ces moments où il sentait son humanité menacer de remonter à la surface, il se murmurait, 
+                            pour se protéger autant que pour se convaincre :
+                        </p>
+                        <p>
+                            <em>Ne t’y attache pas, Raffaele. elle n’a jamais fait partie du monde que tu essayes de construire.</em>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- PARTIE 3 | GENESIS - 2050 - 35 ans -->
+<article class="timeline-item timeline-item--redacted" id="evt-genesis-2050" data-redacted="true">
+    <div class="timeline-marker timeline-marker--redacted">
+        <span class="timeline-year">2050</span>
+    </div>
+
+    <div class="timeline-card timeline-card--redacted">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code timeline-code--red">SEG-R03</span>
+                <!-- Titre glitché -->
+                <h3>
+                    PARTIE 3 | GENESIS - 2050 (35 ans)
+                </h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+                <div class="timeline-text">
+
+                    <!-- Panneau mot de passe -->
+                    <div class="redacted-lock-panel">
+                        <p class="redacted-lock-title">
+                            SEGMENT CLASSIFIÉ - ACCÈS RESTREINT
+                        </p>
+                        <p class="redacted-lock-text">
+                            Ce segment de l’historique de <span class="highlight">R. Imperatore</span> est classé
+                            <span class="accent">CONFIDENTIEL</span>.<br>
+                            Veuillez entrer le mot de passe d’autorisation pour le déverrouiller.
+                        </p>
+
+                        <form class="redacted-form">
+                            <label class="redacted-label">
+                                MOT DE PASSE
+                                <input type="password" class="redacted-input" autocomplete="off">
+                            </label>
+                            <button type="submit" class="redacted-submit">
+                                DÉVERROUILLER
+                            </button>
+                            <p class="redacted-error" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contenu classé (caché au départ) -->
+                    <div class="redacted-content">
+                        <div class="timeline-media redacted-media">
+                            <div class="timeline-audio-card js-ost">
+                                    <p class="audio-title">OST - Genesis</p>
+
+                                    <audio src="audio/cuve.mp3"></audio>
+
+                                    <button class="audio-play-icon-btn">
+                                        <span class="audio-icon">▶</span>
+                                    </button>
+
+                                    <div class="audio-volume-wrap">
+                                        <input type="range" 
+                                            class="audio-volume"
+                                            min="0" max="1" step="0.01" 
+                                            value="0.2">
+                                    </div>
+                                </div>
+    <div class="timeline-photo-slot">
+                                    <img src="images/cuve.png" alt="Guérison" class="timeline-photo-img">
+                                    <div class="photo-caption">
+                                        <span class="photo-slot-label">Cuves de Genesis</span>
+                                        <span class="photo-slot-sub">Représentation fidèle des cuves</span>
+                                    </div>
+                                </div>
+
+            
+                            </div>
+                        <p>
+                            Une fois accepté au sein de Genesis, sa place s’imposa presque naturellement. Ses analyses pointues, 
+                            ses théories audacieuses, sa manière même de décortiquer le monde firent de lui un atout précieux 
+                            pour l’institut. On l’installa, comme une évidence, dans un laboratoire dédié : un lieu où il mènerait 
+                            expériences et recherches saturées de mystères et d’horreurs soigneusement dissimulées.
+                        </p>
+                        <p>
+                            Les cuves faisaient partie de ces abominations. Des prisons de verre, emplies d’un liquide translucide 
+                            seulement animé par quelques bulles d’oxygène remontant paresseusement vers la surface. Et dans ces cuves… 
+                            des êtres humains. Certains encore vivants. Tous porteurs d’un même fardeau : celui d’abriter, quelque part 
+                            dans leurs gènes, un pouvoir que le monde refusait d’admettre complètement, ou simplement d’expliquer.
+                        </p>
+                        <p>
+                            Chercher une réponse, une explication ? Peut-être était-ce l’objectif. Peut-être la vérité était-elle bien 
+                            plus sombre. Jusqu’où pouvait-on exploiter des êtres d’une telle puissance au nom du bien commun ? Combien 
+                            de sacrifices fallait-il accepter pour espérer une paix, notion mouvante, malléable, propre à chacun ?
+                        </p>
+                        <p>
+                            Mais la paix selon Raffaele n’intégrait en rien ces aberrations. Ces erreurs de la nature, selon lui. 
+                            Ces créatures incarnaient la rupture de l’ordre, une division par zéro, une faille qui menaçait de consumer 
+                            le monde que les humains avaient bâti de leurs mains, un monde qu’il estimait qu’elles ne méritaient pas.
+                        </p>
+                        <p>
+                            Il n’éprouvait pour elles ni compassion, ni pitié. Lorsque son regard glissait sur ces corps emprisonnés, 
+                            il n’y avait dans ses yeux ni trouble ni remords. Il les observait comme on dévisage des animaux sauvages 
+                            derrière une vitre de zoo : avec détachement, avec froideur, avec cette certitude glacée d’être du côté 
+                            de ceux qui jugent, jamais de ceux qui subissent, peut-être parce qu’il avait vécu l’exact opposé, il y a de 
+                            cela quelques années seulement, dans ce rêve qu’il avait depuis longtemps qualifié de prémonitoire, 
+                            de mise en garde.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- SÉPARATION & VIE RECLUSE | 2048 / 2050 | 33-35 ans -->
+<article class="timeline-item timeline-item--redacted" id="evt-reclusion" data-redacted="true">
+    <div class="timeline-marker timeline-marker--redacted">
+        <span class="timeline-year">2050</span>
+    </div>
+
+    <div class="timeline-card timeline-card--redacted">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code timeline-code--red">SEG-R04</span>
+                <!-- Titre glitché -->
+                <h3 class="glitch-title" data-glitch="SÉPARATION &amp; VIE RECLUSE | 2048-2050 (33-35 ans)">
+                    ███ ███ ███
+                </h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+                <div class="timeline-text">
+
+                    <!-- Panneau mot de passe -->
+                    <div class="redacted-lock-panel">
+                        <p class="redacted-lock-title">
+                            SEGMENT CLASSIFIÉ - ACCÈS RESTREINT
+                        </p>
+                        <p class="redacted-lock-text">
+                            Ce segment de l’historique de <span class="highlight">R. Imperatore</span> est classé
+                            <span class="accent">CONFIDENTIEL</span>.<br>
+                            Veuillez entrer le mot de passe d’autorisation pour le déverrouiller.
+                        </p>
+
+                        <form class="redacted-form">
+                            <label class="redacted-label">
+                                MOT DE PASSE
+                                <input type="password" class="redacted-input" autocomplete="off">
+                            </label>
+                            <button type="submit" class="redacted-submit">
+                                DÉVERROUILLER
+                            </button>
+                            <p class="redacted-error" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contenu classé -->
+                    <div class="redacted-content">
+                        <div class="timeline-media redacted-media">
+                        <div class="timeline-audio-card js-ost">
+                                    <p class="audio-title">OST - Séparation</p>
+
+                                    <audio src="audio/separation.mp3"></audio>
+
+                                    <button class="audio-play-icon-btn">
+                                        <span class="audio-icon">▶</span>
+                                    </button>
+
+                                    <div class="audio-volume-wrap">
+                                        <input type="range" 
+                                            class="audio-volume"
+                                            min="0" max="1" step="0.01" 
+                                            value="0.2">
+                                    </div>
+                                </div>
+                            </div>
+                        <p>
+                            Cela faisait désormais huit ans que la petite était née, huit longues années durant lesquelles Raffaele 
+                            ne lui avait offert que le strict nécessaire, comme si l’affection était un luxe qu’il ne pouvait ou ne 
+                            voulait pas se permettre. Huit années aussi qu’Aisha se démenait seule pour rattraper chaque absence, 
+                            chaque silence, chaque soir où il n’était pas là.
+                        </p>
+                        <p>
+                            En Australie, Aisha avait ses repères, ses racines, sa famille, son travail. La jeune Angela y avait aussi 
+                            les siens. Abandonner tout cela… ne pouvait être qu’un dernier recours. Soit.
+                        </p>
+                        <p>
+                            <strong>7 novembre 2048.</strong><br>
+                            Ce n’était pas un jour comme les autres. Il aurait pourtant dû l’être. Cachée à l’arrière de sa voiture 
+                            comme un petit animal indiscipliné, une “nuisance” comme il aimait à la nommer se faisait toute petite. 
+                            Il ne l’aperçut qu’en arrivant sur le parking de Genesis, trop tard pour rebrousser chemin.
+                        </p>
+                        <p>
+                            "Tu te fais discrète Angela, je ne veux pas que quelqu’un te voie."<br>
+                            "Tu restes ici Angela, tu ne dis et fais rien."<br>
+                            "Tu ne touches à rien Angela !"
+                        </p>
+                        <p>
+                            Mais un enfant de huit ans ne pouvait rester sage dans un environnement aussi mystérieux. Ce qu’elle découvrit 
+                            n’aurait jamais dû effleurer des yeux aussi innocents : des cuves, des corps humains suspendus, enfermés, 
+                            conservés comme on range des outils sans âme. Un cauchemar.
+                        </p>
+                        <p>
+                            Il l’attrapa par le poignet, se baissa à sa hauteur et lui murmura, d’un sourire crispé :
+                            "Tu n’as rien vu Angela. Tout ça n’est que le fruit de ton imagination."
+                        </p>
+                        <p>
+                            Raffaele passa alors des coups de fil, réserva un chalet à quelques minutes de Genesis. Ce serait là qu’ils se 
+                            terreraient. En une journée, Angela était passée du statut d’enfant libre à celui de captive, punie pour une 
+                            curiosité qu’elle n’aurait jamais pu maîtriser.
+                        </p>
+                        <p>
+                            <strong>8 janvier 2050.</strong><br>
+                            Deux ans. Deux années durant lesquelles Angela paya le prix de ce qu’elle avait vu. Arrachée à sa mère sans même 
+                            un au revoir, effacée du monde. Aisha la croyait morte, comme chacun de ceux qui les avaient connus.
+                        </p>
+                        <p>
+                            Durant ces deux années, Raffaele fut paradoxalement plus présent qu’il ne l’avait jamais été : proximité forcée, 
+                            simulacre de relation père-fille. Il devait effacer les souvenirs, les remodeler : elle ne devait plus se souvenir 
+                            des cuves.
+                        </p>
+                        <p>
+                            Alors commencèrent les manipulations, le lavage de cerveau, les tortures psychologiques, peut-être physiques. 
+                            Mais malgré tout… quelque chose l’empêchait de la tuer. Une attache tordue, imparfaite, mais existante.
+                        </p>
+                        <p>
+                            Et ce 8 janvier, elle trouva malgré tout le moyen de s’échapper du chalet, suivant ses pas jusqu’à l’institut. 
+                            Cette fois, elle fut vue. Captée. Et surtout… elle manifesta des signes irréfutables d’un don, de pouvoirs. 
+                            Exactement ce que Raffaele tentait d’étouffer.
+                        </p>
+                        <p>
+                            Elle ne pouvait plus revenir au chalet. Elle devait rester ici, parmi les jeunes de son âge, enfermés eux aussi 
+                            dans ce lieu qui leur réservait encore un futur bien flou.
+                        </p>
+                        <p>
+                            Pour Raffaele, ce fut un choc d’une violence rare. Comment faire désormais ? Devait-il la haïr pour ce qu’elle 
+                            était ? Pour ce qu’elle révélait ? L’avait-il seulement aimée un jour ?
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- PARTIE 4 | GENESIS - 2055 - 40 ans -->
+<article class="timeline-item timeline-item--redacted" id="evt-genesis-2055" data-redacted="true">
+    <div class="timeline-marker timeline-marker--redacted">
+        <span class="timeline-year">2055</span>
+    </div>
+
+    <div class="timeline-card timeline-card--redacted">
+        <button class="timeline-toggle" type="button">
+            <div class="timeline-toggle-text">
+                <span class="timeline-code timeline-code--red">SEG-R05</span>
+                <!-- Titre glitché -->
+                <h3>
+                    PARTIE 4 | GENESIS - 2055 (40 ans)
+                </h3>
+            </div>
+            <span class="timeline-arrow">▾</span>
+        </button>
+
+        <div class="timeline-body">
+            <div class="timeline-layout">
+                <div class="timeline-text">
+
+                    <!-- Panneau mot de passe -->
+                    <div class="redacted-lock-panel">
+                        <p class="redacted-lock-title">
+                            SEGMENT CLASSIFIÉ - ACCÈS RESTREINT
+                        </p>
+                        <p class="redacted-lock-text">
+                            Ce segment de l’historique de <span class="highlight">R. Imperatore</span> est classé
+                            <span class="accent">CONFIDENTIEL</span>.<br>
+                            Veuillez entrer le mot de passe d’autorisation pour le déverrouiller.
+                        </p>
+
+                        <form class="redacted-form">
+                            <label class="redacted-label">
+                                MOT DE PASSE
+                                <input type="password" class="redacted-input" autocomplete="off">
+                            </label>
+                            <button type="submit" class="redacted-submit">
+                                DÉVERROUILLER
+                            </button>
+                            <p class="redacted-error" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <!-- Contenu classé -->
+                    <div class="redacted-content">
+                        <div class="timeline-media redacted-media">
+                        <div class="timeline-audio-card js-ost">
+                                    <p class="audio-title">OST - Séparation</p>
+
+                                    <audio src="audio/atasante.mp3"></audio>
+
+                                    <button class="audio-play-icon-btn">
+                                        <span class="audio-icon">▶</span>
+                                    </button>
+
+                                    <div class="audio-volume-wrap">
+                                        <input type="range" 
+                                            class="audio-volume"
+                                            min="0" max="1" step="0.01" 
+                                            value="0.2">
+                                    </div>
+                                </div>
+                            </div>
+                        <p>
+                            Suite à la découverte de l’existence d’Angela, Genesis ne pouvait plus feindre l’ignorance ni détourner le regard. 
+                            La laisser repartir comme si rien ne s’était produit était inconcevable : l’institut ne pardonnait jamais une faille, 
+                            encore moins une menace potentielle. Ils imposèrent donc à Raffaele un dilemme, ou plutôt une sentence maquillée en choix.
+                        </p>
+                        <p>
+                            "Tu nous places dans une position délicate, Raffaele. Après tant d’années d’efforts, ce serait… regrettable d’en arriver 
+                            à une élimination. Alors écoute bien. Inscris-la à Genesis. Observe-la. Contrôle ses gestes, ses mots, son évolution. Quitte 
+                            ton laboratoire et veille à ce qu’elle ne devienne pas le fardeau que nous redoutons tous."
+                        </p>
+                        <p>
+                            Le reste n’eut même pas besoin d’être formulé. À la simple menace, Raffaele céda. Il accepta le verdict sans protester, 
+                            avec cette résignation sourde de ceux qui savent qu’ils ne sont plus maîtres de leur destin.
+                        </p>
+                        <p>
+                            Et quelque part, dans un recoin de sa conscience qu’il aurait préféré laisser mourir, il regrettait d’avoir mis au monde un 
+                            monstre, selon ses propres termes, et de ne pas parvenir à désirer sa mort comme il l’aurait fait pour les autres de son espèce. 
+                            Il continuait, malgré lui, contre toute logique et contre sa propre doctrine, de l’aimer.
+                        </p>
+                        <p>
+                            À sa manière. Une manière toxique, glacée, déformée au point de ne plus ressembler qu’à une parodie d’amour. Peut-être la voyait-il 
+                            comme une expérience vivante, une variable imprévue mais fascinante, un projet, un devoir, un engrenage parmi ses plans… 
+                            Peu importait. Le résultat restait le même : il abandonna les laboratoires.
+                        </p>
+                        <p>
+                            Ce fut pour lui une déchirure. Un immense regret pour le scientifique passionné qu’il avait toujours été. Un domaine qu’il chérissait 
+                            plus que sa propre existence, sur lequel il fut contraint de tirer un trait.
+                        </p>
+                        <p>
+                            Raffaele fut alors muté au cœur même de l’institut Genesis, parmi les autres résidents, les cadres, cette hiérarchie millimétrée où 
+                            chaque rôle était assigné avec une précision chirurgicale.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+        </div>
+    </section>
+
+</main>
+
+<!-- ============================
+     SCRIPT INTERACTIF
+============================= -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.timeline-item');
+    const navBtns = document.querySelectorAll('.timeline-nav-btn');
+
+    // Accordéon des segments
+    document.querySelectorAll('.timeline-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.timeline-card');
+            const item = btn.closest('.timeline-item');
+            const body = card.querySelector('.timeline-body');
+            const arrow = card.querySelector('.timeline-arrow');
+
+            if (!body) return;
+
+            const isOpen = item.classList.contains('open');
+            if (isOpen) {
+                item.classList.remove('open');
+                body.style.maxHeight = null;
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                // ouvrir
+                item.classList.add('open');
+                body.style.maxHeight = body.scrollHeight + 'px';
+                arrow.style.transform = 'rotate(180deg)';
+
+                // petite ligne de scan
+                const scan = document.createElement('div');
+                scan.className = 'timeline-scanline';
+                card.appendChild(scan);
+                setTimeout(() => scan.remove(), 600);
+            }
+        });
+    });
+
+    // Initialisation des hauteurs des sections déjà "open"
+    items.forEach(item => {
+        if (item.classList.contains('open')) {
+            const body = item.querySelector('.timeline-body');
+            const arrow = item.querySelector('.timeline-arrow');
+            if (body) body.style.maxHeight = body.scrollHeight + 'px';
+            if (arrow) arrow.style.transform = 'rotate(180deg)';
+        }
+    });
+
+    // Navigation rapide
+    navBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.dataset.target;
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            const rect = target.getBoundingClientRect();
+            const offset = window.scrollY + rect.top - 90; // marge pour le header
+
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+
+            // mettre en value le segment
+            items.forEach(i => i.classList.remove('focus'));
+            target.classList.add('focus');
+
+            setTimeout(() => target.classList.remove('focus'), 1200);
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = Array.from(document.querySelectorAll('.js-ost'));
+    const audios = cards.map(card => card.querySelector('audio'));
+
+    cards.forEach((card, index) => {
+        const audio       = audios[index];
+        const playBtn     = card.querySelector('.audio-play-icon-btn');
+        const iconSpan    = card.querySelector('.audio-icon');
+        const volumeInput = card.querySelector('.audio-volume');
+
+        if (!audio || !playBtn || !iconSpan || !volumeInput) return;
+
+        // volume initial
+        audio.volume = parseFloat(volumeInput.value || 0.4);
+
+        // clic sur le bouton play/pause
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                // mettre en pause toutes les autres pistes
+                audios.forEach((a, i) => {
+                    if (i !== index && !a.paused) {
+                        a.pause();
+                        const otherCard = cards[i];
+                        const otherIcon = otherCard.querySelector('.audio-icon');
+                        if (otherIcon) otherIcon.textContent = '▶';
+                    }
+                });
+
+                audio.play();
+                iconSpan.textContent = '❚❚';  // mode "pause"
+            } else {
+                audio.pause();
+                iconSpan.textContent = '▶';    // mode "play"
+            }
+        });
+
+        // quand la piste se termine naturellement
+        audio.addEventListener('ended', () => {
+            iconSpan.textContent = '▶';
+        });
+
+        // gestion du volume
+        volumeInput.addEventListener('input', () => {
+            audio.volume = parseFloat(volumeInput.value || 0.8);
+        });
+    });
+});
+
+// ============================
+// HISTOIRE - SEGMENTS REDACTED
+// ============================
+
+const HISTORY_PASSWORD_HASH = "2602f8faa95e0f86363968669308281d55f5a3efc10bf4537a819ff07cde9fab";
+
+async function sha256Hex(str) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(str);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+// Recalcule la hauteur de l'accordéon si tu utilises body.style.maxHeight
+function recalcTimelineBodyHeight(article) {
+    const body = article.querySelector('.timeline-body');
+    if (!body) return;
+
+    if (article.classList.contains('open')) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+    }
+}
+
+function initRedactedSegments() {
+    const redactedArticles = document.querySelectorAll('.timeline-item[data-redacted="true"]');
+
+    redactedArticles.forEach(article => {
+        const form  = article.querySelector('.redacted-form');
+        const input = article.querySelector('.redacted-input');
+        const error = article.querySelector('.redacted-error');
+
+        if (!form || !input) return;
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const value = (input.value || "").trim();
+            if (!value) return;
+
+            try {
+                // 2) On hash ce que l'utilisateur a tapé
+                const enteredHash = await sha256Hex(value);
+
+                // 3) On compare au hash stocké
+                if (enteredHash === HISTORY_PASSWORD_HASH) {
+                    // Marquer l'article comme déverrouillé
+                    article.classList.add('timeline-item--unlocked');
+                    if (error) error.textContent = "";
+                    input.value = "";
+
+                    // Déglitcher le titre
+                    const title = article.querySelector('.glitch-title');
+                    if (title) {
+                        const realTitle = title.dataset.glitch || title.textContent;
+                        title.textContent = realTitle;
+                        title.classList.add('glitch-title--revealed');
+                        // au cas où tu aurais une classe spéciale pour l'effet glitch
+                        title.classList.remove('glitch-title--glitched', 'is-glitched');
+                    }
+
+                    // S'assurer que le segment est bien "open" puis recalculer la hauteur
+                    const body = article.querySelector('.timeline-body');
+                    if (body) {
+                        article.classList.add('open');
+                        // on laisse le temps au DOM d'appliquer les classes puis on recalcule
+                        requestAnimationFrame(() => {
+                            recalcTimelineBodyHeight(article);
+                        });
+                    }
+
+                    // Scroll optionnel vers le segment
+                    article.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                } else {
+                    if (error) error.textContent = "Mot de passe incorrect.";
+                    input.select();
+                }
+            } catch (err) {
+                console.error("Erreur lors du hash du mot de passe :", err);
+                if (error) error.textContent = "Erreur technique, réessaie.";
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initRedactedSegments();
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>

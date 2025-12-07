@@ -1,0 +1,3691 @@
+/* ------------------------------
+   RESET
+------------------------------ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #05070D;
+    color: #E6F4FF;
+    font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    min-height: 100vh;
+}
+
+/* ------------------------------
+   GRID SCIENTIFIQUE DE FOND
+------------------------------ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(140, 255, 230, 0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(140, 255, 230, 0.16) 1px, transparent 1px);
+    background-size: 32px 32px;   /* grille plus serrée */
+    pointer-events: none;
+    opacity: .45;                 /* beaucoup plus visible */
+    mix-blend-mode: normal;       /* plus net, moins “fondu” */
+    z-index: -1;
+}
+
+
+/* ------------------------------
+   HEADER + NAVBAR
+------------------------------ */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .7rem 1.5rem;
+    background: rgba(4, 8, 16, 0.96);
+    border-bottom: 1px solid rgba(120, 230, 210, 0.5);
+    backdrop-filter: blur(9px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-zone {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+}
+
+.logo-symbol {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid #7AF3D8;
+    color: #7AF3D8;
+    font-weight: 600;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: .95rem;
+}
+
+.logo-text {
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: .78rem;
+    color: #D7F9FF;
+    opacity: .9;
+}
+
+/* NAV */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    text-decoration: none;
+    padding: .4rem .85rem;
+    color: #C7E9FF;
+    border-radius: 999px;
+    font-size: .75rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    transition: .18s ease;
+    border: 1px solid transparent;
+    position: relative;
+    font-weight: 400;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.main-nav a:hover {
+    border-color: rgba(122, 243, 216, 0.9);
+    color: #FFFFFF;
+}
+
+.main-nav a:hover::after {
+    border-color: rgba(122, 243, 216, 0.3);
+    opacity: 1;
+}
+
+/* Onglet actif (à mettre page par page) */
+.active {
+    border-color: #7AF3D8 !important;
+    background: rgba(122, 243, 216, 0.08);
+}
+
+/* Sous-menu Supplémentaire */
+.submenu {
+    position: relative;
+}
+
+.submenu .dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: rgba(6, 12, 22, 0.98);
+    border: 1px solid rgba(122, 243, 216, 0.5);
+    border-radius: .6rem;
+    list-style: none;
+    padding: .35rem 0;
+    min-width: 170px;
+    display: none;
+    backdrop-filter: blur(8px);
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    display: block;
+    padding: .5rem 1rem;
+    font-size: .72rem;
+    border-radius: 0;
+}
+
+.dropdown li a:hover {
+    background: rgba(122, 243, 216, 0.12);
+    border-color: transparent;
+}
+
+/* ------------------------------
+   CONTENU GLOBAL
+------------------------------ */
+.content {
+    padding: 2rem 1.7rem 2.5rem;
+    max-width: 960px;
+    margin: auto;
+}
+
+/* Panneau générique (carte scientifique) */
+.panel {
+    background: radial-gradient(circle at top left, rgba(122, 243, 216, 0.08), transparent 42%),
+                rgba(7, 11, 22, 0.96);
+    border-radius: 1.1rem;
+    border: 1px solid rgba(122, 243, 216, 0.45);
+    padding: 1.35rem 1.5rem 1.4rem;
+    margin-bottom: 1.6rem;
+    position: relative;
+}
+
+/* Cadre intérieur discret */
+.panel::before {
+    content: "";
+    position: absolute;
+    inset: .5rem;
+    border-radius: .9rem;
+    border: 1px dashed rgba(122, 243, 216, 0.18);
+    pointer-events: none;
+}
+
+/* ------------------------------
+   TITRES & TEXTE
+------------------------------ */
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: .95rem;
+    margin-bottom: 1.1rem;
+    color: #EFFFFF;
+}
+
+h3 {
+    font-size: .78rem;
+    margin-top: 1.2rem;
+    margin-bottom: .3rem;
+    color: #B5F3EB;
+}
+
+p {
+    font-size: .9rem;
+    line-height: 1.7;
+    color: #D6EAF6;
+    margin-bottom: .25rem;
+}
+
+.highlight {
+    color: #7AF3D8;
+}
+
+.accent {
+    color: #FF7B9A;
+}
+
+/* ------------------------------
+   BLOC PHOTO SCIENTIFIQUE
+------------------------------ */
+.photo-panel {
+    display: grid;
+    grid-template-columns: minmax(220px, 260px) 1fr;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.photo-panel::before {
+    /* on neutralise le cadre intérieur pour ce panel,
+       sinon double bordure pas très clean */
+    display: none;
+}
+
+.photo-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: .9rem;
+    background: radial-gradient(circle at top, #1A2335, #020308);
+    overflow: hidden;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+}
+
+.photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(.85);
+}
+
+/* Bandeau haut "Fig. 01" */
+.photo-box::before {
+    content: "FIG. 01 // PROFIL SUJET";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: .25rem .55rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: .7rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.75);
+    color: #8CF6E5;
+}
+
+/* Bandeau bas infos ID */
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .55rem .7rem .65rem;
+    background: rgba(0, 0, 0, 0.40); /* fond noir discret mais bien lisible */
+    backdrop-filter: blur(2px);      /* effet verre dépoli, très scientifique */
+    font-family: "IBM Plex Mono", monospace;
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #9AF7E8;
+    border-top: 1px solid rgba(122, 243, 216, 0.25); /* petite ligne esthétique */
+}
+
+
+.photo-overlay .code {
+    display: block;
+}
+
+.photo-overlay .id {
+    display: block;
+    font-size: .65rem;
+    opacity: .85;
+    margin-top: .1rem;
+}
+
+/* Notes à côté de la photo */
+.photo-notes {
+    position: relative;
+    padding-left: 1.1rem;
+}
+
+.photo-notes::before {
+    content: "";
+    position: absolute;
+    left: .1rem;
+    top: .15rem;
+    bottom: .15rem;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(122, 243, 216, 0.8), transparent);
+}
+
+.photo-notes h2 {
+    font-size: .8rem;
+    margin-bottom: .4rem;
+}
+
+.photo-notes p {
+    font-size: .85rem;
+    color: #CDE5F5;
+}
+
+/* --------- Zone de texte à droite de l'image --------- */
+
+.photo-notes h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.78rem;
+    margin-bottom: 0.6rem;
+    color: #EFFFFF;
+}
+
+.note-lead {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #D6EAF6;
+    margin-bottom: 0.5rem;
+    max-width: 32rem; /* évite une ligne trop longue, plus agréable à lire */
+}
+
+.note-body {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: #BFD3E6;
+    max-width: 32rem;
+}
+
+.note-strong {
+    color: #7AF3D8;
+    font-weight: 500;
+}
+
+/* Ligne de petits "tags" pour combler le vide proprement */
+.note-meta {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.note-chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.35);
+    background: rgba(0, 0, 0, 0.35);
+    color: #CFEFFF;
+}
+
+
+/* ------------------------------
+   DESCRIPTION PHYSIQUE : STYLE
+------------------------------ */
+.physique-panel {
+    counter-reset: section;
+    padding-top: 1.6rem;
+}
+
+/* on corrige le cadre intérieur pour ce panel */
+.physique-panel::before {
+    inset: .7rem;
+}
+
+/* Titre principal déjà géré par h2 */
+
+/* Titres des sous-parties numérotés */
+.physique-panel h3 {
+    position: relative;
+    padding-left: 2.4rem;
+    font-weight: 500;
+}
+
+.physique-panel h3::before {
+    counter-increment: section;
+    content: "S-" counter(section, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: .7rem;
+    letter-spacing: .22em;
+    color: #7AF3D8;
+    opacity: .9;
+}
+
+/* Texte des sous-parties */
+.physique-panel p {
+    padding-left: 2.4rem;
+    border-left: 1px solid rgba(122, 243, 216, 0.25);
+    margin-bottom: .8rem;
+}
+
+/* Encadré scientifique pour Signes distinctifs */
+.distinctive-box {
+    margin-top: 2rem;
+    padding: 1rem 1.2rem;
+    border-radius: 0.8rem;
+    background: rgba(10, 18, 26, 0.75);
+    border: 1px solid rgba(122, 243, 216, 0.4);
+    position: relative;
+}
+
+.distinctive-box::before {
+    content: "ANNOTATION S-COMP";
+    position: absolute;
+    top: -0.6rem;
+    left: 1rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(122, 243, 216, 0.5);
+    background: #05070D;
+    padding: 0 0.4rem;
+}
+
+.distinctive-title {
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #B5F3EB;
+}
+
+.distinctive-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.distinctive-list li {
+    padding-left: 1.2rem;
+    margin-bottom: 0.35rem;
+    position: relative;
+    font-size: 0.88rem;
+    color: #D6EAF6;
+}
+
+.distinctive-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #7AF3D8;
+}
+
+
+/* ------------------------------
+   FOOTER (si tu en ajoutes un)
+------------------------------ */
+.site-footer {
+    text-align: center;
+    font-size: .75rem;
+    padding: .8rem 1rem 1.3rem;
+    color: #9CB0C7;
+    border-top: 1px solid rgba(122, 243, 216, 0.4);
+    background: rgba(4, 8, 16, 0.98);
+}
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+@media (max-width: 720px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .45rem;
+    }
+
+    .content {
+        padding: 1.4rem 1.1rem 2rem;
+    }
+
+    .panel {
+        padding: 1.1rem 1.1rem 1.2rem;
+    }
+
+    .photo-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-notes {
+        padding-left: .4rem;
+    }
+
+    .physique-panel h3,
+    .physique-panel p {
+        padding-left: 1.6rem;
+    }
+
+    .physique-panel::before {
+        inset: .6rem;
+    }
+}
+
+/* ============================
+   CARTE D'IDENTITÉ – GENESIS
+============================ */
+
+.idcard-panel {
+    padding: 1.6rem 1.2rem 1.9rem;
+}
+
+/* on enlève le cadre interne en pointillé pour que la carte soit bien clean */
+.idcard-panel::before {
+    display: none;
+}
+
+.idcard-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Carte format 86x54 mm approx, en mode colonne pour coller l'exemple CNI */
+.idcard-front {
+    position: relative;
+    max-width: 1020px;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid rgba(122, 243, 216, 0.85);
+    background:
+        radial-gradient(circle at 0 0, rgba(122, 243, 216, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(122, 243, 216, 0.14), transparent 55%),
+        linear-gradient(135deg, #050912, #020408);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+
+    /* CHANGEMENT IMPORTANT */
+    padding: 0.7rem 0.9rem 1.4rem; /* ← on augmente seulement le bottom */
+    
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* bord interne de sécurité */
+.idcard-front::before {
+    content: "";
+    position: absolute;
+    inset: 0.35rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(5, 5, 5, 0.35);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Tous les blocs internes au-dessus du fond & bord */
+.idcard-band,
+.idcard-header-row,
+.idcard-body,
+.idcard-mrz-zone {
+    position: relative;
+    z-index: 2;
+}
+
+/* ----- WATERMARK "DOSSIER CONFIDENTIEL" ----- */
+
+.idcard-watermark {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 2.50rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.295);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10; /* entre le fond et le contenu */
+    text-shadow:
+        0 0 6px rgba(0, 0, 0, 0.7),
+        0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+/* ----- BANDEAU SUPÉRIEUR (équivalent "RÉPUBLIQUE FRANÇAISE") ----- */
+
+.idcard-band {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.4rem;
+    border-radius: 0.6rem;
+    background: linear-gradient(90deg, #0f2730, #0a4340);
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    margin-bottom: 0.4rem;
+}
+
+.idband-left {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #E8FBFF;
+}
+
+.idband-right {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #C8F5F1;
+}
+
+/* ----- LIGNE "CARTE D'IDENTITÉ N°" ----- */
+
+.idcard-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 0.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.72rem;
+    color: #D0E7F6;
+}
+
+.id-header-label {
+    font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.id-header-value {
+    font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* ----- CORPS DE CARTE : PHOTO + INFOS ----- */
+
+.idcard-body {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+    gap: 0.8rem;
+    padding: 0.1rem 0.2rem 0.2rem;
+    align-items: flex-start;
+    flex: 1 1 auto;
+}
+
+/* PHOTO (format 3:4 comme sur la carte) */
+.idcard-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 0.6rem;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: radial-gradient(circle at 30% 20%, rgba(180, 255, 230, 0.18), transparent 55%),
+                rgba(6, 10, 18, 0.96);
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.idcard-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: contrast(1.05) saturate(0.95);
+}
+
+/* petit label "PHOTO" en bas à gauche */
+.idcard-photo-label {
+    position: absolute;
+    left: 0.45rem;
+    bottom: 0.32rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(220, 240, 245, 0.95);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 0.12rem 0.4rem;
+    border-radius: 999px;
+}
+
+/* INFOS à droite (Nom, Prénom, Sexe, Né le, À) */
+
+.idcard-fields {
+    display: grid;
+    gap: 0.15rem;
+    align-content: flex-start;
+}
+
+.idline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    padding: 0.1rem 0.25rem;
+}
+
+.idline-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 0.4rem;
+}
+
+/* Ligne double : Sexe + Né le côte à côte */
+.idline-double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.idline-row .idline-label {
+    font-size: 1.10rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #9FDFFF;
+    white-space: nowrap;
+}
+
+.idline-row .idline-value {
+    font-size: 1.00rem;
+    color: #E4F5FF;
+    border-bottom: 1px solid rgba(122, 243, 216, 0.35);
+    padding-bottom: 0.05rem;
+}
+
+/* Signature */
+.idcard-signature-zone {
+    margin-top: 0.45rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.signature-label {
+    font-size: 1.10rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9FDFFF;
+}
+
+/* Image de signature non déformée */
+.idcard-signature {
+    max-height: 160px;         /* limite la hauteur */
+    height: auto;
+    width: auto;
+    object-fit: contain;      /* garde le ratio */
+    display: block;
+    align-self: flex-start;   /* évite qu'elle s'étire sur la largeur */
+}
+
+
+.idline-label {
+    font-size: 0.63rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #9FDFFF;
+}
+
+.idline-value {
+    font-size: 0.85rem;
+    color: #E4F5FF;
+}
+
+/* ligne avec deux champs côte à côte (Sexe + Né le) */
+.idline-inline {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.8rem;
+}
+
+/* ----- BAS DE CARTE : MRZ ----- */
+
+.idcard-mrz-zone {
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
+    border-top: 1px solid rgba(122, 243, 216, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 0.08rem;
+    padding-inline: 0.25rem;
+}
+
+.idcard-mrz {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+    color: rgba(190, 230, 230, 0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ----- RESPONSIVE ----- */
+
+@media (max-width: 720px) {
+    .idcard-panel {
+        padding: 1.2rem 0.7rem 1.6rem;
+    }
+
+    .idcard-front {
+        max-width: 100%;
+        padding: 0.5rem 0.55rem 0.5rem;
+    }
+
+    .idcard-body {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .idcard-band {
+        padding-inline: 0.35rem;
+    }
+
+    .idcard-header-row {
+        padding-inline: 0.35rem;
+    }
+}
+
+/* ============================
+   CARACTÈRE – TRAITS (ACCORDÉON)
+============================= */
+
+.caractere-panel {
+    padding-top: 1.6rem;
+}
+
+.caractere-panel::before {
+    inset: .7rem;
+}
+
+.caractere-header h2 {
+    margin-bottom: 0.3rem;
+}
+
+.caractere-subtitle {
+    font-size: 0.8rem;
+    color: #A9C4DB;
+    margin-bottom: 1.1rem;
+}
+
+.traits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.trait {
+    border-radius: 0.9rem;
+    border: 1px solid rgba(122, 243, 216, 0.35);
+    background: rgba(6, 10, 18, 0.88);
+    overflow: hidden;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trait.open {
+    border-color: rgba(122, 243, 216, 0.85);
+    background: rgba(8, 16, 30, 0.96);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
+}
+
+.trait-toggle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 0.55rem 0.95rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    text-align: left;
+    font: inherit;
+}
+
+.trait-index {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7AF3D8;
+}
+
+.trait-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #EFFFFF;
+}
+
+.trait-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.trait-meter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+    min-width: 90px;
+}
+
+.trait-meter-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #CFEFFF;
+}
+
+.trait-meter-bar {
+    width: 100%;
+    height: 0.35rem;
+    border-radius: 999px;
+    background: rgba(16, 30, 40, 0.9);
+    overflow: hidden;
+    border: 1px solid rgba(122, 243, 216, 0.5);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.trait-meter-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #7AF3D8, #9FFFC8);
+}
+
+/* niveau de remplissage 1–5 */
+.trait-meter-fill.lvl-1 { width: 20%; }
+.trait-meter-fill.lvl-2 { width: 40%; }
+.trait-meter-fill.lvl-3 { width: 60%; }
+.trait-meter-fill.lvl-4 { width: 80%; }
+.trait-meter-fill.lvl-5 { width: 100%; }
+
+.trait-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+    color: #CFEFFF;
+}
+
+.trait.open .trait-arrow {
+    transform: rotate(180deg);
+}
+
+.trait-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0.95rem;
+    border-top: 1px solid rgba(122, 243, 216, 0.25);
+    transition: max-height 0.25s ease;
+}
+
+.trait.open .trait-body {
+    max-height: 1500px;
+    padding-bottom: 0.9rem;
+}
+
+.trait-body p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #D6EAF6;
+    margin-top: 0.6rem;
+}
+
+/* ============================
+   ANNEXE COMPORTEMENTALE – MODULES
+============================= */
+
+.comportement-panel {
+    margin-top: 1.8rem;
+}
+
+.comportement-panel::before {
+    inset: .7rem;
+}
+
+.comportement-header h2 {
+    margin-bottom: 0.3rem;
+}
+
+.comportement-subtitle {
+    font-size: 0.8rem;
+    color: #A9C4DB;
+    margin-bottom: 1.1rem;
+}
+
+/* bouton de lancement du diagnostic */
+
+#runDiagnostic {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(122, 243, 216, 0.08);
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    border-radius: 0.7rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #9FFFE4;
+    cursor: pointer;
+    margin-bottom: 1.3rem;
+    transition: 0.22s ease;
+}
+
+#runDiagnostic:hover {
+    background: rgba(122, 243, 216, 0.2);
+}
+
+/* modules */
+
+.module {
+    border: 1px solid rgba(122, 243, 216, 0.3);
+    border-radius: 0.9rem;
+    background: rgba(8, 14, 24, 0.9);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+
+.module.open {
+    border-color: rgba(122, 243, 216, 0.75);
+    background: rgba(12, 20, 32, 0.96);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+}
+
+.module-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1.1rem;
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.module-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.module-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #7AF3D8;
+    opacity: 0.9;
+}
+
+.module-name {
+    font-size: 0.92rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #EFFFFF;
+}
+
+.module-arrow {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+    color: #CFEFFF;
+}
+
+.module.open .module-arrow {
+    transform: rotate(180deg);
+}
+
+/* ligne de scan */
+
+.scan-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #7AF3D8;
+    top: 0;
+    animation: scanDown 0.55s linear forwards;
+    opacity: 0.7;
+}
+
+@keyframes scanDown {
+    from { top: 0; opacity: 0.7; }
+    to   { top: 100%; opacity: 0; }
+}
+
+/* contenu du module */
+
+.module-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: max-height 0.35s ease, padding-bottom 0.35s ease;
+}
+
+.module.open .module-body {
+    max-height: 2000px;
+    padding-bottom: 1rem;
+}
+
+.module-section {
+    margin-top: 1.1rem;
+}
+
+.module-section h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+    color: #C0F7EE;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.module-section p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 0.45rem;
+    color: #D6EAF6;
+}
+
+/* phobie – style spécifique */
+
+.phobia {
+    border-color: rgba(255, 140, 140, 0.7);
+}
+
+.phobia .module-header {
+    background: rgba(30, 5, 10, 0.25);
+}
+
+.phobia .module-label {
+    color: #FF9DAA;
+}
+
+/* jauge de phobie */
+
+.phobia-meter-block {
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.phobia-meter-label {
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #FFD8DF;
+    margin-bottom: 0.25rem;
+}
+
+.phobia-meter-bar {
+    width: 100%;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: rgba(40, 8, 16, 0.9);
+    border: 1px solid rgba(255, 160, 160, 0.7);
+    overflow: hidden;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.2rem;
+}
+
+.phobia-meter-fill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff7b7b, #ffd1d1);
+    animation: phobiaFill 1.2s forwards ease-out;
+}
+
+@keyframes phobiaFill {
+    to { width: 88%; }
+}
+
+.phobia-meter-scale {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #F8CED6;
+}
+
+/* ============================
+   RESPONSIVE CARACTÈRE
+============================= */
+
+@media (max-width: 720px) {
+    .caractere-panel::before,
+    .comportement-panel::before {
+        inset: 0.6rem;
+    }
+
+    .trait-toggle {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 0.25rem;
+    }
+
+    .trait-meta {
+        justify-self: flex-start;
+    }
+
+    .trait-meter {
+        align-items: flex-start;
+        min-width: 0;
+        width: 140px;
+    }
+
+    #runDiagnostic {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+    }
+}
+
+/* ============================
+   HISTOIRE – TIMELINE
+============================= */
+
+.timeline-panel {
+    padding-top: 1.6rem;
+}
+
+.timeline-panel::before {
+    inset: 0.7rem;
+}
+
+.timeline-header h2 {
+    margin-bottom: 0.3rem;
+}
+
+.timeline-subtitle {
+    font-size: 0.8rem;
+    color: #A9C4DB;
+    margin-bottom: 1.2rem;
+}
+
+/* Navigation des segments */
+
+.timeline-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.3rem;
+}
+
+.timeline-nav-btn {
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.5);
+    background: rgba(3, 8, 12, 0.9);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #CFEFFF;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.timeline-nav-btn:hover {
+    background: rgba(122, 243, 216, 0.22);
+}
+
+/* Structure timeline globale */
+
+.timeline {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    top: 0.1rem;
+    bottom: 0.1rem;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(122, 243, 216, 0.8), transparent);
+    opacity: 0.8;
+}
+
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 0.8rem;
+    padding-left: 0.4rem;
+    margin-bottom: 1.3rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.timeline-item.focus {
+    box-shadow: 0 0 22px rgba(122, 243, 216, 0.38);
+    transform: translateY(-2px);
+}
+
+/* marqueur (colonne gauche) */
+
+.timeline-marker {
+    position: relative;
+    padding-top: 0.3rem;
+    padding-left: 1.4rem;
+}
+
+.timeline-marker::before {
+    content: "";
+    position: absolute;
+    left: 0.15rem;
+    top: 0.45rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: 2px solid #7AF3D8;
+    background: #05070D;
+    box-shadow: 0 0 10px rgba(122, 243, 216, 0.9);
+}
+
+.timeline-year {
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7AF3D8;
+}
+
+.timeline-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #E5F3FF;
+    margin-top: 0.1rem;
+}
+
+/* Carte d’événement (colonne droite) */
+
+.timeline-card {
+    background: radial-gradient(circle at top left, rgba(122, 243, 216, 0.08), transparent 45%),
+                rgba(6, 11, 20, 0.96);
+    border-radius: 0.85rem;
+    border: 1px solid rgba(122, 243, 216, 0.4);
+    overflow: hidden;
+    position: relative;
+}
+
+/* scan line */
+
+.timeline-scanline {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #7AF3D8;
+    top: 0;
+    animation: scanTimeline 0.55s linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes scanTimeline {
+    from { top: 0; opacity: 0.8; }
+    to   { top: 100%; opacity: 0; }
+}
+
+/* header de la carte */
+
+.timeline-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.22);
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    text-align: left;
+}
+
+.timeline-toggle-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.timeline-code {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #7AF3D8;
+}
+
+.timeline-toggle h3 {
+    font-size: 0.92rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #EFFFFF;
+}
+
+.timeline-arrow {
+    font-size: 1rem;
+    color: #CFEFFF;
+    transition: transform 0.2s ease;
+}
+
+.timeline-item.open .timeline-arrow {
+    transform: rotate(180deg);
+}
+
+/* corps de carte */
+
+.timeline-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: max-height 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.timeline-item.open .timeline-body {
+    max-height: 3000px;
+    padding-bottom: 1rem;
+}
+
+/* === LAYOUT INTERNE : MÉDIAS + TEXTE === */
+
+.timeline-layout {
+    display: block;
+    margin-top: 0.9rem;
+}
+
+/* clear du float pour que la carte prenne bien sa hauteur */
+.timeline-layout::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* bloc médias flottant à gauche */
+
+.timeline-media {
+    float: left;
+    width: 260px;
+    max-width: 45%;
+    margin-right: 1.8rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* photo */
+
+.timeline-photo-slot {
+    border-radius: 0.6rem;
+    border: 1px dashed rgba(122, 243, 216, 0.55);
+    background: radial-gradient(circle at top, rgba(16, 50, 70, 0.5), rgba(2, 5, 8, 0.9));
+    padding: 0.45rem 0.45rem 0.55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: left;
+}
+
+.timeline-photo-img {
+    width: 100%;
+    height: 100%;
+    max-height: 230px;
+    object-fit: cover;
+    border-radius: 0.45rem;
+    display: block;
+    border: 1px solid rgba(122, 243, 216, 0.6);
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+}
+
+.photo-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.photo-slot-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FFFE4;
+}
+
+.photo-slot-sub {
+    font-size: 0.8rem;
+    color: #CADAEE;
+    opacity: 0.9;
+}
+
+/* Carte audio */
+
+.timeline-audio-card {
+    margin-top: 1rem;
+    border: 1px solid rgba(122, 243, 216, 0.5);
+    background: rgba(8, 14, 20, 0.9);
+    padding: 0.75rem 0.8rem;
+    border-radius: 0.6rem;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    align-items: center;
+}
+
+/* on cache le player natif */
+.timeline-audio-card audio {
+    display: none;
+}
+
+.audio-title {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #9FFFE4;
+    opacity: 0.9;
+}
+
+/* bouton icône seul */
+.audio-play-icon-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: radial-gradient(circle at 30% 30%, rgba(122, 243, 216, 0.25), rgba(7, 12, 20, 0.95));
+    box-shadow: 0 0 12px rgba(122, 243, 216, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #CFFFF7;
+    font-size: 1.2rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.audio-play-icon-btn:hover {
+    box-shadow: 0 0 18px rgba(122, 243, 216, 0.55);
+    transform: scale(1.05);
+}
+
+.audio-icon {
+    pointer-events: none;
+}
+
+/* volume */
+
+.audio-volume-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.audio-volume {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(30, 70, 80, 0.9);
+    cursor: pointer;
+}
+
+.audio-volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #7AF3D8;
+    box-shadow: 0 0 8px rgba(122, 243, 216, 0.9);
+}
+
+.audio-volume::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #7AF3D8;
+    box-shadow: 0 0 8px rgba(122, 243, 216, 0.9);
+}
+
+/* TEXTE */
+
+.timeline-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #D6EAF6;
+    margin-bottom: 0.55rem;
+    text-align: justify;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .timeline-item {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        left: 0.5rem;
+    }
+
+    .timeline-marker {
+        padding-left: 1.8rem;
+    }
+
+    .timeline-media {
+        float: none;
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .timeline-panel::before {
+        inset: 0.6rem;
+    }
+
+    .timeline-nav-btn {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+    }
+
+    .timeline-toggle h3 {
+        font-size: 0.86rem;
+        letter-spacing: 0.12em;
+    }
+
+    .timeline-text p {
+        font-size: 0.88rem;
+    }
+}
+
+/* ============================
+   SEGMENTS REDACTED (ROUGE)
+============================ */
+
+.timeline-item--redacted .timeline-marker--redacted .timeline-year,
+.timeline-item--redacted .timeline-marker--redacted .timeline-label {
+    color: #ff9fa7;
+}
+
+.timeline-item--redacted .timeline-marker::before {
+    border-color: #ff9fa7;
+    box-shadow: 0 0 10px rgba(255, 120, 140, 0.8);
+}
+
+.timeline-card--redacted {
+    border-color: rgba(255, 130, 150, 0.8);
+    background:
+        radial-gradient(circle at top left, rgba(255, 130, 150, 0.16), transparent 45%),
+        rgba(20, 6, 10, 0.96);
+}
+
+.timeline-code--red {
+    color: #ff9fa7;
+}
+
+/* Titre glitché */
+
+.glitch-title {
+    position: relative;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ffbcc2;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* État révélé après déverrouillage */
+.glitch-title--revealed {
+    color: #EFFFFF; /* ou la couleur de tes autres titres */
+}
+
+/* On coupe l'effet glitch quand c'est révélé */
+.glitch-title--revealed::before,
+.glitch-title--revealed::after {
+    display: none;
+}
+
+
+/* Deux calques "fantômes" pour l'effet glitch léger */
+.glitch-title::before,
+.glitch-title::after {
+    content: attr(data-glitch);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    mix-blend-mode: screen;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.glitch-title::before {
+    color: #ff4770;
+    transform: translate(-1px, 0);
+    animation: glitchShift1 2.4s infinite ease-in-out;
+}
+
+.glitch-title::after {
+    color: #ffc1ff;
+    transform: translate(1px, 0);
+    animation: glitchShift2 3s infinite ease-in-out;
+}
+
+/* Animations glitch douces */
+
+@keyframes glitchShift1 {
+    0%, 90%, 100% { clip-path: inset(0 0 0 0); transform: translate(-1px, 0); }
+    20% { clip-path: inset(0 0 60% 0); transform: translate(-2px, -0.5px); }
+    40% { clip-path: inset(40% 0 0 0); transform: translate(-0.5px, 0.5px); }
+    70% { clip-path: inset(10% 0 20% 0); transform: translate(-1.5px, -0.5px); }
+}
+
+@keyframes glitchShift2 {
+    0%, 90%, 100% { clip-path: inset(0 0 0 0); transform: translate(1px, 0); }
+    25% { clip-path: inset(30% 0 0 0); transform: translate(1.5px, 0.5px); }
+    55% { clip-path: inset(0 0 50% 0); transform: translate(0.5px, -0.5px); }
+    80% { clip-path: inset(15% 0 15% 0); transform: translate(2px, 0.5px); }
+}
+
+/* Panneau de verrouillage */
+
+.redacted-lock-panel {
+    margin-top: 0.9rem;
+    margin-bottom: 0.9rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid rgba(255, 140, 160, 0.8);
+    background: radial-gradient(circle at top left, rgba(60, 6, 16, 0.9), rgba(10, 2, 6, 0.95));
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+}
+
+.redacted-lock-title {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #ffd4dc;
+    margin-bottom: 0.4rem;
+}
+
+.redacted-lock-text {
+    font-size: 0.86rem;
+    color: #f4d7de;
+    margin-bottom: 0.7rem;
+}
+
+.redacted-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.6rem;
+    align-items: flex-end;
+}
+
+.redacted-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #ffc6d2;
+    flex: 1 1 160px;
+}
+
+.redacted-input {
+    background: rgba(12, 4, 8, 0.9);
+    border-radius: 0.45rem;
+    border: 1px solid rgba(255, 160, 180, 0.8);
+    padding: 0.35rem 0.6rem;
+    color: #ffeef2;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+}
+
+.redacted-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(255, 190, 210, 0.9);
+}
+
+.redacted-submit {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 160, 180, 0.9);
+    background: radial-gradient(circle at 0 0, rgba(255, 140, 170, 0.4), rgba(20, 2, 8, 0.95));
+    color: #ffeef5;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    cursor: pointer;
+    transition: 0.2s ease;
+    flex: 0 0 auto;
+}
+
+.redacted-submit:hover {
+    box-shadow: 0 0 16px rgba(255, 140, 170, 0.7);
+    transform: translateY(-1px);
+}
+
+.redacted-error {
+    width: 100%;
+    font-size: 0.78rem;
+    color: #ff9fa7;
+    margin-top: 0.2rem;
+    min-height: 1em;
+}
+
+/* Contenu caché par défaut tant que non déverrouillé */
+
+.redacted-content {
+    display: none;
+    margin-top: 0.6rem;
+}
+
+.timeline-item--unlocked .redacted-lock-panel {
+    display: none;
+}
+
+.timeline-item--unlocked .redacted-content {
+    display: block;
+}
+
+/* Responsive */
+
+@media (max-width: 720px) {
+    .redacted-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .redacted-submit {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   MÉDIAS ROUGES POUR SEGMENTS REDACTED
+   (nouvelle classe .redacted-media)
+========================================== */
+
+.redacted-media .timeline-photo-slot {
+    border: 1px dashed rgba(255, 120, 120, 0.75);
+    background: radial-gradient(circle at top,
+                rgba(45, 5, 10, 0.75),
+                rgba(10, 2, 4, 0.95));
+}
+
+.redacted-media .timeline-photo-img {
+    border: 1px solid rgba(255, 150, 150, 0.95);
+    box-shadow: 0 0 15px rgba(255, 70, 70, 0.45);
+}
+
+.redacted-media .photo-slot-label {
+    color: #FFC6C6;
+}
+
+.redacted-media .photo-slot-sub {
+    color: #FFDFDF;
+}
+
+
+/* AUDIO */
+.redacted-media .timeline-audio-card {
+    border: 1px solid rgba(255, 120, 120, 0.75);
+    background: radial-gradient(circle at top,
+                rgba(45, 5, 10, 0.8),
+                rgba(10, 2, 4, 0.95));
+}
+
+.redacted-media .audio-title {
+    color: #FFD1D1;
+}
+
+.redacted-media .audio-play-icon-btn {
+    border-color: rgba(255, 150, 150, 0.95);
+    background: radial-gradient(circle at 30% 30%,
+                rgba(255, 130, 130, 0.35),
+                rgba(20, 4, 10, 0.98));
+    box-shadow: 0 0 14px rgba(255, 80, 80, 0.55);
+    color: #FFF3F3;
+}
+
+.redacted-media .audio-play-icon-btn:hover {
+    box-shadow: 0 0 20px rgba(255, 110, 110, 0.85);
+}
+
+.redacted-media .audio-volume {
+    background: rgba(55, 12, 20, 0.9);
+}
+
+.redacted-media .audio-volume::-webkit-slider-thumb,
+.redacted-media .audio-volume::-moz-range-thumb {
+    background: #FF9BAA;
+    box-shadow: 0 0 10px rgba(255, 130, 140, 0.95);
+}
+
+.redacted-media .audio-volume::-webkit-slider-thumb {
+    background: #FF9BAA;
+    box-shadow: 0 0 10px rgba(255, 130, 140, 0.95);
+}
+
+.redacted-media .audio-volume::-moz-range-thumb {
+    background: #FF9BAA;
+    box-shadow: 0 0 10px rgba(255, 130, 140, 0.95);
+}
+
+/* Séparateur dans la nav */
+.timeline-nav-separator {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ffb3c0;
+    opacity: 0.8;
+    margin-inline: 0.2rem;
+}
+
+/* Boutons de nav pour segments redacted (glitchés) */
+.timeline-nav-btn--redacted {
+    border-color: rgba(255, 120, 140, 0.7);
+    color: #ffd5de;
+    background: rgba(40, 5, 15, 0.9);
+}
+
+/* Boutons de nav GENESIS secrets mais lisibles */
+.timeline-nav-btn--red-genesis {
+    border-color: rgba(255, 100, 130, 0.9);
+    color: #ffe3ea;
+    background: linear-gradient(120deg, rgba(70, 5, 20, 0.9), rgba(20, 3, 10, 0.95));
+    box-shadow: 0 0 10px rgba(255, 80, 110, 0.35);
+}
+
+/* Petit hover dramatique */
+.timeline-nav-btn--redacted:hover,
+.timeline-nav-btn--red-genesis:hover {
+    background: rgba(120, 15, 35, 0.95);
+    box-shadow: 0 0 14px rgba(255, 120, 150, 0.55);
+    color: #ffffff;
+}
+
+/* Variante de glitch pour la nav (réutilise ta base .glitch-title) */
+.glitch-title--nav {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    color: #ffccd6;
+    text-shadow:
+        0 0 4px rgba(0, 0, 0, 0.8),
+        1px 0 rgba(255, 80, 120, 0.8),
+       -1px 0 rgba(255, 200, 220, 0.6);
+}
+
+.content-histoire {
+    padding: 2rem 1.7rem 2.5rem;
+    max-width: 60%;
+    margin: auto;
+}
+
+
+/* ============================
+   FUN FACTS – LAB CONSOLES
+============================ */
+
+.funfacts-panel {
+    padding-top: 1.6rem;
+}
+
+.funfacts-panel::before {
+    inset: 0.7rem;
+}
+
+.funfacts-header h2 {
+    margin-bottom: 0.3rem;
+}
+
+.funfacts-subtitle {
+    font-size: 0.8rem;
+    color: #A9C4DB;
+    margin-bottom: 1.1rem;
+}
+
+/* Bouton random / scan */
+.funfacts-random-btn {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: 0.7rem;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: radial-gradient(circle at 0 0, rgba(122, 243, 216, 0.18), transparent 55%),
+                rgba(4, 10, 14, 0.96);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #CFFFF5;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.funfacts-random-btn:hover {
+    box-shadow: 0 0 18px rgba(122, 243, 216, 0.5);
+    transform: translateY(-1px);
+}
+
+.funfacts-random-hint {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    color: #7AF3D8;
+}
+
+/* Grille des cartes */
+.funfacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+@media (max-width: 800px) {
+    .funfacts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Carte funfact */
+.funfact-card {
+    border-radius: 0.9rem;
+    border: 1px solid rgba(122, 243, 216, 0.4);
+    background: rgba(6, 12, 22, 0.95);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    position: relative;
+}
+
+.funfact-card.open {
+    border-color: rgba(122, 243, 216, 0.9);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+    transform: translateY(-1px);
+}
+
+/* mise en avant via bouton random */
+.funfact-card.funfact-focus {
+    box-shadow: 0 0 24px rgba(122, 243, 216, 0.9);
+}
+
+/* header de carte */
+.funfact-toggle {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    color: inherit;
+    text-align: left;
+}
+
+.funfact-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.funfact-code {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #7AF3D8;
+}
+
+.funfact-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #EFFFFF;
+}
+
+.funfact-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #CFEFFF;
+    opacity: 0.9;
+}
+
+.funfact-arrow {
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.funfact-card.open .funfact-arrow {
+    transform: rotate(180deg);
+}
+
+/* Corps de la carte */
+.funfact-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0.9rem;
+    transition: max-height 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.funfact-card.open .funfact-body {
+    max-height: 900px;
+    padding-bottom: 0.75rem;
+}
+
+.funfact-body p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #D6EAF6;
+    margin-top: 0.55rem;
+}
+
+/* ============================
+   FUN FACTS – CARROUSEL HOLO
+============================ */
+
+.funfacts-panel {
+    padding-top: 1.6rem;
+}
+
+.funfacts-panel::before {
+    inset: 0.7rem;
+}
+
+.funfacts-header h2 {
+    margin-bottom: 0.3rem;
+}
+
+.funfacts-subtitle {
+    font-size: 0.8rem;
+    color: #A9C4DB;
+    margin-bottom: 1.1rem;
+}
+
+/* wrapper carrousel */
+.funfacts-carousel {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+/* zone centrale */
+.funfacts-viewport {
+    position: relative;
+    min-height: 420px;
+}
+
+/* slides */
+.funfact-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(8px) scale(0.98);
+    filter: blur(1px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    display: flex;
+    align-items: stretch;
+}
+
+.funfact-slide.is-active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+    pointer-events: auto;
+}
+
+/* cadre holographique */
+.funfact-holo-frame {
+    position: relative;
+    width: 100%;
+    padding: 2rem 2.2rem 2rem;
+    border-radius: 0.9rem;
+    background:
+        radial-gradient(circle at 0 0, rgba(122, 243, 216, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(100, 180, 255, 0.18), transparent 55%),
+        rgba(6, 12, 22, 0.95);
+    border: 1px solid rgba(122, 243, 216, 0.6);
+    overflow: hidden;
+}
+
+/* halo extérieur “holo” */
+.funfact-holo-frame::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: conic-gradient(
+        from 180deg,
+        rgba(122, 243, 216, 0.0),
+        rgba(122, 243, 216, 0.25),
+        rgba(130, 200, 255, 0.0),
+        rgba(255, 160, 220, 0.22),
+        rgba(122, 243, 216, 0.0)
+    );
+    opacity: 0.55;
+    mix-blend-mode: screen;
+    filter: blur(18px);
+    animation: funfact-holo-spin 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes funfact-holo-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* petite ligne de scan */
+.funfact-holo-frame::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(122, 243, 216, 0.9),
+        transparent
+    );
+    opacity: 0;
+    animation: funfact-scan 4s ease-in-out infinite;
+}
+
+@keyframes funfact-scan {
+    0%   { transform: translateY(0); opacity: 0; }
+    10%  { opacity: 0.9; }
+    50%  { transform: translateY(260%); opacity: 0.6; }
+    100% { transform: translateY(520%); opacity: 0; }
+}
+
+/* en-tête de slide */
+.funfact-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.funfact-code {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7AF3D8;
+}
+
+.funfact-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #EFFFFF;
+}
+
+.funfact-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.5);
+    background: rgba(0, 0, 0, 0.35);
+    color: #CFEFFF;
+}
+
+/* texte */
+.funfact-body {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 0.4rem;
+}
+
+.funfact-body p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #D6EAF6;
+    margin-bottom: 0.4rem;
+    text-align: justify;
+}
+
+/* scroll discret dans la carte */
+.funfact-body::-webkit-scrollbar {
+    width: 4px;
+}
+.funfact-body::-webkit-scrollbar-track {
+    background: rgba(5, 10, 16, 0.8);
+}
+.funfact-body::-webkit-scrollbar-thumb {
+    background: rgba(122, 243, 216, 0.7);
+    border-radius: 999px;
+}
+
+/* boutons précédent / suivant */
+.funfacts-nav {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: radial-gradient(circle at 30% 30%, rgba(122, 243, 216, 0.25), rgba(4, 8, 14, 0.95));
+    color: #EFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.funfacts-nav:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 18px rgba(122, 243, 216, 0.7);
+}
+
+/* points de navigation */
+.funfacts-dots {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.7rem;
+}
+
+.funfacts-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: rgba(3, 8, 12, 0.9);
+    cursor: pointer;
+    padding: 0;
+}
+
+.funfacts-dot.is-active {
+    background: #7AF3D8;
+    box-shadow: 0 0 10px rgba(122, 243, 216, 0.9);
+}
+
+/* responsive */
+@media (max-width: 720px) {
+    .funfacts-carousel {
+        grid-template-columns: 1fr;
+    }
+
+    .funfacts-nav {
+        order: -1;
+        margin-inline: auto;
+    }
+
+    .funfacts-prev {
+        margin-bottom: 0.4rem;
+    }
+
+    .funfacts-next {
+        margin-top: 0.4rem;
+    }
+}
+
+
+
+/* ============================
+   ACCUEIL – DASHBOARD GENESIS
+============================ */
+
+/* Panel principal : 2 colonnes */
+.dashboard-panel {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) minmax(0, 1.4fr);
+    gap: 1.8rem;
+    padding-top: 1.6rem;
+}
+
+.dashboard-panel::before {
+    inset: .7rem;
+}
+
+/* ----- SCAN SUJET (colonne gauche) ----- */
+
+.dash-left {
+    position: relative;
+}
+
+.subject-scan {
+    border-radius: 0.9rem;
+    border: 1px solid rgba(122, 243, 216, 0.6);
+    background: radial-gradient(circle at top, rgba(122, 243, 216, 0.15), rgba(3, 6, 10, 0.98));
+    padding: 0.8rem 0.85rem 0.95rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.65);
+}
+
+.subject-scan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #CFEFFF;
+}
+
+.scan-code {
+    color: #9FFFE4;
+}
+
+.scan-tag {
+    font-size: 0.65rem;
+    opacity: 0.9;
+}
+
+/* Corps du scan */
+.subject-scan-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.subject-silhouette {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;           /* garde un format “portrait” */
+    border-radius: 0.9rem;
+    overflow: hidden;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: radial-gradient(circle at top, #111827, #020308);
+}
+
+/* l’image qui remplace la forme */
+.subject-silhouette-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;             /* couvre bien tout le cadre */
+    display: block;
+    filter: contrast(1.05) saturate(.9);
+}
+
+/* la barre de scan reste au-dessus de l’image */
+.scan-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10%;
+    top: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(122, 243, 216, 0.18),
+        rgba(122, 243, 216, 0.45),
+        rgba(122, 243, 216, 0.18)
+    );
+    mix-blend-mode: screen;
+    animation: scanMove 2.4s linear infinite;
+}
+
+@keyframes scanMove {
+    0%   { top: -10%; }
+    100% { top: 100%; }
+}
+
+/* overlay “SCANNING…” par-dessus aussi */
+.silhouette-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 0.35rem 0.6rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.silhouette-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FFFE4;
+    opacity: 0.95;
+}
+
+
+/* Infos sujet sous la silhouette */
+
+.subject-info {
+    padding: 0.1rem 0.1rem 0;
+}
+
+.subject-name {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #EFFFFF;
+    margin-bottom: 0.15rem;
+}
+
+.subject-role {
+    font-size: 0.78rem;
+    color: #CDE5F8;
+    opacity: 0.9;
+}
+
+.subject-tags {
+    margin-top: 0.55rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.tag-chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: rgba(0, 0, 0, 0.55);
+    color: #D4FBF1;
+}
+
+/* ----- TERMINAL (colonne droite) ----- */
+
+.dash-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.terminal-panel {
+    border-radius: 0.9rem;
+    border: 1px solid rgba(122, 243, 216, 0.55);
+    background: radial-gradient(circle at top left, rgba(122, 243, 216, 0.16), rgba(3, 5, 9, 0.96));
+    overflow: hidden;
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.45rem 0.85rem;
+    background: rgba(0, 0, 0, 0.55);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #EFFFFF;
+}
+
+.terminal-status {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.9);
+    background: rgba(5, 20, 18, 0.9);
+    color: #9FFFE4;
+}
+
+/* écran */
+.terminal-screen {
+    position: relative;
+    padding: 0.65rem 0.8rem 0.75rem;
+    background: radial-gradient(circle at 0 0, rgba(122, 243, 216, 0.1), transparent 55%),
+                #020306;
+    min-height: 160px;
+}
+
+.terminal-output {
+    margin: 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: #CFFFEA;
+    white-space: pre-wrap;
+}
+
+/* scanline horizontale */
+.terminal-scanline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #7AF3D8, transparent);
+    animation: termScan 4s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes termScan {
+    0%   { top: 0; }
+    50%  { top: 100%; }
+    100% { top: 0; }
+}
+
+.entry-hint p {
+    font-size: 0.85rem;
+    color: #CDE5F7;
+}
+
+/* ============================
+   GRILLE DE MODULES (PANEL 2)
+============================ */
+
+.control-panel {
+    margin-top: 1.5rem;
+    padding-top: 1.6rem;
+}
+
+.control-panel::before {
+    inset: 0.7rem;
+}
+
+.control-header h2 {
+    margin-bottom: 0.3rem;
+}
+
+.control-subtitle {
+    font-size: 0.82rem;
+    color: #A9C4DB;
+    margin-bottom: 1.1rem;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+.control-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.8rem 0.9rem 0.85rem;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(122, 243, 216, 0.4);
+    background: rgba(6, 11, 20, 0.95);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+
+.control-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(122, 243, 216, 0.16), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+}
+
+.control-card:hover {
+    border-color: rgba(122, 243, 216, 0.9);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+    transform: translateY(-2px);
+    background: rgba(8, 15, 30, 0.98);
+}
+
+.control-card:hover::before {
+    opacity: 1;
+}
+
+.control-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #CFEFFF;
+}
+
+.control-code {
+    color: #7AF3D8;
+}
+
+.control-pill {
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 0.64rem;
+}
+
+.control-pill--red {
+    border-color: rgba(255, 140, 140, 0.9);
+    color: #FFD5D5;
+    background: rgba(30, 5, 10, 0.75);
+}
+
+.control-name {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #EFFFFF;
+    margin-top: 0.3rem;
+}
+
+.control-text {
+    font-size: 0.82rem;
+    color: #C0D9F0;
+}
+
+.control-footer {
+    margin-top: 0.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #A9C4DB;
+}
+
+.control-arrow {
+    font-size: 1rem;
+}
+
+/* carte warning pour Histoire */
+.control-card--warning {
+    border-color: rgba(255, 140, 140, 0.7);
+}
+
+.control-card--warning:hover {
+    border-color: rgba(255, 180, 180, 1);
+}
+
+/* ============================
+   PANEL 3 – STATUT & LOGS
+============================ */
+
+.status-panel {
+    margin-top: 1.7rem;
+    padding-top: 1.5rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.4rem;
+}
+
+.status-panel::before {
+    inset: 0.7rem;
+}
+
+.status-left h2,
+.status-right h2 {
+    margin-bottom: 0.4rem;
+}
+
+.status-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.status-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.82rem;
+}
+
+.status-label {
+    color: #CDE5F5;
+}
+
+.status-value {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.4);
+}
+
+.status-ok {
+    color: #9FFFE4;
+    border-color: rgba(122, 243, 216, 0.7);
+}
+
+.status-warn {
+    color: #FFE7B4;
+    border-color: rgba(255, 204, 130, 0.85);
+}
+
+.status-crit {
+    color: #FFD0D0;
+    border-color: rgba(255, 150, 150, 0.9);
+}
+
+/* logs */
+
+.log-panel {
+    margin-top: 0.3rem;
+    border-radius: 0.7rem;
+    border: 1px solid rgba(122, 243, 216, 0.45);
+    background: rgba(4, 9, 15, 0.95);
+    padding: 0.55rem 0.7rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: #CDE5F7;
+    max-height: 120px;
+    overflow: auto;
+}
+
+.log-line {
+    margin-bottom: 0.1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* léger glitch sur une ligne */
+.log-line--glitch {
+    position: relative;
+    color: #FFB3C0;
+}
+
+.log-line--glitch::after {
+    content: attr(data-glitch);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: -1px 0 red, 1px 0 cyan;
+    mix-blend-mode: screen;
+    opacity: 0;
+    animation: glitchBlink 2.4s infinite;
+}
+
+@keyframes glitchBlink {
+    0%, 90%, 100% {
+        opacity: 0;
+    }
+    92% {
+        opacity: 1;
+        transform: translateX(-1px);
+    }
+}
+
+/* ============================
+   RESPONSIVE ACCUEIL
+============================ */
+
+@media (max-width: 900px) {
+
+    .dashboard-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .status-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ============================
+   OVERLAY ROUGE + NOISE
+============================ */
+
+
+
+@keyframes noiseFlicker {
+    0%   { opacity: 0.25; }
+    50%  { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+
+
+@keyframes glitchLines {
+    0%   { opacity: 0; transform: translateY(4px); }
+    20%  { opacity: 1; transform: translateY(0); }
+    80%  { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-2px); }
+}
+
+/* ==========================================
+   CARTE DANGER – mêmes dimensions que les autres
+========================================== */
+
+.homepage-card--danger {
+    border: 1px solid rgba(255, 60, 60, 0.7);
+    background: linear-gradient(
+        135deg,
+        rgba(60, 0, 0, 0.85),
+        rgba(20, 0, 0, 0.9)
+    );
+    box-shadow:
+        0 0 14px rgba(255, 0, 0, 0.32),
+        inset 0 0 12px rgba(255, 0, 0, 0.18);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.25s ease;
+}
+
+.homepage-card--danger:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 22px rgba(255, 0, 0, 0.45),
+        inset 0 0 14px rgba(255, 0, 0, 0.23);
+}
+
+/* Effet de lignes de scan rouge */
+.homepage-card--danger::before {
+    content: "";
+    position: absolute;
+    top: -80%;
+    left: 0;
+    width: 100%;
+    height: 180%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 0, 0, 0.12) 50%,
+        transparent 100%
+    );
+    animation: dangerScan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes dangerScan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Titres rouges */
+.homepage-card-title--danger {
+    color: #ff9999;
+    text-shadow: 0 0 6px rgba(255, 80, 80, 0.5);
+}
+
+/* Texte rouge pâle */
+.homepage-card-text--danger {
+    color: #ffbbbb;
+}
+
+/* Bouton danger */
+.homepage-card-btn--danger {
+    border: 1px solid rgba(255, 90, 90, 0.8);
+    color: #ffdede;
+    background: rgba(70, 0, 0, 0.8);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.homepage-card-btn--danger:hover {
+    background: rgba(130, 0, 0, 0.85);
+    box-shadow: 0 0 14px rgba(255, 60, 60, 0.45);
+}
+
+/* ============================
+   CORRUPTION GLOBALE FORTEMENT GLITCHÉE
+============================ */
+
+
+
+@keyframes screenNoise {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, 1px); }
+    50% { transform: translate(1px, -1px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+
+
+@keyframes hardGlitch {
+    0% {
+        transform: translate(0, 0) skewX(0deg);
+    }
+    25% {
+        transform: translate(-3px, 1px) skewX(-2deg);
+    }
+    50% {
+        transform: translate(3px, -2px) skewX(2deg);
+    }
+    75% {
+        transform: translate(-1px, 3px) skewX(-1deg);
+    }
+    100% {
+        transform: translate(0, 0) skewX(0deg);
+    }
+}
+
+
+
+/* ============================
+   TEXTE GLITCHÉ (à appliquer où tu veux)
+============================ */
+
+.glitch-text {
+    position: relative;
+    display: inline-block;
+    color: #EFFFFF;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+
+
+/* ============================
+   MODE CORRUPTION GLOBALE
+   (toutes les 10s pendant 2s)
+============================ */
+
+/* Quand le body a cette classe, tout part en vrille */
+body.is-corrupted {
+    background: #1a0000 !important;
+    color: #ffdddd !important;
+    animation: genesisHuePulse 0.22s infinite alternate;
+}
+
+
+/* Tous les éléments prennent cher visuellement */
+body.is-corrupted * {
+    text-shadow:
+        0 0 3px rgba(255, 60, 60, 0.9),
+        0 0 8px rgba(255, 0, 0, 0.8);
+    animation: genesisShake 0.18s infinite alternate;
+}
+
+/* Cartes, panels, timeline, etc. deviennent "EN ALERTE" */
+body.is-corrupted .panel,
+body.is-corrupted .idcard-front,
+body.is-corrupted .timeline-card,
+body.is-corrupted .funfacts-panel,
+body.is-corrupted .timeline-item,
+body.is-corrupted .scan-panel,
+body.is-corrupted .hero-grid {
+    border-color: rgba(255, 80, 80, 0.95) !important;
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.6),
+        0 0 60px rgba(255, 0, 0, 0.35);
+    background:
+        radial-gradient(circle at top left, rgba(255, 0, 0, 0.18), transparent 45%),
+        radial-gradient(circle at bottom right, rgba(120, 0, 0, 0.45), #050000) !important;
+}
+
+/* Header & navbar en mode "ALERTE ROUGE" */
+body.is-corrupted .site-header {
+    background: linear-gradient(90deg, #3b0000, #150000) !important;
+    border-bottom-color: rgba(255, 80, 80, 0.9) !important;
+}
+
+body.is-corrupted .main-nav a {
+    color: #ffdede !important;
+    border-color: rgba(255, 120, 120, 0.8) !important;
+    background: rgba(50, 0, 0, 0.8) !important;
+}
+
+/* Images aussi un peu contaminées */
+body.is-corrupted img {
+    filter: contrast(1.4) saturate(1.5) hue-rotate(-20deg);
+}
+
+/* Overlay bruit / lignes de scan rouge par-dessus toute la page */
+body.is-corrupted::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255, 0, 0, 0.18),
+            rgba(255, 0, 0, 0.18) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+    mix-blend-mode: screen;
+    opacity: 0.28;
+    animation: genesisLines 0.12s infinite;
+}
+
+/* Si tu as déjà une scan-bar, on la speed up en corruption */
+body.is-corrupted .scan-bar {
+    animation-duration: 0.4s !important;
+    background: linear-gradient(to bottom, #ff8080, transparent) !important;
+}
+
+/* ====== Animations ====== */
+
+@keyframes genesisShake {
+    0%   { transform: translate(0, 0) skewX(0deg); }
+    25%  { transform: translate(-1px, 0.5px) skewX(-1deg); }
+    50%  { transform: translate(1px, -0.5px) skewX(1deg); }
+    75%  { transform: translate(-0.5px, -1px) skewX(0.5deg); }
+    100% { transform: translate(0.5px, 1px) skewX(-0.5deg); }
+}
+
+@keyframes genesisHuePulse {
+    0%   { filter: hue-rotate(-10deg) contrast(1.1); }
+    100% { filter: hue-rotate(20deg) contrast(1.4); }
+}
+
+@keyframes genesisLines {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+/* ============================
+   CORRUPTION GLOBALE – GLITCH TEXTE
+============================ */
+
+/* On s'assure que le mode corruption est bien visible */
+body.is-corrupted {
+    background: #100000 !important;
+    color: #ffdddd !important;
+}
+
+/* Glitch fort sur tout le texte */
+body.is-corrupted h1,
+body.is-corrupted h2,
+body.is-corrupted h3,
+body.is-corrupted h4,
+body.is-corrupted p,
+body.is-corrupted span,
+body.is-corrupted li,
+body.is-corrupted .timeline-text,
+body.is-corrupted .panel,
+body.is-corrupted .timeline-card,
+body.is-corrupted .funfacts-panel,
+body.is-corrupted .hero-grid,
+body.is-corrupted .scan-panel {
+    position: relative;
+    animation: textGlitch 0.09s infinite steps(2, end);
+    text-shadow:
+        -2px 0 0 rgba(255, 0, 80, 0.9),
+         2px 0 0 rgba(0, 255, 200, 0.8),
+         0 0 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Optionnel : les cartes vibrent un peu aussi */
+body.is-corrupted .panel,
+body.is-corrupted .timeline-card,
+body.is-corrupted .funfacts-panel {
+    animation: cardShake 0.12s infinite alternate;
+    border-color: rgba(255, 80, 80, 0.95) !important;
+    box-shadow:
+        0 0 22px rgba(255, 0, 0, 0.7),
+        0 0 60px rgba(255, 0, 0, 0.4);
+}
+
+/* Overlay bruit par-dessus toute la page */
+body.is-corrupted::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255, 0, 0, 0.25),
+            rgba(255, 0, 0, 0.25) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+    mix-blend-mode: screen;
+    opacity: 0.35;
+    animation: noiseSlide 0.08s infinite;
+}
+
+/* ===== Animations ===== */
+
+@keyframes textGlitch {
+    0% {
+        transform: translate(0, 0);
+        clip-path: inset(0 0 0 0);
+    }
+    25% {
+        transform: translate(-1px, 0.5px) skewX(-1deg);
+        clip-path: inset(0 0 40% 0);
+    }
+    50% {
+        transform: translate(1px, -0.5px) skewX(1deg);
+        clip-path: inset(60% 0 0 0);
+    }
+    75% {
+        transform: translate(-0.5px, 1px);
+        clip-path: inset(20% 0 20% 0);
+    }
+    100% {
+        transform: translate(0.5px, -1px);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes cardShake {
+    0%   { transform: translate(0, 0); }
+    50%  { transform: translate(-1px, 1px); }
+    100% { transform: translate(1px, -1px); }
+}
+
+@keyframes noiseSlide {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+
+/* ============================
+   OVERLAY GLITCH CRITIQUE
+   (s'affiche uniquement en mode is-corrupted)
+============================ */
+
+.system-glitch-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    
+    /* caché par défaut */
+    opacity: 0;
+    visibility: hidden;
+    
+    /* pour centrer le message */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* petit voile léger pour renforcer le côté alerte */
+    background: transparent;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* On l'affiche seulement quand le site est en corruption */
+body.is-corrupted .system-glitch-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* bruit / grain rouge sur toute la surface */
+.system-glitch-noise {
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 0, 40, 0.18),
+            rgba(255, 0, 40, 0.18) 2px,
+            rgba(0, 0, 0, 0.2) 3px
+        );
+    mix-blend-mode: screen;
+    animation: noiseFlicker 0.2s infinite;
+}
+
+@keyframes noiseFlicker {
+    0%   { opacity: 0.25; }
+    50%  { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+/* Bloc de message centré */
+.system-glitch-message {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    text-align: center;
+    font-family: "IBM Plex Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #FFE3E9;
+}
+
+/* Lignes qui apparaissent / disparaissent */
+.glitch-line {
+    font-size: 0.75rem;
+    text-shadow:
+        -1px 0 rgba(255, 80, 120, 0.8),
+        1px 0 rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    animation: glitchLines 2s infinite;
+}
+
+.glitch-line:nth-child(1) { animation-delay: 0s; }
+.glitch-line:nth-child(2) { animation-delay: 0.2s; }
+.glitch-line:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes glitchLines {
+    0%   { opacity: 0; transform: translateY(4px); }
+    20%  { opacity: 1; transform: translateY(0); }
+    80%  { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-2px); }
+}
+
+/* ============================
+   IDENTITÉ – RÉPUTATION INTERNE (V2)
+============================ */
+
+.reputation-panel {
+    margin-top: 1.4rem;
+    padding: 1.5rem 1.6rem 1.7rem;
+}
+
+.reputation-panel::before {
+    inset: 0.7rem;
+}
+
+/* Header */
+
+.reputation-header {
+    margin-bottom: 1rem;
+}
+
+.reputation-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FFFE4;
+}
+
+.rep-code {
+    padding: 0.12rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.rep-tag {
+    opacity: 0.85;
+    color: #CFEFFF;
+}
+
+.reputation-header h2 {
+    margin-bottom: 0.25rem;
+}
+
+.reputation-subtitle {
+    font-size: 0.84rem;
+    color: #A9C4DB;
+    max-width: 42rem;
+}
+
+/* Layout 2 colonnes */
+
+.reputation-layout {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr);
+    gap: 1.3rem;
+}
+
+/* Colonne gauche : carte de reput */
+
+.reputation-card {
+    position: relative;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(122, 243, 216, 0.55);
+    background:
+        radial-gradient(circle at 0 0, rgba(122, 243, 216, 0.16), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(100, 180, 255, 0.18), transparent 55%),
+        rgba(4, 8, 16, 0.98);
+    padding: 0.8rem 0.95rem 0.95rem;
+    overflow: hidden;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.65);
+}
+
+/* petite “scan-line” décorative */
+.reputation-card::before {
+    content: "";
+    position: absolute;
+    left: -20%;
+    right: -20%;
+    top: -40%;
+    height: 180%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(122, 243, 216, 0.12) 45%,
+        transparent 100%
+    );
+    opacity: 0.35;
+    mix-blend-mode: screen;
+    animation: repScan 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes repScan {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(40%); }
+}
+
+.rep-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+}
+
+.rep-status-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #CDE5F7;
+}
+
+.rep-status-pill {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+    color: #DFFEF6;
+}
+
+.rep-status-pill--low {
+    border-color: rgba(255, 150, 150, 0.9);
+    background: rgba(40, 8, 12, 0.95);
+    color: #FFD5DF;
+}
+
+/* jauge */
+
+.rep-meter-block {
+    margin-top: 0.4rem;
+    margin-bottom: 0.7rem;
+}
+
+.rep-meter-label {
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FFFE4;
+    margin-bottom: 0.25rem;
+}
+
+.rep-meter-bar {
+    position: relative;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: rgba(5, 15, 20, 0.9);
+    border: 1px solid rgba(122, 243, 216, 0.65);
+    overflow: hidden;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.25rem;
+}
+
+.rep-meter-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 78%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #7AF3D8, #FF9999);
+    box-shadow: 0 0 8px rgba(255, 120, 140, 0.8);
+}
+
+.rep-meter-scale {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #CDE5F7;
+}
+
+/* chips */
+
+.rep-chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.rep-chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 243, 216, 0.55);
+    background: rgba(0, 0, 0, 0.6);
+    color: #CFEFFF;
+}
+
+.rep-chip--cold {
+    border-color: rgba(140, 190, 255, 0.85);
+    background: rgba(12, 24, 40, 0.9);
+    color: #E1EEFF;
+}
+
+.rep-chip--zoo {
+    border-color: rgba(210, 200, 140, 0.9);
+    background: rgba(40, 32, 12, 0.9);
+    color: #FFF6D5;
+}
+
+.rep-chip--risk {
+    border-color: rgba(255, 140, 140, 0.9);
+    background: rgba(40, 10, 15, 0.92);
+    color: #FFD7DD;
+}
+
+/* mini-log */
+
+.rep-mini-log {
+    margin-top: 0.2rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: 0.6rem;
+    background: rgba(3, 6, 12, 0.96);
+    border: 1px dashed rgba(122, 243, 216, 0.4);
+}
+
+.rep-mini-title {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FFFE4;
+    margin-bottom: 0.3rem;
+}
+
+.rep-mini-text {
+    font-size: 0.82rem;
+    color: #CDE5F7;
+    line-height: 1.6;
+}
+
+/* Colonne droite */
+
+.reputation-body {
+    position: relative;
+    padding-left: 1.3rem;
+}
+
+.reputation-body::before {
+    content: "";
+    position: absolute;
+    left: 0.15rem;
+    top: 0.1rem;
+    bottom: 0.1rem;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(122, 243, 216, 0.8), transparent);
+    opacity: 0.8;
+}
+
+.reputation-body-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.rep-body-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FFFE4;
+}
+
+.rep-body-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #A9C4DB;
+}
+
+.reputation-body-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #D6EAF6;
+    margin-bottom: 0.45rem;
+    text-align: justify;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .reputation-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .reputation-body {
+        padding-left: 0.7rem;
+    }
+
+    .reputation-body::before {
+        left: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    .reputation-panel {
+        padding: 1.3rem 1.1rem 1.4rem;
+    }
+}

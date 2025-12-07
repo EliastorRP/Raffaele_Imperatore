@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Identité – Raffaele Imperatore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Polices scientifiques -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo-zone">
+        <div class="logo-symbol">Σ</div>
+        <span class="logo-text">Scientifique de Genesis</span>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="identite.html" class="active">Identité</a></li>
+            <li><a href="physique.html">Description Physique</a></li>
+            <li><a href="caractere.html">Caractère</a></li>
+            <li><a href="informations.html">Documents</a></li>
+            <li><a href="histoire.html">Histoire</a></li>
+            <li><a href="funfacts.html">Fun Facts</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content">
+
+        <div class="idcard-wrapper">
+            <article class="idcard-front">
+
+                <!-- Watermark dossier confidentiel -->
+                <div class="idcard-watermark">DOSSIER CONFIDENTIEL</div>
+
+                <!-- Bandeau supérieur (équivalent "RÉPUBLIQUE FRANÇAISE") -->
+                <div class="idcard-band">
+                    <span class="idband-left">GENESIS</span>
+                    <span class="idband-right">CARTE D’IDENTITÉ-RI</span>
+                </div>
+
+                <!-- Ligne "Carte d'identité n° ..." -->
+                <div class="idcard-header-row">
+                    <span class="id-header-label">Carte d’identité n° 01885697423514045</span>
+                </div>
+
+                <!-- Corps de la carte : photo + infos -->
+                <div class="idcard-body">
+
+                    <!-- Zone photo comme sur une vraie CNI -->
+                    <div class="idcard-photo">
+                        <!-- Remplace le src par ta vraie image -->
+                        <img src="images/identite.png" alt="Raffaele Imperatore">
+                        <span class="idcard-photo-label">PHOTO</span>
+                    </div>
+
+                    <!-- Zone informations, calquée sur la disposition de la CNI -->
+                    <div class="idcard-fields">
+
+                    <div class="idline idline-row">
+                        <span class="idline-label">Nom :</span>
+                        <span class="idline-value">IMPERATORE</span>
+                    </div>
+
+                    <div class="idline idline-row">
+                        <span class="idline-label">Prénom(s) :</span>
+                        <span class="idline-value">RAFFAELE</span>
+                    </div>
+
+                    <div class="idline-double">
+                        <div class="idline idline-row">
+                            <span class="idline-label">Sexe :</span>
+                            <span class="idline-value">M</span>
+                        </div>
+                        <div class="idline idline-row">
+                            <span class="idline-label">Né le :</span>
+                            <span class="idline-value">08.07.2015 - 40 ans</span>
+                        </div>
+                    </div>
+
+                    <div class="idline idline-row">
+                        <span class="idline-label">À :</span>
+                        <span class="idline-value">FLORENCE - ITALIE</span>
+                    </div>
+
+                    <div class="idline idline-row">
+                        <span class="idline-label">Taille :</span>
+                        <span class="idline-value">1,82</span>
+                    </div>
+
+                    <div class="idline idline-row">
+                        <span class="idline-label">LANGUES PARLÉES :</span>
+                        <span class="idline-value">ITALIEN, ANGLAIS</span>
+                    </div>
+
+                    <div class="idline idline-row">
+                        <span class="idline-label">GRADE :</span>
+                        <span class="idline-value">SCIENTIFIQUE DE GENESIS</span>
+                    </div>
+
+                    <!-- Signature -->
+                    <div class="idcard-signature-zone">
+                        <span class="signature-label">Signature du titulaire :</span>
+                        <img src="images/signature.png" alt="Signature" class="idcard-signature">
+                    </div>
+
+                </div>
+
+
+                </div>
+
+                <!-- Bas de carte (MRZ façon vraie CNI) -->
+                <div class="idcard-mrz-zone">
+                    <span class="idcard-mrz">
+                        IDITAIMPERATORE<<<<<<<<<<<<<<<11889244789941256746985
+                    </span>
+                    <span class="idcard-mrz">
+                        1804785632145789544152708RAFFAELE&lt;&lt;5877415263458
+                    </span>
+                </div>
+
+            </article>
+        </div><br><br>
+
+<section class="panel idcard-panel reputation-panel">
+    <header class="reputation-header">
+        <div class="reputation-header-meta">
+            <span class="rep-code">REP-01</span>
+            <span class="rep-tag">OBSERVATIONS INTERNES</span>
+        </div>
+        <h2>Réputation interne</h2>
+        <p class="reputation-subtitle">
+            Synthèse des perceptions recueillies dans les couloirs de <span class="highlight">Genesis</span> concernant le comportement du docteur Imperatore envers les résidents et le personnel.
+        </p>
+    </header>
+
+    <div class="reputation-layout">
+        <!-- Colonne gauche : carte de réputation -->
+        <aside class="reputation-card">
+            <div class="rep-status-row">
+                <span class="rep-status-label">Indice d’empathie</span>
+                <span class="rep-status-pill rep-status-pill--low">FAIBLE</span>
+            </div><br>
+
+            <div class="rep-meter-block">
+                <span class="rep-meter-label">Perception globale</span>
+                <div class="rep-meter-bar">
+                    <span class="rep-meter-fill" style="width: 60%;"></span>
+                </div>
+                <span class="rep-meter-label">Hostilité</span>
+                <div class="rep-meter-bar">
+                    <span class="rep-meter-fill"></span>
+                </div>
+            </div><br><br>
+
+            <div class="rep-chip-grid">
+                <span class="rep-chip rep-chip--cold">DISTANCE AFFECTIVE</span><br>
+                <span class="rep-chip rep-chip--risk">RISQUE ÉTHIQUE : ÉLEVÉ</span><br>
+                <span class="rep-chip">CONTACT HUMAIN : MINIMAL</span><br>
+            </div><br>
+
+            <div class="rep-mini-log">
+                <p class="rep-mini-title">Extrait de dossier</p>
+                <p class="rep-mini-text">
+                    Présence fréquente dans les couloirs, toutes ailes confondues.
+                    Aucune volonté de créer du lien
+                    avec les résidents ou collègues, interactions strictement utilitaires.
+                </p>
+            </div>
+        </aside>
+
+        <!-- Colonne droite : texte d’observation -->
+        <div class="reputation-body">
+            <div class="reputation-body-header">
+                <span class="rep-body-label">OBS-LOG // COULOIRS</span>
+                <span class="rep-body-tag">Sources : personnel & résidents</span>
+            </div>
+
+            <div class="reputation-body-text">
+                <p>
+                    Il n’était pas rare de croiser Raffaele dans les couloirs. Tous les couloirs, à vrai dire, bien
+                    qu’on le surprenne plus fréquemment dans certaines ailes que dans d’autres. Il s’y déplaçait avec
+                    une assurance tranquille, l’assurance de celui qui n’a, au fond, rien à redouter.
+                </p>
+                <p>
+                    Dans sa voix comme dans son regard, jusque dans la précision sèche de ses gestes, transparaissait une
+                    évidence dérangeante : il ne les considérait pas comme des êtres humains à part entière. À peine même
+                    comme des individus. Il traversait cette foule de jeunes non pas en souverain, mais avec la désinvolture
+                    d’un visiteur arpentant les couloirs d’un refuge animalier.
+                </p>
+                <p>
+                    Il ne cherchait ni à retenir leurs noms, ni à comprendre leurs goûts, ni même à reconnaître leurs visages.
+                    Leur existence ne pesait pas davantage qu’un aboiement anonyme derrière une cage. Si l’un d’eux ingérait du
+                    chocolat, une brique chocolatée, cela lui importait peu. Et si cela pouvait, d’une manière ou d’une autre,
+                    accélérer un destin malheureux, alors… tant mieux.
+                </p>
+                <p>
+                    Parmi les membres les plus gradés de l’institut, notamment les cadres, leurs relations reposaient sur un
+                    système délicat de pressions mutuelles. Raffaele savait exercer une tension précise, veillant à ce qu’aucun
+                    ne se montre trop laxiste envers les résidents. La discipline devait primer : trop de tolérance entraînerait
+                    la chute.
+                </p>
+                <p>
+                    Mais eux aussi avaient leurs droits, et ils s’y accrochaient farouchement. La décision finale leur appartenait,
+                    ainsi que la direction des opérations. Raffaele ne pouvait punir un pensionnaire de son propre chef : il devait
+                    en référer à un cadre, lui remettre la tâche ou, dans les meilleurs cas, obtenir son accord préalable.
+                </p>
+                <p>
+                    Mais le plus complexe, le plus délicat, le plus imprévisible… restait encore le coordinateur. Avec lui, les
+                    règles se tordaient, les dynamiques se renversaient, et Raffaele devait apprendre à manœuvrer autrement,
+                    plus prudemment, plus subtilement, plus… cruellement.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+</body>
+</html>
