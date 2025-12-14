@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOC-██ - ████████</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-zone">
+    <div class="logo-symbol">Σ</div>
+    <span class="logo-text">Scientifique de Genesis</span>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="identite.html">Identité</a></li>
+      <li><a href="physique.html">Description Physique</a></li>
+      <li><a href="caractere.html">Caractère</a></li>
+      <li><a href="informations.html" class="active">Documents</a></li>
+      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="funfacts.html">Fun Facts</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- LOCK OVERLAY (bloque l'accès au contenu) -->
+<div class="doc-lock" id="docLock">
+  <div class="doc-lock-box">
+    <p class="doc-lock-kicker">ACCÈS CLASSIFIÉ</p>
+    <h1 class="doc-lock-title">DOCUMENT VERROUILLÉ</h1>
+    <p class="doc-lock-text">
+      Toute consultation non autorisée sera enregistrée.
+    </p>
+
+    <form class="doc-lock-form" id="docLockForm">
+      <label class="doc-lock-label">
+        MOT DE PASSE
+        <input type="password" class="doc-lock-input" id="docLockInput" autocomplete="off" />
+      </label>
+
+      <div class="doc-lock-actions">
+        <a class="doc-lock-back" href="informations.html">Retour</a>
+        <button class="doc-lock-btn" type="submit">Déverrouiller</button>
+      </div>
+
+      <p class="doc-lock-error" id="docLockError" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<main class="content">
+<div id="docContent" aria-hidden="true">
+  <section class="panel archive-panel">
+    <header class="archive-header">
+      <h2>ARCHIVE 0X // CONTE DE CONDITIONNEMENT</h2>
+      <p class="archive-subtitle">
+        Transcription partielle - récit répété au sujet A. (ANGELA). Source : R-IM.
+      </p>
+    </header>
+
+    <div class="archive-layout">
+
+      <!-- COLONNE VIDEO -->
+      <aside class="archive-media">
+        <div class="archive-video">
+          <div class="archive-video-head">
+            <span class="archive-video-code">VID-ARC-01</span>
+            <span class="archive-video-tag">ENREGISTREMENT</span>
+          </div>
+
+          <video controls preload="metadata" poster="images/reynard-poster.jpg">
+            <source src="videos/reynard.mp4" type="video/mp4">
+            Ton navigateur ne supporte pas la vidéo.
+          </video>
+
+          <p class="archive-video-note">
+            Montage visuel - <span class="highlight">Reynard, le Renard qui Apprit le Vent</span>
+          </p>
+        </div>
+      </aside>
+
+      <!-- COLONNE LIVRE -->
+      <section class="archive-book-zone" aria-label="Livre interactif">
+        <div class="book-shell">
+          <div class="book-topbar">
+            <span class="book-chip">ARCHIVE</span>
+            <span class="book-title">REYNARD / TRANSCRIPTION</span>
+            <span class="book-page-indicator">
+              Page <span id="pageNow">1</span>/<span id="pageTotal">1</span>
+            </span>
+          </div>
+
+          <div class="book-stage" id="bookStage" aria-live="polite">
+            <!-- Pages injectées en JS -->
+          </div>
+
+          <div class="book-controls">
+            <button class="book-btn" id="prevPage" type="button">⟵ Précédent</button>
+            <button class="book-btn book-btn--primary" id="nextPage" type="button">Suivant ⟶</button>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </section>
+  </div>
+
+</main>
+
+
+<script>
+/* ========= SHA-256 ========= */
+async function sha256Hex(str) {
+  const enc = new TextEncoder();
+  const data = enc.encode(str);
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  const arr = Array.from(new Uint8Array(buf));
+  return arr.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+/* ========= CONFIG DOC =========
+   -> Remplace DOC_PASSWORD_HASH par le hash SHA-256 du mdp
+   Exemple: "Reynard"
+*/
+const DOC_PASSWORD_HASH = "ebc5a55921a9f97a75b75bfbda7dbb34d3693551e0f830633c705369964e1674";
+
+/* ========= LOGIQUE LOCK ========= */
+const lock = document.getElementById("docLock");
+const form = document.getElementById("docLockForm");
+const input = document.getElementById("docLockInput");
+const error = document.getElementById("docLockError");
+const content = document.getElementById("docContent");
+
+// option: mémorise juste pour cette session
+const STORAGE_KEY = "unlock:" + location.pathname;
+
+function unlock() {
+  lock.classList.add("is-unlocked");
+
+  const content = document.getElementById("docContent");
+  if (content) content.setAttribute("aria-hidden", "false");
+
+  sessionStorage.setItem(STORAGE_KEY, "1");
+  setTimeout(() => { lock.style.display = "none"; }, 180);
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // si déjà déverrouillé durant la session
+  if (sessionStorage.getItem(STORAGE_KEY) === "1") unlock();
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const val = (input.value || "").trim();
+  if (!val) return;
+
+  try {
+    const h = await sha256Hex(val);
+    if (h === DOC_PASSWORD_HASH) {
+      error.textContent = "";
+      input.value = "";
+      unlock();
+    } else {
+      error.textContent = "Mot de passe incorrect.";
+      input.select();
+    }
+  } catch (err) {
+    console.error(err);
+    error.textContent = "Erreur technique.";
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1) Ton texte, découpé en “pages”
+  // (tu peux ajuster : une page = 1 ou 2 paragraphes selon ton rendu)
+  const PAGES = [
+  {
+    stamp: "ARC-01",
+    title: "Reynard, le Renard qui Apprit le Vent",
+    paragraphs: [
+      "Dans une grande forêt toute verte vivait un petit renard nommé Reynard.",
+      "Reynard était rapide, très rapide… mais il rêvait d’être encore plus rapide :",
+      "“Un jour, je veux courir aussi vite que le vent !”",
+      "Ses parents, souvent, en rigolaient.",
+      "Pourtant, chaque matin, Reynard s’entraînait.",
+      "Il bondissait par-dessus les branches, zigzaguait entre les arbres, filait comme une flèche.",
+      "Et surtout… il écoutait."
+    ]
+  },
+  {
+    stamp: "ARC-01",
+    paragraphs: [
+      "Il écoutait le vent qui passait entre les feuilles :",
+      "whoooosh… ffff… shhh…",
+      "Parfois le vent parlait doucement, parfois il chantait fort.",
+      "Reynard, lui, apprenait. Il comprenait ses murmures.",
+            "Un jour, alors qu’il faisait beau, le vent changea de voix.",
+      "Il n’était plus doux ni joueur.",
+      "Il devint lourd, pressé, inquiet.",
+      "Les nuages arrivèrent, gris et rapides."
+    ]
+  },
+
+  {
+    stamp: "ARC-01",
+    paragraphs: [
+      "Les oiseaux se cachaient, les lapins tremblaient, les écureuils couraient dans tous les sens.",
+      "Une tempête arrivait.",
+      "Les animaux avaient peur.",
+      "Mais Reynard, lui, écouta.",
+      "Il ferma les yeux, sentit l’air sur ses oreilles, et murmura :",
+      "“Je te comprends, vent. Tu cries pour prévenir. Tu veux nous dire où aller.”",
+      "Alors Reynard leva la tête, gonfla son petit torse courageux, et cria :",
+      "“Par ici ! Suivez-moi ! Le vent veut nous guider !”"
+    ]
+  },
+  {
+    stamp: "ARC-01",
+    paragraphs: [
+      "Les animaux hésitèrent… mais Reynard semblait si sûr de lui.",
+      "Alors ils le suivirent :",
+      "les oiseaux, les lapins, les hérissons, même le vieux blaireau grognon !",
+      "Reynard courait, le vent lui parlait dans les oreilles, et lui montrait le chemin."
+    ]
+  },
+  {
+    stamp: "ARC-01",
+    paragraphs: [
+      "Il sauta par-dessus un rocher, passa sous une racine, et mena tous ses amis à une grotte chaude et sèche, là où la tempête ne pouvait pas les atteindre.",
+      "Quand ils furent à l’abri, la pluie tomba très fort, tap tap tap, comme des petits tambours.",
+      "Les animaux regardèrent Reynard avec de grands yeux brillants."
+    ]
+  },
+  {
+    stamp: "ARC-01",
+    paragraphs: [
+      "“Comment savais-tu ?” demanda une petite souris.",
+      "Reynard sourit, fier de lui :",
+      "“J’ai appris. Chaque jour, j’ai écouté le vent.”",
+      "La tempête passa. Le soleil revint.",
+      "Les animaux sortirent de la grotte, le sourire jusqu’aux oreilles.",
+      "Et Reynard, lui, sous les yeux ébahis de ses parents, était le renard le plus heureux de tous les animaux de la forêt : sa patience, ses entraînements avaient servi.",
+      ""
+    ]
+  },
+  {
+    stamp: "ARC-01",
+    paragraphs: [
+        "Quand tu apprends quelque chose avec patience, un jour ce talent peut aider les autres.",
+      "Et être libre, c’est être toi : c’est ça qui te rend fort, comme Reynard."
+    ]
+  }
+];
+
+
+  const stage = document.getElementById("bookStage");
+  const pageNow = document.getElementById("pageNow");
+  const pageTotal = document.getElementById("pageTotal");
+  const btnPrev = document.getElementById("prevPage");
+  const btnNext = document.getElementById("nextPage");
+
+  pageTotal.textContent = PAGES.length;
+
+  // 2) Construire le livre
+  const book = document.createElement("div");
+  book.className = "book";
+  stage.appendChild(book);
+
+  // 3) Empiler les pages (dernière au-dessus)
+  // index 0 = première page, mais on empile en z-index croissant
+  const pageEls = [];
+
+  PAGES.forEach((p, i) => {
+    const page = document.createElement("div");
+    page.className = "book-page";
+    page.style.zIndex = String(100 + (PAGES.length - i)); // top = page 0 au départ
+
+    // FRONT
+    const front = document.createElement("div");
+    front.className = "page-face page-front";
+    front.innerHTML = `
+      <div class="page-paper">
+        <div>
+          <div class="page-head">
+            <span>GENESIS ARCHIVE</span>
+            <span class="page-stamp">${p.stamp}</span>
+
+          </div>
+          ${p.title ? `<div class="page-title">${p.title}</div>` : ""}
+        </div>
+        <div class="page-text">
+          ${p.paragraphs.map(t => `<p style="margin:0 0 .55rem 0;">${t}</p>`).join("")}
+        </div>
+        <div class="page-footer">
+          <span>RÉCIT / TRANSCRIPTION</span>
+          <span>${String(i+1).padStart(2,"0")}</span>
+        </div>
+      </div>
+    `;
+
+    // BACK (on met un “papier” discret)
+    const back = document.createElement("div");
+    back.className = "page-face page-back";
+    back.innerHTML = `
+      <div class="page-paper">
+        <div class="page-head">
+          <span>GENESIS ARCHIVE</span>
+          <span class="page-stamp">${p.stamp}</span>
+        </div>
+        <div class="page-text" style="opacity:.85">
+          <p style="margin:0 0 .55rem 0;">
+            (Verso) — Document interne. Reproduction interdite.
+          </p>
+        </div>
+        <div class="page-footer">
+          <span>VERSO</span>
+          <span>${String(i+1).padStart(2,"0")}</span>
+        </div>
+      </div>
+    `;
+
+    page.appendChild(front);
+    page.appendChild(back);
+
+    // clic = avancer si page “courante”
+    page.addEventListener("click", () => {
+      if (i === currentIndex) goNext();
+    });
+
+    book.appendChild(page);
+    pageEls.push(page);
+  });
+
+  // 4) Navigation
+  let currentIndex = 0; // page visible (celle qu’on peut tourner)
+  updateUI();
+
+  function updateUI(){
+    pageNow.textContent = String(currentIndex + 1);
+    btnPrev.disabled = currentIndex === 0;
+    btnNext.disabled = currentIndex >= PAGES.length - 1;
+
+    btnPrev.style.opacity = btnPrev.disabled ? .5 : 1;
+    btnNext.style.opacity = btnNext.disabled ? .5 : 1;
+  }
+
+  function goNext(){
+    if (currentIndex >= PAGES.length - 1) return;
+    pageEls[currentIndex].classList.add("is-flipped");
+    currentIndex++;
+    updateUI();
+  }
+
+  function goPrev(){
+    if (currentIndex <= 0) return;
+    currentIndex--;
+    pageEls[currentIndex].classList.remove("is-flipped");
+    updateUI();
+  }
+
+  btnNext.addEventListener("click", goNext);
+  btnPrev.addEventListener("click", goPrev);
+
+  // clavier (facultatif)
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") goNext();
+    if (e.key === "ArrowLeft") goPrev();
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOC-00 - INCIDENT ███</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-zone">
+    <div class="logo-symbol">Σ</div>
+    <span class="logo-text">Scientifique de Genesis</span>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="identite.html">Identité</a></li>
+      <li><a href="physique.html">Description Physique</a></li>
+      <li><a href="caractere.html">Caractère</a></li>
+      <li><a href="informations.html" class="active">Documents</a></li>
+      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="funfacts.html">Fun Facts</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- LOCK OVERLAY (bloque l'accès au contenu) -->
+<div class="doc-lock" id="docLock">
+  <div class="doc-lock-box">
+    <p class="doc-lock-kicker">ACCÈS CLASSIFIÉ</p>
+    <h1 class="doc-lock-title">DOCUMENT VERROUILLÉ</h1>
+    <p class="doc-lock-text">
+      Toute consultation non autorisée sera enregistrée.
+    </p>
+
+    <form class="doc-lock-form" id="docLockForm">
+      <label class="doc-lock-label">
+        MOT DE PASSE
+        <input type="password" class="doc-lock-input" id="docLockInput" autocomplete="off" />
+      </label>
+
+      <div class="doc-lock-actions">
+        <a class="doc-lock-back" href="informations.html">Retour</a>
+        <button class="doc-lock-btn" type="submit">Déverrouiller</button>
+      </div>
+
+      <p class="doc-lock-error" id="docLockError" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<main class="content" id="docContent" aria-hidden="true">
+  <section class="panel">
+    <h2>Incident ███-OMEGA</h2>
+    <p>Ton contenu ici…</p>
+  </section>
+</main>
+
+<script>
+/* ========= SHA-256 ========= */
+async function sha256Hex(str) {
+  const enc = new TextEncoder();
+  const data = enc.encode(str);
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  const arr = Array.from(new Uint8Array(buf));
+  return arr.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+/* ========= CONFIG DOC =========
+   -> Remplace DOC_PASSWORD_HASH par le hash SHA-256 du mdp
+   Exemple: "Reynard"
+*/
+const DOC_PASSWORD_HASH = "REYNARD_HASH_ICI";
+
+/* ========= LOGIQUE LOCK ========= */
+const lock = document.getElementById("docLock");
+const form = document.getElementById("docLockForm");
+const input = document.getElementById("docLockInput");
+const error = document.getElementById("docLockError");
+const content = document.getElementById("docContent");
+
+// option: mémorise juste pour cette session
+const STORAGE_KEY = "unlock:" + location.pathname;
+
+function unlock() {
+  lock.classList.add("is-unlocked");
+  content.setAttribute("aria-hidden", "false");
+  sessionStorage.setItem(STORAGE_KEY, "1");
+  setTimeout(() => { lock.style.display = "none"; }, 180);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // si déjà déverrouillé durant la session
+  if (sessionStorage.getItem(STORAGE_KEY) === "1") unlock();
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const val = (input.value || "").trim();
+  if (!val) return;
+
+  try {
+    const h = await sha256Hex(val);
+    if (h === DOC_PASSWORD_HASH) {
+      error.textContent = "";
+      input.value = "";
+      unlock();
+    } else {
+      error.textContent = "Mot de passe incorrect.";
+      input.select();
+    }
+  } catch (err) {
+    console.error(err);
+    error.textContent = "Erreur technique.";
+  }
+});
+</script>
+
+</body>
+</html>

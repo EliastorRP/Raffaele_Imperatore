@@ -33,7 +33,125 @@
     </header>
 
     <main class="content">
+<section class="panel documents-panel">
+
+  <h1 class="documents-title">ARCHIVES & DOCUMENTS</h1>
+  <p class="documents-subtitle">
+    Accès aux dossiers internes de Genesis.<br>
+    Certaines archives sont instables ou partiellement corrompues.
+  </p>
+
+  <div class="documents-grid">
+
+    <!-- DOCUMENT 01 – ARCHIVE OMEGA -->
+    <a href="archive1.html"
+       class="doc-card doc-card--danger doc-card--glitch js-glitch"
+       data-text="INCIDENT ███-">
+
+      <span class="doc-code">DOC-00</span><br>
+      <h2 class="doc-title glitch-text">INCIDENT ███</h2>
+      <p class="doc-desc">Rapport formellement confidentiel.</p>
+      <span class="doc-level">NIVEAU : INCONNU</span>
+    </a>
+
+    <!-- DOCUMENT 02 – JOURNAL DU COMA -->
+    <a href="coma.html"
+       class="doc-card doc-card--secret">
+
+      <span class="doc-code">DOC-01</span>
+      <h2 class="doc-title">Journal post-coma</h2>
+      <p class="doc-desc">Fragments concervés en l'état.</p>
+      <span class="doc-level">NIVEAU : CONFIDENTIEL</span>
+    </a>
+
+    <!-- DOCUMENT 03 – EXPÉRIENCES -->
+<a class="doc-card doc-card--semi js-glitch" data-text="EXP SUR N.02-026" href="n02026.html">
+  <div class="doc-top">
+    <span class="doc-code">DOC-02</span>
+    
+  </div>
+  <h3 class="doc-title glitch-text"></h3>
+  <p class="doc-desc">Accès restreint. Données dangereuses.</p>
+  <span class="doc-level">NIVEAU : CRITIQUE</span>
+</a>
+
+
+    <!-- DOCUMENT 04 – ARCHIVE NULL -->
+    <a href="archive2.html"
+       class="doc-card doc-card--danger doc-card--glitch js-glitch"
+       data-text="ARCHIVE NULL">
+
+      <span class="doc-code">DOC-██</span><br>
+      <h2 class="doc-title glitch-text">ARCHIVE NULL</h2>
+      <p class="doc-desc">Données partiellement effacées.</p>
+      <span class="doc-level">NIVEAU : INCONNU</span>
+    </a>
+
+  </div>
+</section>
+
     </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const GLITCH_CHARS = "█▓▒░<>/\\[]{}!@#$%&*+=-";
+  const TICK = 55;
+
+  function makeMask(original, stableRatio) {
+    return Array.from(original).map(ch => (Math.random() < stableRatio ? ch : null));
+  }
+
+  document.querySelectorAll(".js-glitch").forEach(card => {
+    const el = card.querySelector(".glitch-text");
+    const original = card.dataset.text || (el ? el.textContent : "");
+    if (!el || !original) return;
+
+    // Par défaut : très illisible
+    const isSemi = card.classList.contains("doc-card--semi");
+
+    // “Semi” = plus de lettres stables + fenêtres de lisibilité
+    let stableRatio = isSemi ? 0.62 : 0.35;
+    let mask = makeMask(original, stableRatio);
+
+    // petites fenêtres où ça devient plus lisible
+    let revealTimer = 0;
+
+if (isSemi) {
+  card.addEventListener("mouseenter", () => { stableRatio = 0.78; mask = makeMask(original, stableRatio); });
+  card.addEventListener("mouseleave", () => { stableRatio = 0.62; mask = makeMask(original, stableRatio); });
+
+  // Mobile: appui long = plus lisible
+  card.addEventListener("touchstart", () => { stableRatio = 0.78; mask = makeMask(original, stableRatio); }, {passive:true});
+  card.addEventListener("touchend", () => { stableRatio = 0.62; mask = makeMask(original, stableRatio); }, {passive:true});
+}
+
+    setInterval(() => {
+      // toutes les ~2.8s, on ouvre une mini fenêtre de lisibilité ~250ms
+      if (isSemi && Math.random() < 0.04 && revealTimer <= 0) {
+        revealTimer = 5; // 5 ticks ≈ 275ms
+        // on “reconstruit” un masque plus lisible
+        mask = makeMask(original, 0.82);
+      }
+
+      // en dehors de la fenêtre, masque normal semi-lisible
+      if (isSemi && revealTimer === 1) {
+        mask = makeMask(original, 0.62);
+      }
+      if (revealTimer > 0) revealTimer--;
+
+      let out = "";
+      for (let i = 0; i < original.length; i++) {
+        if (mask[i]) out += mask[i];
+        else out += GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+      }
+      el.textContent = out;
+    }, TICK);
+  });
+});
+
+</script>
+
+
 
 </body>
 
