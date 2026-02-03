@@ -69,45 +69,53 @@ async function sha256Hex(str) {
   return arr.map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
-/* ========= CONFIG DOC =========
-   -> Remplace DOC_PASSWORD_HASH par le hash SHA-256 du mdp
-   Exemple: "Reynard"
-*/
-const DOC_PASSWORD_HASH = "REYNARD_HASH_ICI";
+const DOC_PASSWORD_HASH = "ebc5a55921a9f97a75b75bfbda7dbb34d3693551e0f830633c705369964e1674";
 
-/* ========= LOGIQUE LOCK ========= */
-const lock = document.getElementById("docLock");
-const form = document.getElementById("docLockForm");
-const input = document.getElementById("docLockInput");
-const error = document.getElementById("docLockError");
-const content = document.getElementById("docContent");
+/* ========= LOCK ========= */
+const lock   = document.getElementById("docLock");
+const form   = document.getElementById("docLockForm");
+const input  = document.getElementById("docLockInput");
+const error  = document.getElementById("docLockError");
+const docContent = document.getElementById("docContent");
 
-// option: mémorise juste pour cette session
-const STORAGE_KEY = "unlock:" + location.pathname;
+function setLockedState(isLocked) {
+  if (!lock || !docContent) return;
 
-function unlock() {
-  lock.classList.add("is-unlocked");
-  content.setAttribute("aria-hidden", "false");
-  sessionStorage.setItem(STORAGE_KEY, "1");
-  setTimeout(() => { lock.style.display = "none"; }, 180);
+  if (isLocked) {
+    lock.style.display = "";                 // important: le remettre si bfcache
+    lock.classList.remove("is-unlocked");
+    docContent.setAttribute("aria-hidden", "true");
+    if (input) input.value = "";
+    if (error) error.textContent = "";
+    // focus propre
+    setTimeout(() => input?.focus(), 0);
+  } else {
+    lock.classList.add("is-unlocked");
+    docContent.setAttribute("aria-hidden", "false");
+    // on laisse l’anim puis on cache
+    setTimeout(() => { lock.style.display = "none"; }, 180);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // si déjà déverrouillé durant la session
-  if (sessionStorage.getItem(STORAGE_KEY) === "1") unlock();
+/* Toujours verrouiller à l'arrivée + quand on revient via le bouton "retour" */
+window.addEventListener("pageshow", () => {
+  setLockedState(true);
 });
 
+/* Submit du mot de passe */
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const val = (input.value || "").trim();
-  if (!val) return;
+
+  // Normalisation = évite les caractères invisibles / variantes unicode
+  const value = (input.value || "").normalize("NFKC").trim();
+
+  if (!value) return;
 
   try {
-    const h = await sha256Hex(val);
+    const h = await sha256Hex(value);
+
     if (h === DOC_PASSWORD_HASH) {
-      error.textContent = "";
-      input.value = "";
-      unlock();
+      setLockedState(false);
     } else {
       error.textContent = "Mot de passe incorrect.";
       input.select();
@@ -118,6 +126,7 @@ form.addEventListener("submit", async (e) => {
   }
 });
 </script>
+
 
 </body>
 </html>
