@@ -4294,3 +4294,246 @@ body.is-corrupted .book-page{ animation: none !important; }
 .book-page{
   transition: transform .85s cubic-bezier(.2,.8,.2,1);
 }
+
+/* ===========================
+   COMA — JOURNAL INTERACTIF
+=========================== */
+
+.coma-panel { padding-top: 1.6rem; }
+.coma-panel::before { inset: .7rem; }
+
+.coma-head { margin-bottom: 1.2rem; }
+.coma-title{
+  font-size: 1.1rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  margin-bottom: .35rem;
+}
+.coma-subtitle{
+  font-size: .85rem;
+  color: #A9C4DB;
+  opacity: .9;
+  line-height: 1.6;
+}
+
+.coma-layout{
+  display:grid;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px){
+  .coma-layout{ grid-template-columns: 1fr; }
+}
+
+/* index */
+.coma-index{
+  border-radius: .9rem;
+  border: 1px solid rgba(122,243,216,.55);
+  background: radial-gradient(circle at top left, rgba(122,243,216,.10), rgba(3,6,10,.96));
+  box-shadow: 0 0 20px rgba(0,0,0,.7);
+  overflow:hidden;
+  padding: .85rem .85rem 1rem;
+}
+
+.coma-index-top{
+  display:flex;
+  gap:.45rem;
+  margin-bottom: .75rem;
+}
+
+.coma-chip{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.65rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  padding:.16rem .55rem;
+  border-radius:999px;
+  border:1px solid rgba(122,243,216,.7);
+  background: rgba(0,0,0,.35);
+  color:#9FFFE4;
+}
+
+.coma-chip--warn{
+  border-color: rgba(255,160,180,.6);
+  color:#ffd0d8;
+}
+
+.coma-years{
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  margin-bottom: .85rem;
+}
+
+.coma-year{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:.6rem;
+  padding:.55rem .65rem;
+  border-radius:.7rem;
+  border:1px solid rgba(122,243,216,.35);
+  background: rgba(0,0,0,.35);
+  color:#EFFFFF;
+  cursor:pointer;
+  font-family:"IBM Plex Mono", monospace;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.68rem;
+}
+
+.coma-year:hover{
+  box-shadow: 0 0 14px rgba(122,243,216,.35);
+  transform: translateY(-1px);
+}
+
+.coma-year.is-active{
+  border-color: rgba(122,243,216,.75);
+  background: rgba(0,0,0,.5);
+}
+
+.coma-year-right{
+  color:#CFEFFF;
+  opacity:.9;
+}
+
+.coma-index-actions{
+  display:flex;
+  gap:.5rem;
+  justify-content:space-between;
+  margin-bottom: .7rem;
+}
+
+.coma-btn{
+  border-radius:999px;
+  border:1px solid rgba(122,243,216,.55);
+  background: rgba(0,0,0,.35);
+  padding:.45rem .75rem;
+  color:#EFFFFF;
+  font-family:"IBM Plex Mono", monospace;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:.66rem;
+  cursor:pointer;
+  transition:.18s ease;
+}
+
+.coma-btn:hover{
+  box-shadow: 0 0 14px rgba(122,243,216,.35);
+  transform: translateY(-1px);
+}
+
+.coma-btn--primary{
+  border-color: rgba(122,243,216,.85);
+  background: radial-gradient(circle at 0 0, rgba(122,243,216,.18), rgba(0,0,0,.45));
+  color:#CFFFF5;
+}
+
+.coma-btn--ghost{
+  border-color: rgba(255,160,180,.55);
+  color:#ffdfe6;
+  background: rgba(0,0,0,.25);
+}
+
+.coma-hint{
+  font-size:.8rem;
+  color:#A9C4DB;
+  line-height:1.6;
+  margin:0;
+}
+
+/* reader */
+.coma-reader{
+  border-radius: .95rem;
+  border: 1px solid rgba(122,243,216,.55);
+  background: radial-gradient(circle at top left, rgba(122,243,216,.10), rgba(3,6,10,.96));
+  box-shadow: 0 0 22px rgba(0,0,0,.7);
+  overflow:hidden;
+}
+
+.coma-reader-top{
+  display:flex;
+  justify-content:space-between;
+  gap:.8rem;
+  padding: .75rem .85rem;
+  background: rgba(0,0,0,.55);
+  border-bottom: 1px solid rgba(122,243,216,.2);
+  align-items:center;
+}
+
+.coma-frag-label{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.65rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#9FFFE4;
+  opacity:.95;
+}
+
+.coma-frag-title{
+  font-size: 1rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color:#EFFFFF;
+  margin-top:.1rem;
+}
+
+.coma-reader-right{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+
+.coma-meter{
+  width: 120px;
+  height: .5rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(122,243,216,.35);
+  overflow:hidden;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.7);
+}
+
+.coma-meter-fill{
+  height:100%;
+  width: 30%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7AF3D8, #FF9999);
+  box-shadow: 0 0 10px rgba(255,120,140,.55);
+}
+
+.coma-paper{
+  padding: 1.15rem 1.2rem 1rem;
+  min-height: 420px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.05), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(122,243,216,.05), transparent 55%),
+    rgba(2,3,6,.92);
+}
+
+.coma-line{
+  font-size: .92rem;
+  line-height: 1.85;
+  color:#D6EAF6;
+  text-align: justify;
+  margin-bottom: .1rem;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.coma-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: .65rem .85rem;
+  border-top: 1px solid rgba(122,243,216,.18);
+  background: rgba(0,0,0,.35);
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.64rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#A9C4DB;
+  opacity:.9;
+}
