@@ -4537,3 +4537,403 @@ body.is-corrupted .book-page{ animation: none !important; }
   color:#A9C4DB;
   opacity:.9;
 }
+
+/* ==========================
+   N.02-026 — DOSSIER ORGANISÉ
+========================== */
+
+.n02-panel{ padding: 1.6rem 1.2rem; }
+.n02-kicker{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.68rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#9FFFE4;
+  opacity:.85;
+  margin-bottom:.35rem;
+}
+.n02-title{
+  font-size: 1.15rem;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  margin: 0 0 .35rem 0;
+}
+.n02-sub{
+  font-size: .86rem;
+  color:#A9C4DB;
+  margin:0 0 1rem 0;
+}
+
+.n02-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem;
+  margin-top:.6rem;
+}
+.n02-nav-link{
+  text-decoration:none;
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  padding:.45rem .8rem;
+  border-radius:999px;
+  border:1px solid rgba(122,243,216,.55);
+  background: rgba(0,0,0,.35);
+  color:#EFFFFF;
+  transition:.18s ease;
+}
+.n02-nav-link:hover{
+  box-shadow:0 0 18px rgba(122,243,216,.35);
+  transform: translateY(-1px);
+}
+.n02-nav-link--danger{
+  border-color: rgba(255,120,140,.55);
+  color:#ffe5ea;
+}
+
+.n02-file{
+  margin-top: 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(122,243,216,.45);
+  background:
+    radial-gradient(circle at 0 0, rgba(122,243,216,.10), transparent 60%),
+    rgba(3,6,10,.96);
+  box-shadow: 0 0 22px rgba(0,0,0,.75);
+  overflow: hidden;
+}
+
+.n02-file--danger{
+  border-color: rgba(255,120,140,.55);
+  background:
+    radial-gradient(circle at 0 0, rgba(255,120,140,.12), transparent 60%),
+    rgba(10,3,6,.96);
+}
+
+.n02-file-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:1rem;
+  padding: .85rem .95rem .7rem;
+  background: rgba(0,0,0,.55);
+  border-bottom: 1px solid rgba(122,243,216,.18);
+}
+.n02-file--danger .n02-file-header{
+  border-bottom-color: rgba(255,120,140,.18);
+}
+
+.n02-file-left{ display:flex; gap:.75rem; align-items:flex-start; }
+.n02-ribbon{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.66rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#9FFFE4;
+  padding:.25rem .55rem;
+  border-radius: .6rem;
+  border:1px solid rgba(122,243,216,.55);
+  background: rgba(0,0,0,.35);
+}
+.n02-ribbon--danger{
+  color:#ffd0d8;
+  border-color: rgba(255,120,140,.45);
+}
+
+.n02-file-title{
+  font-size:.95rem;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  color:#EFFFFF;
+  margin-bottom:.25rem;
+}
+.n02-file-meta{
+  font-size:.8rem;
+  color:#CDE5F7;
+  opacity:.9;
+  line-height:1.35;
+}
+
+.n02-file-right{
+  display:flex;
+  flex-direction:column;
+  gap:.35rem;
+  align-items:flex-end;
+}
+
+.n02-badge{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.66rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:.22rem .55rem;
+  border-radius:999px;
+  border:1px solid rgba(122,243,216,.55);
+  background: rgba(0,0,0,.35);
+  color:#CFFFF5;
+}
+.n02-badge--ok{
+  border-color: rgba(122,243,216,.75);
+}
+.n02-badge--danger{
+  border-color: rgba(255,120,140,.7);
+  color:#ffe5ea;
+}
+
+.n02-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  padding: .65rem .95rem;
+  border-bottom: 1px solid rgba(122,243,216,.14);
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.15), rgba(0,0,0,0));
+}
+.n02-file--danger .n02-tabs{
+  border-bottom-color: rgba(255,120,140,.14);
+}
+
+.n02-tab{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.64rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#A9C4DB;
+  padding:.18rem .45rem;
+  border-radius: .55rem;
+  border:1px dashed rgba(122,243,216,.22);
+  background: rgba(0,0,0,.22);
+}
+.n02-file--danger .n02-tab{
+  border-color: rgba(255,120,140,.18);
+  color:#ffd0d8;
+}
+
+.n02-paper{
+  position: relative;
+  padding: .9rem .95rem 1rem;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+    radial-gradient(circle at 85% 70%, rgba(122,243,216,.06), transparent 55%),
+    rgba(2,3,6,.96);
+}
+
+.n02-paper--danger{
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+    radial-gradient(circle at 85% 70%, rgba(255,120,140,.07), transparent 55%),
+    rgba(2,3,6,.96);
+}
+
+.n02-paper-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:.6rem;
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.68rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#9FFFE4;
+  opacity:.95;
+  padding-bottom:.6rem;
+  border-bottom: 1px dashed rgba(122,243,216,.22);
+  margin-bottom:.75rem;
+}
+.n02-file--danger .n02-paper-top{
+  color:#ffd0d8;
+  border-bottom-color: rgba(255,120,140,.18);
+}
+
+.n02-paper-stamp{ color:#CFEFFF; opacity:.85; }
+.n02-paper-mark{
+  padding:.12rem .5rem;
+  border-radius: 999px;
+  border:1px solid rgba(122,243,216,.45);
+  background: rgba(0,0,0,.35);
+  color:#EFFFFF;
+  font-size:.62rem;
+}
+.n02-paper-mark--danger{
+  border-color: rgba(255,120,140,.45);
+  color:#ffe5ea;
+}
+
+.n02-raw{
+  margin:0;
+  padding: 0;
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.80rem;
+  line-height: 1.9;
+  color:#D6EAF6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  position: relative;
+}
+
+/* effet scan / grain */
+.n02-paper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,.03) 1px,
+      transparent 2px,
+      transparent 6px
+    );
+  opacity:.25;
+  pointer-events:none;
+  mix-blend-mode: overlay;
+}
+
+.n02-paper-foot{
+  display:flex;
+  justify-content:space-between;
+  gap:.8rem;
+  margin-top: .9rem;
+  padding-top: .65rem;
+  border-top: 1px dashed rgba(122,243,216,.20);
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.65rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#A9C4DB;
+  opacity:.9;
+}
+.n02-file--danger .n02-paper-foot{
+  border-top-color: rgba(255,120,140,.18);
+}
+
+/* ==========================
+   N02 — ENHANCE (sections/listes/signature)
+========================== */
+
+.n02-enhanced{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.80rem;
+  line-height: 1.9;
+  color:#D6EAF6;
+}
+
+/* Sections I. / II. / III. */
+.n02-sec{
+  margin: 1.05rem 0 .55rem;
+  padding: .55rem .7rem .55rem .85rem;
+  border-radius: .75rem;
+  border: 1px solid rgba(122,243,216,.22);
+  background: rgba(0,0,0,.25);
+  position: relative;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  color:#EFFFFF;
+}
+
+.n02-file--danger .n02-sec{
+  border-color: rgba(255,120,140,.22);
+}
+
+.n02-sec::before{
+  content:"";
+  position:absolute;
+  left:.5rem; top:.55rem; bottom:.55rem;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, rgba(122,243,216,.85), transparent);
+  opacity:.95;
+}
+.n02-file--danger .n02-sec::before{
+  background: linear-gradient(to bottom, rgba(255,120,140,.85), transparent);
+}
+
+/* Paragraphes / lignes */
+.n02-line{
+  margin: 0 0 .35rem 0;
+  color:#D6EAF6;
+  white-space: pre-wrap; /* garde tes espaces */
+}
+
+/* “Blanc” (lignes vides) */
+.n02-gap{ height: .65rem; }
+
+/* Listes - */
+.n02-ul,
+.n02-ol{
+  margin: .35rem 0 .55rem 1.1rem;
+  padding: 0;
+}
+
+.n02-ul li,
+.n02-ol li{
+  margin: .18rem 0;
+  color:#D6EAF6;
+}
+
+/* Puce stylée */
+.n02-ul li::marker{
+  content: "▸ ";
+  color: rgba(122,243,216,.9);
+}
+.n02-file--danger .n02-ul li::marker{
+  color: rgba(255,120,140,.9);
+}
+
+/* Numérotation plus “tech” */
+.n02-ol{ counter-reset: n02; list-style: none; }
+.n02-ol li{
+  counter-increment: n02;
+  position: relative;
+  padding-left: 2.05rem;
+}
+.n02-ol li::before{
+  content: counter(n02) ".";
+  position:absolute;
+  left: 0;
+  width: 1.8rem;
+  text-align: right;
+  color: rgba(122,243,216,.9);
+}
+.n02-file--danger .n02-ol li::before{
+  color: rgba(255,120,140,.9);
+}
+
+/* Signature */
+.n02-sign{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: .8rem;
+  border-top: 1px dashed rgba(122,243,216,.20);
+}
+.n02-file--danger .n02-sign{
+  border-top-color: rgba(255,120,140,.18);
+}
+
+.n02-sign-label{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:.65rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#A9C4DB;
+  opacity:.9;
+  display:block;
+  margin-bottom:.2rem;
+}
+.n02-sign-meta{
+  font-size:.82rem;
+  color:#CDE5F7;
+  opacity:.9;
+}
+
+.n02-sign-img{
+  max-width: 220px;
+  height: auto;
+  opacity: .92;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,.45));
+}
