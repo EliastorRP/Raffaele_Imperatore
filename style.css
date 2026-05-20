@@ -4937,3 +4937,128 @@ body.is-corrupted .book-page{ animation: none !important; }
   opacity: .92;
   filter: drop-shadow(0 0 10px rgba(0,0,0,.45));
 }
+
+.exp-directory-panel { padding: 1.6rem 1.2rem; }
+
+.exp-dir-kicker {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .68rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #ffb8c5;
+}
+
+.exp-dir-title {
+  font-size: 1.15rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.exp-dir-sub {
+  color: #A9C4DB;
+  font-size: .85rem;
+}
+
+.exp-dir-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.exp-dir-index {
+  border: 1px solid rgba(255,120,140,.55);
+  border-radius: .95rem;
+  background: rgba(12,3,7,.95);
+  padding: .75rem;
+}
+
+.exp-index-btn {
+  width: 100%;
+  text-align: left;
+  margin-bottom: .55rem;
+  padding: .65rem .75rem;
+  border-radius: .75rem;
+  border: 1px solid rgba(255,120,140,.35);
+  background: rgba(0,0,0,.35);
+  color: #ffe8ed;
+  cursor: pointer;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .7rem;
+}
+
+.exp-index-btn.active {
+  border-color: rgba(255,120,140,.9);
+  box-shadow: 0 0 16px rgba(255,80,110,.35);
+}
+
+.exp-dir-viewer {
+  border-radius: 1rem;
+  border: 1px solid rgba(255,120,140,.55);
+  background:
+    radial-gradient(circle at top left, rgba(255,120,140,.12), transparent 60%),
+    rgba(3,6,10,.96);
+  overflow: hidden;
+}
+
+.exp-doc-header {
+  padding: .8rem 1rem;
+  background: rgba(0,0,0,.55);
+  border-bottom: 1px solid rgba(255,120,140,.2);
+}
+
+.exp-doc-title {
+  font-size: 1rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #fff0f4;
+}
+
+.exp-doc-body {
+  padding: 1rem;
+}
+
+.exp-section-title {
+  margin: 1rem 0 .55rem;
+  padding: .55rem .75rem;
+  border-radius: .7rem;
+  border: 1px solid rgba(255,120,140,.3);
+  background: rgba(0,0,0,.32);
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #ffd0d8;
+  font-size: .78rem;
+}
+
+.exp-line {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .8rem;
+  line-height: 1.85;
+  color: #D6EAF6;
+  margin-bottom: .32rem;
+  white-space: pre-wrap;
+}
+
+.exp-list {
+  margin: .45rem 0 .65rem 1.1rem;
+  padding: 0;
+}
+
+.exp-list li {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .8rem;
+  line-height: 1.7;
+  color: #D6EAF6;
+  margin-bottom: .25rem;
+}
+
+.exp-list li::marker {
+  color: #ff9fac;
+}
+
+@media (max-width: 900px) {
+  .exp-dir-layout { grid-template-columns: 1fr; }
+}
